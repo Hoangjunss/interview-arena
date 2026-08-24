@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"2[ab3[cd]]\"]",
+    "expectedOutput": "abcdcdcdabcdcdcd",
+    "hidden": false
+  },
+  {
+    "input": "[\"2[ab3[c]]\"]",
+    "expectedOutput": "abcccabccc",
+    "hidden": false
+  },
+  {
+    "input": "[\"1[a1[b1[c]]]\"]",
+    "expectedOutput": "abc",
+    "hidden": true
+  },
+  {
+    "input": "[\"2[3[a]]\"]",
+    "expectedOutput": "aaaaaa",
+    "hidden": true
+  },
+  {
+    "input": "[\"a1[b]\"]",
+    "expectedOutput": "ab",
+    "hidden": true
+  }
+]

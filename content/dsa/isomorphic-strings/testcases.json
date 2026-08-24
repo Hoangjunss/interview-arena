@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"hello\\\", t = \\\"world\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abcdefghijklmnopqrstuvwxyz\\\", t = \\\"zyxwvutsrqponmlkjihgfedcba\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"paper\\\", t = \\\"title\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"#a@C\\\", t = \\\"%b$D\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"1234567890\\\", t = \\\"0987654321\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

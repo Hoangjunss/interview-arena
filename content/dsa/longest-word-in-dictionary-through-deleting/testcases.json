@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"\\\", dictionary = [\\\"a\\\",\\\"b\\\",\\\"c\\\"]\"]",
+    "expectedOutput": "",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"a\\\", dictionary = [\\\"b\\\",\\\"c\\\",\\\"d\\\"]\"]",
+    "expectedOutput": "",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"zcfzdb\\\", dictionary = [\\\"a\\\",\\\"b\\\",\\\"c\\\"]\"]",
+    "expectedOutput": "b",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"aaaaaaa\\\", dictionary = [\\\"aaa\\\",\\\"aaaa\\\"]\"]",
+    "expectedOutput": "aaaa",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"aaaaaaa\\\", dictionary = [\\\"aaaaaaa\\\",\\\"aa\\\",\\\"a\\\",\\\"\\\" ]\"]",
+    "expectedOutput": "aaaaaaa",
+    "hidden": true
+  }
+]

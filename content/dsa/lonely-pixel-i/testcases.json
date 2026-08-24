@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[[\"W\", \"W\", \"B\"], [\"W\", \"B\", \"W\"], [\"B\", \"W\", \"W\"]]]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[[[\"B\", \"B\", \"B\"], [\"B\", \"B\", \"W\"], [\"B\", \"B\", \"B\"]]]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[[[\"W\"]]]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[[[\"W\", \"W\", \"W\"], [\"W\", \"W\", \"W\"], [\"W\", \"W\", \"W\"]]]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[[[\"B\", \"W\", \"W\"], [\"W\", \"W\", \"W\"], [\"W\", \"W\", \"B\"]]]",
+    "expectedOutput": "2",
+    "hidden": true
+  }
+]

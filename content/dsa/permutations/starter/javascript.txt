@@ -1,0 +1,5 @@
+class Solution {
+    permute(nums) {
+        // TODO: implement
+    }
+}

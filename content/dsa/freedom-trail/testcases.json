@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"ring = \\\"caotmcaataijjxi\\\", key = \\\"oatjiioijjjxxxcx\\\"\"]",
+    "expectedOutput": "42",
+    "hidden": false
+  },
+  {
+    "input": "[\"ring = \\\"godding\\\", key = \\\"gd\\\"\"]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[\"ring = \\\"pqwcx\\\", key = \\\"cpqwx\\\"\"]",
+    "expectedOutput": "13",
+    "hidden": true
+  },
+  {
+    "input": "[\"ring = \\\"edcba\\\", key = \\\"abc\\\"\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  },
+  {
+    "input": "[\"ring = \\\"ababcabc\\\", key = \\\"abc\\\"\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  }
+]

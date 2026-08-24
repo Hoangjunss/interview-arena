@@ -1,0 +1,5 @@
+class Solution {
+    hasPath(maze, start, destination) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    isScramble(s1, s2) {
+        // TODO: implement
+    }
+}

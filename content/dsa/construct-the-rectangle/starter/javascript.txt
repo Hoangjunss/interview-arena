@@ -1,0 +1,5 @@
+class Solution {
+    constructRectangle(area) {
+        // TODO: implement
+    }
+}

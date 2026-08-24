@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"abcdefghijklmnopqrstuvwxyz\\\", t = \\\"zyxwvutsrqponmlkjihgfedcba\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abcde\\\", t = \\\"edcba\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abc\\\", t = \\\"abcd\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"apple\\\", t = \\\"pale\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"hello\\\", t = \\\"bello\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

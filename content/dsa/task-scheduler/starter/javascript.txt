@@ -1,0 +1,5 @@
+class Solution {
+    leastInterval(tasks, n) {
+        // TODO: implement
+    }
+}

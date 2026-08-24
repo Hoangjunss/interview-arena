@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"n = 3, k = 1\"]",
+    "expectedOutput": "123",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 8, k = 40320\"]",
+    "expectedOutput": "87654321",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 4, k = 9\"]",
+    "expectedOutput": "2314",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 9, k = 362880\"]",
+    "expectedOutput": "987654321",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 5, k = 10\"]",
+    "expectedOutput": "13452",
+    "hidden": true
+  }
+]

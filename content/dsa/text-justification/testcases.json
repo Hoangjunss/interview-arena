@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"words = [\\\"Try\\\",\\\"your\\\",\\\"best\\\",\\\"to\\\",\\\"be\\\",\\\"like\\\",\\\"them\\\",\\\"at\\\",\\\"best\\\",\\\"you\\\",\\\"can\\\",\\\"be\\\",\\\"like\\\",\\\"them.\\\"], maxWidth = 20\"]",
+    "expectedOutput": "['Try  your best to be', 'like  them  at  best', 'you   can   be  like', 'them.               ']",
+    "hidden": false
+  },
+  {
+    "input": "[\"words = [\\\"a\\\",\\\"b\\\",\\\"c\\\",\\\"d\\\",\\\"e\\\"], maxWidth = 3\"]",
+    "expectedOutput": "['a b', 'c d', 'e  ']",
+    "hidden": false
+  },
+  {
+    "input": "[\"words = [\\\"What\\\",\\\"must\\\",\\\"be\\\",\\\"acknowledgment\\\",\\\"shall\\\",\\\"be\\\"], maxWidth = 16\"]",
+    "expectedOutput": "['What   must   be', 'acknowledgment  ', 'shall be        ']",
+    "hidden": true
+  },
+  {
+    "input": "[\"words = [\\\"Listen\\\",\\\"to\\\",\\\"many\\\",\\\"people\\\",\\\"so\\\",\\\"that\\\",\\\"you\\\",\\\"can\\\",\\\"speak\\\",\\\"to\\\",\\\"none.\\\"], maxWidth = 15\"]",
+    "expectedOutput": "['Listen  to many', 'people  so that', 'you  can  speak', 'to none.       ']",
+    "hidden": true
+  },
+  {
+    "input": "[\"words = [\\\"short\\\",\\\"longwordhere\\\",\\\"longwordhere\\\",\\\"short\\\"], maxWidth = 20\"]",
+    "expectedOutput": "['short   longwordhere', 'longwordhere short  ']",
+    "hidden": true
+  }
+]

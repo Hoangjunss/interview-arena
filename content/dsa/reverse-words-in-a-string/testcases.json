@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"the sky is blue\"]",
+    "expectedOutput": "\"blue is sky the\"",
+    "hidden": false
+  },
+  {
+    "input": "[\" \\u00a0hello world \\u00a0\"]",
+    "expectedOutput": "\"world hello\"",
+    "hidden": false
+  },
+  {
+    "input": "[\"a good \\u00a0 example\"]",
+    "expectedOutput": "\"example good a\"",
+    "hidden": true
+  },
+  {
+    "input": "[\"   multiple     spaces   between words   \"]",
+    "expectedOutput": "words between spaces multiple",
+    "hidden": true
+  },
+  {
+    "input": "[\"   complex   example    with    various    spacing    conditions   \"]",
+    "expectedOutput": "conditions spacing various with example complex",
+    "hidden": true
+  }
+]

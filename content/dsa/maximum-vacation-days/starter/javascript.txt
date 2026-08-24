@@ -1,0 +1,5 @@
+class Solution {
+    maxVacationDays(flights, days) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    killProcess(pid, ppid, kill) {
+        // TODO: implement
+    }
+}

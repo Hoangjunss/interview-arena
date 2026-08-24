@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"depth\"]",
+    "expectedOutput": "Error: Solution.addOneRow() missing 3 required positional arguments: 'root', 'val', and 'depth'",
+    "hidden": false
+  },
+  {
+    "input": "[\"val\"]",
+    "expectedOutput": "Error: Solution.addOneRow() missing 3 required positional arguments: 'root', 'val', and 'depth'",
+    "hidden": false
+  },
+  {
+    "input": "[\"root\"]",
+    "expectedOutput": "Error: Solution.addOneRow() missing 3 required positional arguments: 'root', 'val', and 'depth'",
+    "hidden": true
+  },
+  {
+    "input": "[\"root = [1,2,3,4,5,6,7], val = 0, depth = 2\"]",
+    "expectedOutput": "[1, 0, 0, 2, None, None, 3, 4, 5, 6, 7]",
+    "hidden": true
+  },
+  {
+    "input": "[\"root = [1,2,3,4,5,6,7], val = 0, depth = 4\"]",
+    "expectedOutput": "[1,2,3,4,5,6,7,0,0,0,0,0,0,0,0]",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    canIWin(maxChoosableInteger, desiredTotal) {
+        // TODO: implement
+    }
+}

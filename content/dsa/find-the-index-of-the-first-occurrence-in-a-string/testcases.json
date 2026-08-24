@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"haystack = \\\"ababcabcabababd\\\", needle = \\\"ababd\\\"\"]",
+    "expectedOutput": "10",
+    "hidden": false
+  },
+  {
+    "input": "[\"haystack = \\\"abcde\\\", needle = \\\"f\\\"\"]",
+    "expectedOutput": "-1",
+    "hidden": false
+  },
+  {
+    "input": "[\"haystack = \\\"mississippi\\\", needle = \\\"issi\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"haystack = \\\"sadbutsad\\\", needle = \\\"sad\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"haystack = \\\"abababa\\\", needle = \\\"aba\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

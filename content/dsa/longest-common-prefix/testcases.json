@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"hello\", \"helium\", \"helper\"]]",
+    "expectedOutput": "hel",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\"]]",
+    "expectedOutput": "a",
+    "hidden": false
+  },
+  {
+    "input": "[[\"\", \"\", \"\", \"\"]]",
+    "expectedOutput": "",
+    "hidden": true
+  },
+  {
+    "input": "[[\"apple\", \"app\", \"apricot\"]]",
+    "expectedOutput": "ap",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abcd\", \"abce\", \"abcf\"]]",
+    "expectedOutput": "abc",
+    "hidden": true
+  }
+]

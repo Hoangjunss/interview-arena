@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"root/a 1.txt(abcd)\", \"root/b 2.txt(efgh)\", \"root/c 3.txt(efgh)\", \"root/d 4.txt(abcd)\"]]",
+    "expectedOutput": "[['root/a/1.txt', 'root/d/4.txt'], ['root/b/2.txt', 'root/c/3.txt']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"root 1.txt(abcd) 2.txt(efgh)\", \"root/c 3.txt(abcd)\", \"root/c/d 4.txt(efgh)\", \"root/e 5.txt(efgh)\"]]",
+    "expectedOutput": "[['root/1.txt', 'root/c/3.txt'], ['root/2.txt', 'root/c/d/4.txt', 'root/e/5.txt']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"root/a 1.txt(abcd) 2.txt(efgh)\", \"root/c 3.txt(abcd)\", \"root/c/d 4.txt(efgh)\"]]",
+    "expectedOutput": "[['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"root/a 1.txt(abcd)\", \"root/b 2.txt(efgh)\", \"root/c 3.txt(efgh)\", \"root/d 4.txt(efgh)\"]]",
+    "expectedOutput": "[['root/b/2.txt', 'root/c/3.txt', 'root/d/4.txt']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"root/a 1.txt(abcd) 2.txt(efgh)\", \"root/c 3.txt(abcd)\", \"root/c/d 4.txt(efgh)\", \"root 4.txt(efgh)\"]]",
+    "expectedOutput": "[['root/a/1.txt', 'root/c/3.txt'], ['root/a/2.txt', 'root/c/d/4.txt', 'root/4.txt']]",
+    "hidden": true
+  }
+]

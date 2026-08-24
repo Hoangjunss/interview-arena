@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"abcba\"]",
+    "expectedOutput": "5",
+    "hidden": false
+  },
+  {
+    "input": "[\"abcdefghijklmnopqrstuvwxyz\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"abcdcba\"]",
+    "expectedOutput": "7",
+    "hidden": true
+  },
+  {
+    "input": "[\"abcdedcba\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  },
+  {
+    "input": "[\"noonhighnoon\"]",
+    "expectedOutput": "11",
+    "hidden": true
+  }
+]

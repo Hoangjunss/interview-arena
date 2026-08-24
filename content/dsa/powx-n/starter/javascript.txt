@@ -1,0 +1,5 @@
+class Solution {
+    myPow(x, n) {
+        // TODO: implement
+    }
+}

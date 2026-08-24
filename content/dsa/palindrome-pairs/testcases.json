@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"aabb\", \"bbaa\", \"abc\", \"cba\"]]",
+    "expectedOutput": "[[0,1],[1,0],[2,3],[3,2]]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"bat\", \"tab\", \"cat\"]]",
+    "expectedOutput": "[[0,1],[1,0]]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abc\", \"cba\", \"bca\", \"xyz\", \"zyx\"]]",
+    "expectedOutput": "[[0,1],[1,0],[3,4],[4,3]]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abba\", \"a\", \"abc\", \"cba\"]]",
+    "expectedOutput": "[[2,3],[3,2]]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abcd\", \"dcba\", \"\", \"cba\", \"abc\"]]",
+    "expectedOutput": "[[0,3],[0,1],[4,1],[1,0],[3,4],[4,3]]",
+    "hidden": true
+  }
+]

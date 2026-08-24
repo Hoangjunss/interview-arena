@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"low = \\\"1\\\", high = \\\"10\\\"\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"low = \\\"1000000000\\\", high = \\\"9999999999\\\"\"]",
+    "expectedOutput": "2500",
+    "hidden": false
+  },
+  {
+    "input": "[\"low = \\\"0\\\", high = \\\"150\\\"\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  },
+  {
+    "input": "[\"low = \\\"100\\\", high = \\\"200\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"low = \\\"500\\\", high = \\\"1000\\\"\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  }
+]

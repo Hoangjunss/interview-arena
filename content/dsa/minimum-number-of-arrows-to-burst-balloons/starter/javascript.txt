@@ -1,0 +1,5 @@
+class Solution {
+    findMinArrowShots(points) {
+        // TODO: implement
+    }
+}

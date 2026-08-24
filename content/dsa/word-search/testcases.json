@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"board = [[\\\"A\\\",\\\"B\\\"],[\\\"C\\\",\\\"D\\\"]], word = \\\"BD\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[]",
+    "expectedOutput": "Error: Solution.exist() missing 2 required positional arguments: 'board' and 'word'",
+    "hidden": false
+  },
+  {
+    "input": "[]",
+    "expectedOutput": "Error: Solution.exist() missing 2 required positional arguments: 'board' and 'word'",
+    "hidden": true
+  },
+  {
+    "input": "[]",
+    "expectedOutput": "Error: Solution.exist() missing 2 required positional arguments: 'board' and 'word'",
+    "hidden": true
+  },
+  {
+    "input": "[\"board = [[\\\"A\\\",\\\"B\\\"],[\\\"C\\\",\\\"D\\\"]], word = \\\"AC\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

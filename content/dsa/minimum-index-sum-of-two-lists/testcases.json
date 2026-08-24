@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"list1 = [\\\"a\\\",\\\"b\\\",\\\"c\\\",\\\"d\\\",\\\"e\\\"], list2 = [\\\"e\\\",\\\"d\\\",\\\"c\\\",\\\"b\\\",\\\"a\\\"]\"]",
+    "expectedOutput": "['a', 'b', 'c', 'd', 'e']",
+    "hidden": false
+  },
+  {
+    "input": "[\"list1 = [\\\"happy\\\",\\\"sad\\\",\\\"good\\\"], list2 = [\\\"sad\\\",\\\"happy\\\",\\\"good\\\"]\"]",
+    "expectedOutput": "['happy', 'sad']",
+    "hidden": false
+  },
+  {
+    "input": "[\"list1 = [\\\"apple\\\",\\\"banana\\\"], list2 = [\\\"banana\\\",\\\"apple\\\"]\"]",
+    "expectedOutput": "['apple', 'banana']",
+    "hidden": true
+  },
+  {
+    "input": "[\"list1 = [\\\"Shogun\\\",\\\"Tapioca Express\\\",\\\"Burger King\\\",\\\"KFC\\\"], list2 = [\\\"Piatti\\\",\\\"The Grill at Torrey Pines\\\",\\\"Hungry Hunter Steakhouse\\\",\\\"Shogun\\\"]\"]",
+    "expectedOutput": "['Shogun']",
+    "hidden": true
+  },
+  {
+    "input": "[\"list1 = [\\\"Shogun\\\",\\\"Tapioca Express\\\",\\\"Burger King\\\",\\\"KFC\\\"], list2 = [\\\"KFC\\\",\\\"Shogun\\\",\\\"Burger King\\\"]\"]",
+    "expectedOutput": "['Shogun']",
+    "hidden": true
+  }
+]

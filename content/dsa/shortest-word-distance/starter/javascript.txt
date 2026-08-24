@@ -1,0 +1,5 @@
+class Solution {
+    shortestDistance(wordsDict, word1, word2) {
+        // TODO: implement
+    }
+}

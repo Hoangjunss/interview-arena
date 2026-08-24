@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"nums = [-3,-2,-1,0,1,2,3], lower = -5, upper = 5\"]",
+    "expectedOutput": "24",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [100, 200, 300, 400, 500], lower = 150, upper = 1000\"]",
+    "expectedOutput": "11",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [-1,-2,-3,-4,-5], lower = -10, upper = -5\"]",
+    "expectedOutput": "7",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [1,2,3,4,5], lower = 1, upper = 5\"]",
+    "expectedOutput": "7",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [100,100,100,100,100], lower = 200, upper = 400\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  }
+]

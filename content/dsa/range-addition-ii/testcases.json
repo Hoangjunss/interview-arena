@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"m = 5, n = 4, ops = [[2,2]]\"]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 1, n = 1, ops = []\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 2, n = 2, ops = [[2,2],[1,1],[2,2]]\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 1, n = 1, ops = [[1,1]]\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 4, n = 5, ops = [[1,1],[2,2],[3,3]]\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

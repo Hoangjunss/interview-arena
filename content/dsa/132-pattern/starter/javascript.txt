@@ -1,0 +1,5 @@
+class Solution {
+    find132pattern(nums) {
+        // TODO: implement
+    }
+}

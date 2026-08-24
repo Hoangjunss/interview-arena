@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[3]",
+    "expectedOutput": "19",
+    "hidden": false
+  },
+  {
+    "input": "[100000]",
+    "expectedOutput": "Error: maximum recursion depth exceeded",
+    "hidden": false
+  },
+  {
+    "input": "[100]",
+    "expectedOutput": "985598218",
+    "hidden": true
+  },
+  {
+    "input": "[10101]",
+    "expectedOutput": "Error: maximum recursion depth exceeded",
+    "hidden": true
+  },
+  {
+    "input": "[10000]",
+    "expectedOutput": "Error: maximum recursion depth exceeded",
+    "hidden": true
+  }
+]

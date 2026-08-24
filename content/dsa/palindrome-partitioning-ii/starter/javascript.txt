@@ -1,0 +1,5 @@
+class Solution {
+    minCut(s) {
+        // TODO: implement
+    }
+}

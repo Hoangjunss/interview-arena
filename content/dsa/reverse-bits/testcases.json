@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[0]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 00000000000000000000000000000001\"]",
+    "expectedOutput": "Error: Solution.reverseBits() missing 1 required positional argument: 'n'",
+    "hidden": false
+  },
+  {
+    "input": "[11111111111111111111111111111111]",
+    "expectedOutput": "3817748707",
+    "hidden": true
+  },
+  {
+    "input": "[0]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[10000000000000000000000000000000]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

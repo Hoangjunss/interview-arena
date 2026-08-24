@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[9]",
+    "expectedOutput": "Nine",
+    "hidden": false
+  },
+  {
+    "input": "[10]",
+    "expectedOutput": "Ten",
+    "hidden": false
+  },
+  {
+    "input": "[100000000]",
+    "expectedOutput": "One Hundred Million",
+    "hidden": true
+  },
+  {
+    "input": "[1234567]",
+    "expectedOutput": "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven",
+    "hidden": true
+  },
+  {
+    "input": "[999]",
+    "expectedOutput": "Nine Hundred Ninety Nine",
+    "hidden": true
+  }
+]

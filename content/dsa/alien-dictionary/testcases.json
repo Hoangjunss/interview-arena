@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"wrt\", \"wrf\", \"er\", \"ett\", \"rftt\"]]",
+    "expectedOutput": "wertf",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abc\", \"ab\"]]",
+    "expectedOutput": "",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\", \"b\", \"ca\", \"cc\"]]",
+    "expectedOutput": "abc",
+    "hidden": true
+  },
+  {
+    "input": "[[\"a\", \"b\", \"ca\"]]",
+    "expectedOutput": "abc",
+    "hidden": true
+  },
+  {
+    "input": "[[\"z\", \"x\", \"z\"]]",
+    "expectedOutput": "",
+    "hidden": true
+  }
+]

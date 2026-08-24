@@ -1,0 +1,5 @@
+class Solution {
+    calcEquation(equations, values, queries) {
+        // TODO: implement
+    }
+}

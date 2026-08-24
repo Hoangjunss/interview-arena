@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"wordsDict = [\\\"hello\\\", \\\"world\\\", \\\"this\\\", \\\"is\\\", \\\"a\\\", \\\"test\\\", \\\"hello\\\"], word1 = \\\"hello\\\", word2 = \\\"test\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"wordsDict = [\\\"the\\\", \\\"quick\\\", \\\"brown\\\", \\\"fox\\\", \\\"jumps\\\", \\\"over\\\", \\\"the\\\", \\\"lazy\\\", \\\"dog\\\"], word1 = \\\"quick\\\", word2 = \\\"lazy\\\"\"]",
+    "expectedOutput": "6",
+    "hidden": false
+  },
+  {
+    "input": "[\"wordsDict = [\\\"hello\\\", \\\"world\\\", \\\"this\\\", \\\"is\\\", \\\"a\\\", \\\"test\\\", \\\"hello\\\", \\\"world\\\"], word1 = \\\"hello\\\", word2 = \\\"world\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"wordsDict = [\\\"practice\\\", \\\"makes\\\", \\\"perfect\\\", \\\"coding\\\", \\\"makes\\\"], word1 = \\\"coding\\\", word2 = \\\"practice\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"wordsDict = [\\\"the\\\", \\\"quick\\\", \\\"brown\\\", \\\"fox\\\", \\\"jumps\\\", \\\"over\\\", \\\"the\\\", \\\"lazy\\\", \\\"dog\\\"], word1 = \\\"the\\\", word2 = \\\"fox\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  }
+]

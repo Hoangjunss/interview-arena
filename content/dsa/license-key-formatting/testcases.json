@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"AB-CD-EF-GH-IJ\\\", k = 2\"]",
+    "expectedOutput": "AB-CD-EF-GH-IJ",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abcdefg-hijkl-mnopqr-stuv-wxyz\\\", k = 5\"]",
+    "expectedOutput": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"\\\", k = 1\"]",
+    "expectedOutput": "",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"\\\", k = 10\"]",
+    "expectedOutput": "",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"1234567890\\\", k = 3\"]",
+    "expectedOutput": "1-234-567-890",
+    "hidden": true
+  }
+]

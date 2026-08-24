@@ -1,0 +1,5 @@
+class Solution {
+    canWinNim(n) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    validTree(n, edges) {
+        // TODO: implement
+    }
+}

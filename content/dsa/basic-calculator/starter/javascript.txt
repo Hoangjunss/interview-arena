@@ -1,0 +1,5 @@
+class Solution {
+    calculate(s) {
+        // TODO: implement
+    }
+}

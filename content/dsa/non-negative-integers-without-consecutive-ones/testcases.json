@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[100]",
+    "expectedOutput": "34",
+    "hidden": false
+  },
+  {
+    "input": "[15]",
+    "expectedOutput": "8",
+    "hidden": false
+  },
+  {
+    "input": "[1000000]",
+    "expectedOutput": "17711",
+    "hidden": true
+  },
+  {
+    "input": "[32]",
+    "expectedOutput": "14",
+    "hidden": true
+  },
+  {
+    "input": "[2]",
+    "expectedOutput": "3",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"left = 5, right = 7\"]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[\"left = 100, right = 105\"]",
+    "expectedOutput": "96",
+    "hidden": false
+  },
+  {
+    "input": "[\"left = 16, right = 31\"]",
+    "expectedOutput": "16",
+    "hidden": true
+  },
+  {
+    "input": "[\"left = 123456, right = 654321\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"left = 8, right = 12\"]",
+    "expectedOutput": "8",
+    "hidden": true
+  }
+]

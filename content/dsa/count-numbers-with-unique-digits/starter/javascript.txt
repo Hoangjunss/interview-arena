@@ -1,0 +1,5 @@
+class Solution {
+    countNumbersWithUniqueDigits(n) {
+        // TODO: implement
+    }
+}

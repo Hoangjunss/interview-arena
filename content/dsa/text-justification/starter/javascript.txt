@@ -1,0 +1,5 @@
+class Solution {
+    fullJustify(words, maxWidth) {
+        // TODO: implement
+    }
+}

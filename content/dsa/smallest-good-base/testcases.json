@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"4681\"]",
+    "expectedOutput": "8",
+    "hidden": false
+  },
+  {
+    "input": "[\"9\"]",
+    "expectedOutput": "8",
+    "hidden": false
+  },
+  {
+    "input": "[\"104729\"]",
+    "expectedOutput": "104728",
+    "hidden": true
+  },
+  {
+    "input": "[\"15\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"218\"]",
+    "expectedOutput": "217",
+    "hidden": true
+  }
+]

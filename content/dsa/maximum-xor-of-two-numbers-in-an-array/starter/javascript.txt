@@ -1,0 +1,5 @@
+class Solution {
+    findMaximumXOR(nums) {
+        // TODO: implement
+    }
+}

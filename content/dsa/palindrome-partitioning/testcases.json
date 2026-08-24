@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"madam\"]",
+    "expectedOutput": "[['m', 'a', 'd', 'a', 'm'], ['m', 'ada', 'm'], ['madam']]",
+    "hidden": false
+  },
+  {
+    "input": "[\"deified\"]",
+    "expectedOutput": "[['d', 'e', 'i', 'f', 'i', 'e', 'd'], ['d', 'e', 'ifi', 'e', 'd'], ['d', 'eifie', 'd'], ['deified']]",
+    "hidden": false
+  },
+  {
+    "input": "[\"repaper\"]",
+    "expectedOutput": "[['r', 'e', 'p', 'a', 'p', 'e', 'r'], ['r', 'e', 'pap', 'e', 'r'], ['r', 'epape', 'r'], ['repaper']]",
+    "hidden": true
+  },
+  {
+    "input": "[\"aaab\"]",
+    "expectedOutput": "[['a', 'a', 'a', 'b'], ['a', 'aa', 'b'], ['aa', 'a', 'b'], ['aaa', 'b']]",
+    "hidden": true
+  },
+  {
+    "input": "[\"aabbaa\"]",
+    "expectedOutput": "[['a', 'a', 'b', 'b', 'a', 'a'], ['a', 'a', 'b', 'b', 'aa'], ['a', 'a', 'bb', 'a', 'a'], ['a', 'a', 'bb', 'aa'], ['a', 'abba', 'a'], ['aa', 'b', 'b', 'a', 'a'], ['aa', 'b', 'b', 'aa'], ['aa', 'bb', 'a', 'a'], ['aa', 'bb', 'aa'], ['aabbaa']]",
+    "hidden": true
+  }
+]

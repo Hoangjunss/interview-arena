@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"sevensixfivefourthree\"]",
+    "expectedOutput": "34567",
+    "hidden": false
+  },
+  {
+    "input": "[\"fivefivethree\"]",
+    "expectedOutput": "355",
+    "hidden": false
+  },
+  {
+    "input": "[\"oneonetwothreefourfivesixseveneightnine\"]",
+    "expectedOutput": "1123456789",
+    "hidden": true
+  },
+  {
+    "input": "[\"fivefivesixsix\"]",
+    "expectedOutput": "5566",
+    "hidden": true
+  },
+  {
+    "input": "[\"sixseveneightnine\"]",
+    "expectedOutput": "6789",
+    "hidden": true
+  }
+]

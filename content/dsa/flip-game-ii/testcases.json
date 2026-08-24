@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"+-+-+--\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"-+-\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"++--\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"++-++\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"++++\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

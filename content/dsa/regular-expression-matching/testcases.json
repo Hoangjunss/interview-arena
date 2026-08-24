@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"aa\\\", p = \\\"a*\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"aab\\\", p = \\\"c*a*b\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"ab\\\", p = \\\".*\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"aa\\\", p = \\\"a\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"mississippi\\\", p = \\\"mis*is*p*.\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

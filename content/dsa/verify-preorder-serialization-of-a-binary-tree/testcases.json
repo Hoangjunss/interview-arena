@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"1,2,#,#,3,4,#,#,5,#,#\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"1,2,3,#,#,4,#,#,5,6,#,#,#,#\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"1,2,3,#,#,4,5,#,#,#,#,6,7,#,#,#,#\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"#\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"1,2,3,4,#,#,#,#,5,#,#\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

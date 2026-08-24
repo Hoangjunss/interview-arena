@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s1 = \\\"acb\\\", n1 = 1, s2 = \\\"acb\\\", n2 = 1\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"aaa\\\", n1 = 3, s2 = \\\"a\\\", n2 = 1\"]",
+    "expectedOutput": "9",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"aabaacaabaab\\\", n1 = 8, s2 = \\\"aab\\\", n2 = 1\"]",
+    "expectedOutput": "24",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"acb\\\", n1 = 4, s2 = \\\"ab\\\", n2 = 2\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"abcde\\\", n1 = 2, s2 = \\\"ace\\\", n2 = 1\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  }
+]

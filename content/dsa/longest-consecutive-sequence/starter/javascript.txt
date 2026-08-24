@@ -1,0 +1,5 @@
+class Solution {
+    longestConsecutive(nums) {
+        // TODO: implement
+    }
+}

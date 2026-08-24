@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"startGene = \\\"AACCGGTT\\\", endGene = \\\"AAACGGTA\\\", bank = [\\\"AACCGGTA\\\", \\\"AACCGCTA\\\", \\\"AAACGGTA\\\"]\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"startGene = \\\"AACCGGTT\\\", endGene = \\\"AACCGGTA\\\", bank = [\\\"AACCGGTA\\\"]\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"startGene = \\\"AACCGGTT\\\", endGene = \\\"AACCGGTA\\\", bank = []\"]",
+    "expectedOutput": "-1",
+    "hidden": true
+  },
+  {
+    "input": "[\"startGene = \\\"AACCGGTT\\\", endGene = \\\"AACCGGTA\\\", bank = [\\\"TACCGGTA\\\"]\"]",
+    "expectedOutput": "-1",
+    "hidden": true
+  },
+  {
+    "input": "[\"startGene = \\\"AAAAAAAA\\\", endGene = \\\"CCCCCCCC\\\", bank = [\\\"AAAAAAAA\\\", \\\"AAAAAAAC\\\", \\\"AAAAAACC\\\", \\\"AAAAACCC\\\", \\\"AAAACCCC\\\", \\\"AAACCCCC\\\", \\\"AACCCCCC\\\", \\\"ACCCCCCC\\\", \\\"CCCCCCCC\\\"]\"]",
+    "expectedOutput": "8",
+    "hidden": true
+  }
+]

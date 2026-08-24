@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"nums1 = [100000000,200000000], nums2 = [-300000000,-400000000], nums3 = [500000000,600000000], nums4 = [-700000000,-800000000]\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums1 = [1,2,3], nums2 = [-1,-2,-3], nums3 = [1,-1,0], nums4 = [0,2,-2]\"]",
+    "expectedOutput": "13",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums1 = [1,2,3], nums2 = [-1,-2,-3], nums3 = [1,2,3], nums4 = [-1,-2,-3]\"]",
+    "expectedOutput": "19",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums1 = [-1,-2,-3], nums2 = [3,2,1], nums3 = [1,-2,3], nums4 = [-3,2,1]\"]",
+    "expectedOutput": "10",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums1 = [-1,1,0], nums2 = [-1,1,0], nums3 = [-1,1,0], nums4 = [-1,1,0]\"]",
+    "expectedOutput": "19",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    rearrangeString(s, k) {
+        // TODO: implement
+    }
+}

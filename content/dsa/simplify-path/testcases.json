@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"/.../a/../b/c/../d/./\"]",
+    "expectedOutput": "/.../b/d",
+    "hidden": false
+  },
+  {
+    "input": "[\"/a/../../b/../c///.//\"]",
+    "expectedOutput": "/c",
+    "hidden": false
+  },
+  {
+    "input": "[\"/a/b/c/d/e/f/g/../../..\"]",
+    "expectedOutput": "/a/b/c/d",
+    "hidden": true
+  },
+  {
+    "input": "[\"/a/b/c/d/e/../../..//f/\"]",
+    "expectedOutput": "/a/b/f",
+    "hidden": true
+  },
+  {
+    "input": "[\"/a/b/c/../\"]",
+    "expectedOutput": "/a/b",
+    "hidden": true
+  }
+]

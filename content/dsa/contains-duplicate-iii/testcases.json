@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"nums = [1,3,1,3,1,3], indexDiff = 2, valueDiff = 1\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [8,2,4,2,0,1,4,1,3], indexDiff = 5, valueDiff = 2\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [10,10,10,10,10,10], indexDiff = 3, valueDiff = 0\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [1,2,3,4,5], indexDiff = 1, valueDiff = 1\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [8,7,15,1,6,1,9,15], indexDiff = 1, valueDiff = 3\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

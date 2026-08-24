@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"5678\"]",
+    "expectedOutput": "['jmpt', 'jmpu', 'jmpv', 'jmqt', 'jmqu', 'jmqv', 'jmrt', 'jmru', 'jmrv', 'jmst', 'jmsu', 'jmsv', 'jnpt', 'jnpu', 'jnpv', 'jnqt', 'jnqu', 'jnqv', 'jnrt', 'jnru', 'jnrv', 'jnst', 'jnsu', 'jnsv', 'jopt', 'jopu', 'jopv', 'joqt', 'joqu', 'joqv', 'jort', 'joru', 'jorv', 'jost', 'josu', 'josv', 'kmpt', 'kmpu', 'kmpv', 'kmqt', 'kmqu', 'kmqv', 'kmrt', 'kmru', 'kmrv', 'kmst', 'kmsu', 'kmsv', 'knpt', 'knpu', 'knpv', 'knqt', 'knqu', 'knqv', 'knrt', 'knru', 'knrv', 'knst', 'knsu', 'knsv', 'kopt', 'kopu', 'kopv', 'koqt', 'koqu', 'koqv', 'kort', 'koru', 'korv', 'kost', 'kosu', 'kosv', 'lmpt', 'lmpu', 'lmpv', 'lmqt', 'lmqu', 'lmqv', 'lmrt', 'lmru', 'lmrv', 'lmst', 'lmsu', 'lmsv', 'lnpt', 'lnpu', 'lnpv', 'lnqt', 'lnqu', 'lnqv', 'lnrt', 'lnru', 'lnrv', 'lnst', 'lnsu', 'lnsv', 'lopt', 'lopu', 'lopv', 'loqt', 'loqu', 'loqv', 'lort', 'loru', 'lorv', 'lost', 'losu', 'losv']",
+    "hidden": false
+  },
+  {
+    "input": "[\"2\"]",
+    "expectedOutput": "['a', 'b', 'c']",
+    "hidden": false
+  },
+  {
+    "input": "[\"3\"]",
+    "expectedOutput": "['d', 'e', 'f']",
+    "hidden": true
+  },
+  {
+    "input": "[\"9\"]",
+    "expectedOutput": "['w', 'x', 'y', 'z']",
+    "hidden": true
+  },
+  {
+    "input": "[\"47\"]",
+    "expectedOutput": "['gp', 'gq', 'gr', 'gs', 'hp', 'hq', 'hr', 'hs', 'ip', 'iq', 'ir', 'is']",
+    "hidden": true
+  }
+]

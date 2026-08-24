@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"ransomNote = \\\"abc\\\", magazine = \\\"def\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"ransomNote = \\\"hello\\\", magazine = \\\"hll\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"ransomNote = \\\"mississippi\\\", magazine = \\\"mspsisgp\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"ransomNote = \\\"aa\\\", magazine = \\\"ab\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"ransomNote = \\\"aabbcc\\\", magazine = \\\"abc\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

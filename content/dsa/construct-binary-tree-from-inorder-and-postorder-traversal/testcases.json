@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"inorder = [-1], postorder = [-1]\"]",
+    "expectedOutput": "[-1]",
+    "hidden": false
+  },
+  {
+    "input": "[\"inorder = [1,2], postorder = [2,1]\"]",
+    "expectedOutput": "[1, None, 2]",
+    "hidden": false
+  },
+  {
+    "input": "[\"inorder = [3,2,1], postorder = [3,2,1]\"]",
+    "expectedOutput": "[1, 2, None, 3]",
+    "hidden": true
+  },
+  {
+    "input": "[\"inorder = [1,2,3,4,5], postorder = [1,2,5,4,3]\"]",
+    "expectedOutput": "[3, 2, 4, 1, None, None, 5]",
+    "hidden": true
+  },
+  {
+    "input": "[\"inorder = [1,2,3,4], postorder = [1,2,4,3]\"]",
+    "expectedOutput": "[3,2,4,1]",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"num1 = \\\"-50-50i\\\", num2 = \\\"-50+50i\\\"\"]",
+    "expectedOutput": "Error: invalid literal for int() with base 10: '-50-50'",
+    "hidden": false
+  },
+  {
+    "input": "[\"num1 = \\\"75+25i\\\", num2 = \\\"25-75i\\\"\"]",
+    "expectedOutput": "Error: invalid literal for int() with base 10: '25-75'",
+    "hidden": false
+  },
+  {
+    "input": "[\"num1 = \\\"100+0i\\\", num2 = \\\"0+100i\\\"\"]",
+    "expectedOutput": "0+10000i",
+    "hidden": true
+  },
+  {
+    "input": "[\"num1 = \\\"7+-8i\\\", num2 = \\\"-9+2i\\\"\"]",
+    "expectedOutput": "-47+86i",
+    "hidden": true
+  },
+  {
+    "input": "[\"num1 = \\\"-1+2i\\\", num2 = \\\"-3-4i\\\"\"]",
+    "expectedOutput": "Error: invalid literal for int() with base 10: '-3-4'",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    getSum(a, b) {
+        // TODO: implement
+    }
+}

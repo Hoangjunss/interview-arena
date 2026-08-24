@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[1, 0, 2, 0, 1, 2, 1]]",
+    "expectedOutput": "None",
+    "hidden": false
+  },
+  {
+    "input": "[[1, 1, 1]]",
+    "expectedOutput": "None",
+    "hidden": false
+  },
+  {
+    "input": "[[2, 2, 2, 1, 1, 1, 0, 0, 0]]",
+    "expectedOutput": "None",
+    "hidden": true
+  },
+  {
+    "input": "[[1]]",
+    "expectedOutput": "None",
+    "hidden": true
+  },
+  {
+    "input": "[[1, 0, 2, 1, 0, 2, 1, 0, 2]]",
+    "expectedOutput": "None",
+    "hidden": true
+  }
+]

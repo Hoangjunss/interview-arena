@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"2 - 3 + 4\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\" 1000000000 - 500000000 + 250000000\"]",
+    "expectedOutput": "750000000",
+    "hidden": false
+  },
+  {
+    "input": "[\"30 + 2 * 6 / (3 - 1)\"]",
+    "expectedOutput": "33",
+    "hidden": true
+  },
+  {
+    "input": "[\"100 * ( 2 + 12 ) / 14\"]",
+    "expectedOutput": "200",
+    "hidden": true
+  },
+  {
+    "input": "[\"1 + 1 * 1 + 1\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  }
+]

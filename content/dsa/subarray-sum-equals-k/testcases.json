@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"nums = [2,2,2,2,2], k = 4\"]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [5,5,5,5,5,5,5,5,5,5], k = 15\"]",
+    "expectedOutput": "8",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [0,0,0,0,0,0,0,0,0,0], k = 0\"]",
+    "expectedOutput": "55",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [1,2,1,2,1], k = 3\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [100,200,300,400,500], k = 1500\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

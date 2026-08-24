@@ -1,0 +1,5 @@
+class Solution {
+    licenseKeyFormatting(s, k) {
+        // TODO: implement
+    }
+}

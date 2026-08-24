@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"k = 1, w = 10, profits = [5,6], capital = [4,0]\"]",
+    "expectedOutput": "16",
+    "hidden": false
+  },
+  {
+    "input": "[\"k = 5, w = 10, profits = [5,4,3,2,1], capital = [1,2,3,4,5]\"]",
+    "expectedOutput": "25",
+    "hidden": false
+  },
+  {
+    "input": "[\"k = 2, w = 3, profits = [8,10,6], capital = [2,5,0]\"]",
+    "expectedOutput": "21",
+    "hidden": true
+  },
+  {
+    "input": "[\"k = 4, w = 0, profits = [1,1,1,1], capital = [0,0,0,0]\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"k = 5, w = 0, profits = [1,2,3,4,5], capital = [0,1,2,3,4]\"]",
+    "expectedOutput": "15",
+    "hidden": true
+  }
+]

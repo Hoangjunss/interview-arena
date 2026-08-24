@@ -1,0 +1,5 @@
+class Solution {
+    removeBoxes(boxes) {
+        // TODO: implement
+    }
+}

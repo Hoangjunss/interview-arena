@@ -1,0 +1,5 @@
+class Solution {
+    getHint(secret, guess) {
+        // TODO: implement
+    }
+}

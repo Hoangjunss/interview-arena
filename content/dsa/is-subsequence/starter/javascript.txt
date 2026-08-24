@@ -1,0 +1,5 @@
+class Solution {
+    isSubsequence(s, t) {
+        // TODO: implement
+    }
+}

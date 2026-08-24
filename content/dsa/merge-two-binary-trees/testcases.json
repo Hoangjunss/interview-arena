@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"root1\"]",
+    "expectedOutput": "Error: Solution.mergeTrees() missing 2 required positional arguments: 'root1' and 'root2'",
+    "hidden": false
+  },
+  {
+    "input": "[\"root2\"]",
+    "expectedOutput": "Error: Solution.mergeTrees() missing 2 required positional arguments: 'root1' and 'root2'",
+    "hidden": false
+  },
+  {
+    "input": "[\"root1 = [5,3,2,1], root2 = [2,4,6,8]\"]",
+    "expectedOutput": "[7,7,8,9]",
+    "hidden": true
+  },
+  {
+    "input": "[\"root1 = [3,4,5,1,2], root2 = [4,5,6]\"]",
+    "expectedOutput": "[7,9,11,1,2]",
+    "hidden": true
+  },
+  {
+    "input": "[\"root1 = [5,3,6,2,4,null,null,1,null,null,null,null,null,null,8], root2 = [7,4,5,null,null,null,null,3,6,9]\"]",
+    "expectedOutput": "[12, 7, 11, 2, 4, None, None, 1]",
+    "hidden": true
+  }
+]

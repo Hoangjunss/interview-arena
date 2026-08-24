@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"houses = [1,5], heaters = [2]\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"houses = [1], heaters = [1]\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"houses = [10,20,30,40,50], heaters = [15,45]\"]",
+    "expectedOutput": "15",
+    "hidden": true
+  },
+  {
+    "input": "[\"houses = [10,20,30,40,50], heaters = [5,15,25,35,45]\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  },
+  {
+    "input": "[\"houses = [1,3,5,7,9], heaters = [2,6]\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  }
+]

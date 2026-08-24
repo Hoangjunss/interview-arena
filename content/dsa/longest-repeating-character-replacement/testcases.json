@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"ABABABAB\\\", k = 3\"]",
+    "expectedOutput": "7",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"AAAAAAAAAAAAABBBAABBCCDDEE\\\", k = 5\"]",
+    "expectedOutput": "20",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"AABBCCDD\\\", k = 2\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"\\\", k = 0\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"A\\\", k = 1\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

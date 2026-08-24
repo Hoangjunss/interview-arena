@@ -1,0 +1,5 @@
+class Solution {
+    totalNQueens(n) {
+        // TODO: implement
+    }
+}

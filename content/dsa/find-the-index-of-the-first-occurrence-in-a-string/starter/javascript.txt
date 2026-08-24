@@ -1,0 +1,5 @@
+class Solution {
+    strStr(haystack, needle) {
+        // TODO: implement
+    }
+}

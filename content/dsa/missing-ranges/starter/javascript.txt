@@ -1,0 +1,5 @@
+class Solution {
+    findMissingRanges(nums, lower, upper) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    splitLoopedString(strs) {
+        // TODO: implement
+    }
+}

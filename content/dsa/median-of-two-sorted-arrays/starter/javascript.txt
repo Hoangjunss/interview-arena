@@ -1,0 +1,5 @@
+class Solution {
+    findMedianSortedArrays(nums1, nums2) {
+        // TODO: implement
+    }
+}

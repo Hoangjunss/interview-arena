@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"word = \\\"internationalization\\\", abbr = \\\"i12iz4n\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"word = \\\"substitution\\\", abbr = \\\"substitution\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"word = \\\"hi\\\", abbr = \\\"2\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"word = \\\"substitution\\\", abbr = \\\"su3i1u2on\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"word = \\\"hi\\\", abbr = \\\"h1\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

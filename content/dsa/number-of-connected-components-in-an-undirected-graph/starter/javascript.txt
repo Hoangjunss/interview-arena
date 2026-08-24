@@ -1,0 +1,5 @@
+class Solution {
+    countComponents(n, edges) {
+        // TODO: implement
+    }
+}

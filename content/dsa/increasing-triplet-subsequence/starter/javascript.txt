@@ -1,0 +1,5 @@
+class Solution {
+    increasingTriplet(nums) {
+        // TODO: implement
+    }
+}

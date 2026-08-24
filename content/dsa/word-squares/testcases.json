@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"aaaa\", \"asas\", \"axas\", \"azaz\"]]",
+    "expectedOutput": "[['aaaa', 'aaaa', 'aaaa', 'aaaa'], ['aaaa', 'asas', 'aaaa', 'asas'], ['aaaa', 'axas', 'aaaa', 'asas'], ['aaaa', 'azaz', 'aaaa', 'azaz']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"area\", \"lead\", \"wall\", \"lady\", \"ball\"]]",
+    "expectedOutput": "[['wall', 'area', 'lead', 'lady'], ['ball', 'area', 'lead', 'lady']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"aaaa\", \"abcd\", \"adbc\", \"dabc\", \"dddd\"]]",
+    "expectedOutput": "[['aaaa', 'aaaa', 'aaaa', 'aaaa'], ['dddd', 'dddd', 'dddd', 'dddd']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"a\", \"b\", \"c\", \"d\"]]",
+    "expectedOutput": "[['a'], ['b'], ['c'], ['d']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abac\", \"abad\", \"acaa\", \"adab\", \"baca\", \"bada\", \"baac\", \"badb\", \"cacb\", \"cada\", \"cdab\", \"cadb\", \"daca\", \"dada\", \"dbca\", \"dbac\"]]",
+    "expectedOutput": "[['acaa', 'cacb', 'acaa', 'abac'], ['acaa', 'cacb', 'acaa', 'abad'], ['adab', 'daca', 'acaa', 'baac'], ['adab', 'dbca', 'acaa', 'baac'], ['baca', 'abac', 'cada', 'acaa'], ['baca', 'abad', 'cada', 'adab'], ['baca', 'adab', 'cada', 'abac'], ['baca', 'adab', 'cada', 'abad'], ['bada', 'abac', 'daca', 'acaa'], ['bada', 'abac', 'dada', 'acaa'], ['bada', 'abad', 'daca', 'adab'], ['bada', 'abad', 'dada', 'adab'], ['bada', 'adab', 'daca', 'abac'], ['bada', 'adab', 'daca', 'abad'], ['bada', 'adab', 'dada', 'abac'], ['bada', 'adab', 'dada', 'abad'], ['badb', 'acaa', 'daca', 'baac'], ['badb', 'acaa', 'dada', 'baac'], ['cacb', 'acaa', 'cada', 'baac'], ['cada', 'abac', 'daca', 'acaa'], ['cada', 'abac', 'dada', 'acaa'], ['cada', 'abad', 'daca', 'adab'], ['cada', 'abad', 'dada', 'adab'], ['cada', 'adab', 'daca', 'abac'], ['cada', 'adab', 'daca', 'abad'], ['cada', 'adab', 'dada', 'abac'], ['cada', 'adab', 'dada', 'abad'], ['cdab', 'daca', 'acaa', 'baac'], ['cdab', 'dbca', 'acaa', 'baac'], ['cadb', 'acaa', 'daca', 'baac'], ['cadb', 'acaa', 'dada', 'baac'], ['daca', 'abac', 'cada', 'acaa'], ['daca', 'abad', 'cada', 'adab'], ['daca', 'adab', 'cada', 'abac'], ['daca', 'adab', 'cada', 'abad'], ['dada', 'abac', 'daca', 'acaa'], ['dada', 'abac', 'dada', 'acaa'], ['dada', 'abad', 'daca', 'adab'], ['dada', 'abad', 'dada', 'adab'], ['dada', 'adab', 'daca', 'abac'], ['dada', 'adab', 'daca', 'abad'], ['dada', 'adab', 'dada', 'abac'], ['dada', 'adab', 'dada', 'abad'], ['dbca', 'baac', 'cada', 'acaa']]",
+    "hidden": true
+  }
+]

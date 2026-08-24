@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"PAYPALISHIRING\\\", numRows = 4\"]",
+    "expectedOutput": "PINALSIGYAHRPI",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"ABCDEFGHI\\\", numRows = 3\"]",
+    "expectedOutput": "AEIBDFHCG",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z\\\", numRows = 5\"]",
+    "expectedOutput": "AEIMQUY,,,,,,,,,,,,,BDFHJLNPRTVXZ,,,,,,,,,,,,CGKOSW",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"PAYPALISHIRING\\\", numRows = 3\"]",
+    "expectedOutput": "PAHNAPLSIIGYIR",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"A\\\", numRows = 1\"]",
+    "expectedOutput": "A",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"wordsDict = [\\\"practice\\\", \\\"makes\\\", \\\"perfect\\\", \\\"coding\\\", \\\"makes\\\"], word1 = \\\"makes\\\", word2 = \\\"makes\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"wordsDict = [\\\"foo\\\", \\\"bar\\\", \\\"foo\\\", \\\"bar\\\", \\\"foo\\\"], word1 = \\\"foo\\\", word2 = \\\"foo\\\"\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"wordsDict = [\\\"hello\\\", \\\"world\\\", \\\"hello\\\", \\\"world\\\", \\\"hello\\\"], word1 = \\\"hello\\\", word2 = \\\"world\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"wordsDict = [\\\"practice\\\", \\\"makes\\\", \\\"perfect\\\", \\\"coding\\\", \\\"makes\\\"], word1 = \\\"makes\\\", word2 = \\\"coding\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"wordsDict = [\\\"a\\\", \\\"b\\\", \\\"a\\\", \\\"b\\\", \\\"a\\\"], word1 = \\\"a\\\", word2 = \\\"b\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"strs = [\\\"0\\\",\\\"0\\\",\\\"1\\\",\\\"1\\\"], m = 2, n = 2\"]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[\"strs = [\\\"111\\\",\\\"000\\\",\\\"101010\\\"], m = 3, n = 3\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"strs = [\\\"10\\\",\\\"0\\\",\\\"1\\\"], m = 1, n = 1\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"strs = [\\\"111\\\",\\\"000\\\",\\\"1010\\\",\\\"0101\\\"], m = 3, n = 3\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"strs = [\\\"110\\\",\\\"100\\\",\\\"001\\\"], m = 2, n = 2\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

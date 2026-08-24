@@ -1,0 +1,5 @@
+class Solution {
+    subarraySum(nums, k) {
+        // TODO: implement
+    }
+}

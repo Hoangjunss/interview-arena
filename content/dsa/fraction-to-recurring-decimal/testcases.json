@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"numerator = 7, denominator = -3\"]",
+    "expectedOutput": "-2.(3)",
+    "hidden": false
+  },
+  {
+    "input": "[\"numerator = 1, denominator = 6\"]",
+    "expectedOutput": "0.1(6)",
+    "hidden": false
+  },
+  {
+    "input": "[\"numerator = 1, denominator = 2147483647\"]",
+    "expectedOutput": "Execution timed out",
+    "hidden": true
+  },
+  {
+    "input": "[\"numerator = 4, denominator = 333\"]",
+    "expectedOutput": "0.(012)",
+    "hidden": true
+  },
+  {
+    "input": "[\"numerator = 22, denominator = 7\"]",
+    "expectedOutput": "3.(142857)",
+    "hidden": true
+  }
+]

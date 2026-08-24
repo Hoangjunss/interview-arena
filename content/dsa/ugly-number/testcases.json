@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[0]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[8]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[-2147483648]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[100000]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[100]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

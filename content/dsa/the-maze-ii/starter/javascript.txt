@@ -1,0 +1,5 @@
+class Solution {
+    shortestDistance(maze, start, destination) {
+        // TODO: implement
+    }
+}

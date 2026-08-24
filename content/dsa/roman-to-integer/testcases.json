@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"XCIX\"]",
+    "expectedOutput": "99",
+    "hidden": false
+  },
+  {
+    "input": "[\"MMCMXCIX\"]",
+    "expectedOutput": "2999",
+    "hidden": false
+  },
+  {
+    "input": "[\"MMMCMXCIX\"]",
+    "expectedOutput": "3999",
+    "hidden": true
+  },
+  {
+    "input": "[\"DCXXI\"]",
+    "expectedOutput": "621",
+    "hidden": true
+  },
+  {
+    "input": "[\"XC\"]",
+    "expectedOutput": "90",
+    "hidden": true
+  }
+]

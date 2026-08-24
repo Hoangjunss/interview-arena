@@ -1,0 +1,5 @@
+class Solution {
+    maximumGap(nums) {
+        // TODO: implement
+    }
+}

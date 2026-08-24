@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"aa\", \"aaa\"]]",
+    "expectedOutput": "['aa', 'aaa']",
+    "hidden": false
+  },
+  {
+    "input": "[[\"test\", \"testing\", \"tester\", \"testify\", \"testament\"]]",
+    "expectedOutput": "['t2t', 't5g', 't4r', 't5y', 't7t']",
+    "hidden": false
+  },
+  {
+    "input": "[[\"aabbcc\", \"aabbc\", \"aab\", \"abc\", \"abcd\", \"abcde\", \"abcdef\"]]",
+    "expectedOutput": "['a4c', 'a3c', 'aab', 'abc', 'a2d', 'a3e', 'a4f']",
+    "hidden": true
+  },
+  {
+    "input": "[[\"hello\", \"hellp\", \"heaven\", \"heavy\"]]",
+    "expectedOutput": "['h3o', 'h3p', 'h4n', 'h3y']",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abcdef\", \"abacdf\", \"abacde\", \"abacdd\", \"abaced\"]]",
+    "expectedOutput": "['abc2f', 'aba2f', 'a4e', 'abacdd', 'abaced']",
+    "hidden": true
+  }
+]

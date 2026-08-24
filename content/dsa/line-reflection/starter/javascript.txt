@@ -1,0 +1,5 @@
+class Solution {
+    isReflected(points) {
+        // TODO: implement
+    }
+}

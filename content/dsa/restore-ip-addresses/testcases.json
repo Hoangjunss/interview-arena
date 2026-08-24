@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"101023\"]",
+    "expectedOutput": "['1.0.10.23', '1.0.102.3', '10.1.0.23', '10.10.2.3', '101.0.2.3']",
+    "hidden": false
+  },
+  {
+    "input": "[\"1111\"]",
+    "expectedOutput": "['1.1.1.1']",
+    "hidden": false
+  },
+  {
+    "input": "[\"9876543210\"]",
+    "expectedOutput": "[]",
+    "hidden": true
+  },
+  {
+    "input": "[\"00000000000000000000\"]",
+    "expectedOutput": "[]",
+    "hidden": true
+  },
+  {
+    "input": "[\"222333444\"]",
+    "expectedOutput": "['22.233.34.44', '222.33.34.44']",
+    "hidden": true
+  }
+]

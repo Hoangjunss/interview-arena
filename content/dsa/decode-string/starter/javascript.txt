@@ -1,0 +1,5 @@
+class Solution {
+    decodeString(s) {
+        // TODO: implement
+    }
+}

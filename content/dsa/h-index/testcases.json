@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[10, 8, 5, 4, 3]]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[[1]]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[[3, 0, 6, 1, 5]]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[[0, 1, 2, 3, 4]]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[[1000, 999, 998, 997, 996]]",
+    "expectedOutput": "5",
+    "hidden": true
+  }
+]

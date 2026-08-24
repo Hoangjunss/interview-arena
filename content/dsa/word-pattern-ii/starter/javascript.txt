@@ -1,0 +1,5 @@
+class Solution {
+    wordPatternMatch(pattern, s) {
+        // TODO: implement
+    }
+}

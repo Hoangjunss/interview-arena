@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"a\", \"b\", \"c\", \"d\", \"e\"]]",
+    "expectedOutput": "[['a'], ['b'], ['c'], ['d'], ['e']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abc\", \"bca\", \"cab\", \"xyz\", \"zyx\", \"yxz\"]]",
+    "expectedOutput": "[['abc', 'bca', 'cab'], ['xyz', 'zyx', 'yxz']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abc\", \"def\", \"ghi\", \"jkl\"]]",
+    "expectedOutput": "[['abc'], ['def'], ['ghi'], ['jkl']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abc\", \"acb\", \"bac\", \"bca\", \"cab\", \"cba\"]]",
+    "expectedOutput": "[['abc', 'acb', 'bac', 'bca', 'cab', 'cba']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]]",
+    "expectedOutput": "[['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]",
+    "hidden": true
+  }
+]

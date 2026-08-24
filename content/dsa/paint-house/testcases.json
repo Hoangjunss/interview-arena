@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[[11, 11, 13], [8, 12, 18], [9, 10, 3]]]",
+    "expectedOutput": "22",
+    "hidden": false
+  },
+  {
+    "input": "[[[1, 2, 3], [4, 5, 6], [7, 8, 9]]]",
+    "expectedOutput": "13",
+    "hidden": false
+  },
+  {
+    "input": "[[[7, 6, 2]]]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[[[5, 8, 6], [19, 14, 13], [7, 5, 12]]]",
+    "expectedOutput": "23",
+    "hidden": true
+  },
+  {
+    "input": "[[[17, 2, 17], [16, 16, 5], [14, 3, 19]]]",
+    "expectedOutput": "10",
+    "hidden": true
+  }
+]

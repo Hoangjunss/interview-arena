@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"<A>abc</A>\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"<A><![CDATA[wahaha]]]></A>\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"<A><B><![CDATA[CDATA]]></B></A>\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"<A><B></C></B></A>\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"code = \\\"This is the first line <div>\\\"\\\"\"]",
+    "expectedOutput": "Error: Solution.isValid() missing 1 required positional argument: 'code'",
+    "hidden": true
+  }
+]

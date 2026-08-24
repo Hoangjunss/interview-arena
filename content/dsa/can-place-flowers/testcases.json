@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"flowerbed = [1,0,0,0,0,1], n = 2\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"flowerbed = [1,0,1,0,1], n = 0\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"flowerbed = [1,0,0,0,1], n = 1\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"flowerbed = [1,0,0,0,1], n = 2\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"flowerbed = [1,0,0,1,0,0,1], n = 1\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

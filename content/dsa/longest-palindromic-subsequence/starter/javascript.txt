@@ -1,0 +1,5 @@
+class Solution {
+    longestPalindromeSubseq(s) {
+        // TODO: implement
+    }
+}

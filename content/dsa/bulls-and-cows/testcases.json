@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"secret = \\\"1010101010\\\", guess = \\\"0101010101\\\"\"]",
+    "expectedOutput": "0A10B",
+    "hidden": false
+  },
+  {
+    "input": "[\"secret = \\\"1234567890\\\", guess = \\\"1111111111\\\"\"]",
+    "expectedOutput": "1A0B",
+    "hidden": false
+  },
+  {
+    "input": "[\"secret = \\\"0000\\\", guess = \\\"1111\\\"\"]",
+    "expectedOutput": "0A0B",
+    "hidden": true
+  },
+  {
+    "input": "[\"secret = \\\"111222333\\\", guess = \\\"333222111\\\"\"]",
+    "expectedOutput": "3A6B",
+    "hidden": true
+  },
+  {
+    "input": "[\"secret = \\\"9999999999\\\", guess = \\\"1111111111\\\"\"]",
+    "expectedOutput": "0A0B",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"pattern = \\\"ab\\\", s = \\\"dogdog\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"pattern = \\\"aaaa\\\", s = \\\"catcatcatcat\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"pattern = \\\"aabb\\\", s = \\\"xyzabcxzyabc\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"pattern = \\\"abcd\\\", s = \\\"oneonetwothree\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"pattern = \\\"ab\\\", s = \\\"aa\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

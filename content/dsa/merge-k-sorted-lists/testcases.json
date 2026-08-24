@@ -1,0 +1,17 @@
+[
+  {
+    "input": "[[]]",
+    "expectedOutput": "None",
+    "hidden": false
+  },
+  {
+    "input": "[[[], [], [], []]]",
+    "expectedOutput": "None",
+    "hidden": false
+  },
+  {
+    "input": "[[[]]]",
+    "expectedOutput": "None",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"wordgoodgoodgoodbestword\\\", words = [\\\"word\\\",\\\"good\\\",\\\"best\\\",\\\"word\\\"]\"]",
+    "expectedOutput": "[]",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"a\\\", words = [\\\"a\\\",\\\"a\\\",\\\"a\\\"]\"]",
+    "expectedOutput": "[]",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abababab\\\", words = [\\\"a\\\",\\\"b\\\",\\\"a\\\",\\\"b\\\"]\"]",
+    "expectedOutput": "[0,1,2,3,4]",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"lingmindraboofooowingdingbarrwingmonkeypoundcake\\\", words = [\\\"fooo\\\",\\\"barr\\\",\\\"wing\\\",\\\"ding\\\",\\\"wing\\\"]\"]",
+    "expectedOutput": "[13]",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"barfoothefoobarman\\\", words = [\\\"foo\\\",\\\"bar\\\"]\"]",
+    "expectedOutput": "[0,9]",
+    "hidden": true
+  }
+]

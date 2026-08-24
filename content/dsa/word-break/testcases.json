@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"cars\\\", wordDict = [\\\"car\\\",\\\"ca\\\",\\\"rs\\\"]\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"goals\\\", wordDict = [\\\"go\\\",\\\"goal\\\",\\\"goals\\\"]\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"pineapplepenapple\\\", wordDict = [\\\"apple\\\",\\\"pen\\\",\\\"applepen\\\",\\\"pine\\\",\\\"pineapple\\\"]\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"leetcode\\\", wordDict = [\\\"leet\\\",\\\"code\\\"]\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"applepenapple\\\", wordDict = [\\\"apple\\\",\\\"pen\\\"]\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"word1 = \\\"park\\\", word2 = \\\"spake\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"word1 = \\\"algorithm\\\", word2 = \\\"altruistic\\\"\"]",
+    "expectedOutput": "6",
+    "hidden": false
+  },
+  {
+    "input": "[\"word1 = \\\"abc\\\", word2 = \\\"\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"word1 = \\\"horse\\\", word2 = \\\"ros\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"word1 = \\\"a\\\", word2 = \\\"b\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

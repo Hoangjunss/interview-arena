@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"k = 2, prices = [10,22,5,75,65,80]\"]",
+    "expectedOutput": "87",
+    "hidden": false
+  },
+  {
+    "input": "[\"k = 5, prices = [1,2,3,4,5]\"]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[\"k = 2, prices = [2,4,1]\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"k = 1, prices = [7,1,5,3,6,4]\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  },
+  {
+    "input": "[\"k = 1, prices = [3,3,3,3,3]\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

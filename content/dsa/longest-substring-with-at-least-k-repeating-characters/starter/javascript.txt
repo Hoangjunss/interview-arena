@@ -1,0 +1,5 @@
+class Solution {
+    longestSubstring(s, k) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"nums = [2,5,31,4,5,1], k = 5\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [1,2,3,4,5], k = 9\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"nums = [23,2,6,4,7], k = 6\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [2,5,4,5,10], k = 3\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"nums = [1,0,1,0,1], k = 2\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

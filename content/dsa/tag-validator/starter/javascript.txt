@@ -1,0 +1,5 @@
+class Solution {
+    isValid(code) {
+        // TODO: implement
+    }
+}

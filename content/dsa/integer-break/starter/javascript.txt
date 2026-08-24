@@ -1,0 +1,5 @@
+class Solution {
+    integerBreak(n) {
+        // TODO: implement
+    }
+}

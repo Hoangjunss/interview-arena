@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"aaa\", \"aaa\", \"aa\"]]",
+    "expectedOutput": "-1",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\", \"b\", \"c\", \"d\", \"e\"]]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\", \"a\", \"a\", \"a\"]]",
+    "expectedOutput": "-1",
+    "hidden": true
+  },
+  {
+    "input": "[[\"xyz\", \"xy\", \"xz\", \"yzz\"]]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[[\"aabbcc\", \"abc\", \"aabbc\", \"aabc\"]]",
+    "expectedOutput": "6",
+    "hidden": true
+  }
+]

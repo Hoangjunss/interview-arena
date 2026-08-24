@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"beginWord = \\\"leet\\\", endWord = \\\"code\\\", wordList = [\\\"lest\\\",\\\"leet\\\",\\\"lose\\\",\\\"code\\\",\\\"lode\\\",\\\"robe\\\",\\\"home\\\",\\\"dote\\\",\\\"cake\\\"]\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"beginWord = \\\"talk\\\", endWord = \\\"tell\\\", wordList = [\\\"talk\\\",\\\"tell\\\",\\\"tall\\\",\\\"toll\\\",\\\"toll\\\"]\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"beginWord = \\\"talk\\\", endWord = \\\"walk\\\", wordList = [\\\"talk\\\",\\\"walk\\\",\\\"tall\\\",\\\"tale\\\",\\\"tali\\\",\\\"wali\\\",\\\"wali\\\",\\\"wale\\\",\\\"wall\\\",\\\"walk\\\"]\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"beginWord = \\\"leet\\\", endWord = \\\"code\\\", wordList = [\\\"lest\\\",\\\"leet\\\",\\\"lose\\\",\\\"code\\\",\\\"lode\\\",\\\"robe\\\",\\\"lost\\\"]\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  },
+  {
+    "input": "[\"beginWord = \\\"red\\\", endWord = \\\"tax\\\", wordList = [\\\"ted\\\",\\\"tex\\\",\\\"red\\\",\\\"tax\\\",\\\"tad\\\",\\\"den\\\",\\\"rex\\\",\\\"pee\\\"]\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  }
+]

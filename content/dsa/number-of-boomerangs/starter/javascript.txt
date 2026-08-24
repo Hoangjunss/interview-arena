@@ -1,0 +1,5 @@
+class Solution {
+    numberOfBoomerangs(points) {
+        // TODO: implement
+    }
+}

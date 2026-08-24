@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"maze = [[0,0,1,0,0],[0,0,0,0,0],[0,0,0,1,0],[1,1,0,1,1],[0,0,0,0,0]], start = [0,4], destination = [4,4]\"]",
+    "expectedOutput": "12",
+    "hidden": false
+  },
+  {
+    "input": "[\"maze = [[0,0,0,0,0],[1,1,0,0,1],[0,0,0,0,0],[0,1,0,0,1],[0,1,0,0,0]], start = [4,3], destination = [0,1]\"]",
+    "expectedOutput": "-1",
+    "hidden": false
+  },
+  {
+    "input": "[\"maze = [[0,0,0],[0,1,0],[0,0,0]], start = [0,0], destination = [2,2]\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"maze = [[0,0,1,0,0],[0,0,0,0,0],[0,0,0,1,0],[1,1,0,1,1],[0,0,0,0,0]], start = [0,4], destination = [3,2]\"]",
+    "expectedOutput": "-1",
+    "hidden": true
+  },
+  {
+    "input": "[\"maze = [[0,0,0],[0,0,0],[0,0,0]], start = [0,2], destination = [2,0]\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  }
+]

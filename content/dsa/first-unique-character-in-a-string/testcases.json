@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"aabbbccccddeeeeeffffffgggggghhhhhhiiiiiiiijjjjjjjjjkkkkkkkkkkklllllllllllllmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnooooooooollllllllllllllllmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnp\"]",
+    "expectedOutput": "165",
+    "hidden": false
+  },
+  {
+    "input": "[\"abcdefghijklmnopqrstuvwxyz\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"abcdef\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"aabbccddee\"]",
+    "expectedOutput": "-1",
+    "hidden": true
+  },
+  {
+    "input": "[\"a\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

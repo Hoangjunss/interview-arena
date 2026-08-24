@@ -1,0 +1,5 @@
+class Solution {
+    wordBreak(s, wordDict) {
+        // TODO: implement
+    }
+}

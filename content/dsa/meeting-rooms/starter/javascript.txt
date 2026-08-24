@@ -1,0 +1,5 @@
+class Solution {
+    canAttendMeetings(intervals) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"gas = [1,2,3,4,5], cost = [3,4,5,1,2]\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"gas = [1,1,1,1], cost = [1,1,1,1]\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"gas = [1,1,1,1,1], cost = [1,1,1,1,1]\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"gas = [5,1,2,3,4], cost = [4,5,1,2,3]\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"gas = [1,2,3,4,5], cost = [5,4,3,2,1]\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  }
+]

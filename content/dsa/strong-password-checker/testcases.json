@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"AAAbbb\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"aA1\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"Aa1234567890\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"........##@\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"Aaaaaa1A\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

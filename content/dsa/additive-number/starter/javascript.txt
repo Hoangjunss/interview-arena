@@ -1,0 +1,5 @@
+class Solution {
+    isAdditiveNumber(num) {
+        // TODO: implement
+    }
+}

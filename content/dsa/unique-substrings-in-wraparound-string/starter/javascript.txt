@@ -1,0 +1,5 @@
+class Solution {
+    findSubstringInWraproundString(s) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"m = 20, n = 30\"]",
+    "expectedOutput": "11541847896480",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 1, n = 100\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 3, n = 7\"]",
+    "expectedOutput": "28",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 5, n = 5\"]",
+    "expectedOutput": "70",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 10, n = 10\"]",
+    "expectedOutput": "48620",
+    "hidden": true
+  }
+]

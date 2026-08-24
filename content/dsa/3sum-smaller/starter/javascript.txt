@@ -1,0 +1,5 @@
+class Solution {
+    threeSumSmaller(nums, target) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"sentence = [\\\"abcde\\\",\\\"fghij\\\"], rows = 1, cols = 9\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"sentence = [\\\"hello\\\",\\\"world\\\"], rows = 2, cols = 8\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"sentence = [\\\"try\\\",\\\"to\\\",\\\"be\\\",\\\"better\\\"], rows = 10, cols = 20\"]",
+    "expectedOutput": "10",
+    "hidden": true
+  },
+  {
+    "input": "[\"sentence = [\\\"a\\\", \\\"bcd\\\", \\\"e\\\"], rows = 3, cols = 6\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"sentence = [\\\"abc\\\",\\\"de\\\",\\\"fgh\\\"], rows = 5, cols = 15\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  }
+]

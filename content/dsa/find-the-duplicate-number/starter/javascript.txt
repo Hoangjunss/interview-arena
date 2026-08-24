@@ -1,0 +1,5 @@
+class Solution {
+    findDuplicate(nums) {
+        // TODO: implement
+    }
+}

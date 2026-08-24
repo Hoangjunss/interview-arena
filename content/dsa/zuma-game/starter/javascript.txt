@@ -1,0 +1,5 @@
+class Solution {
+    findMinStep(board, hand) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"targetSum\"]",
+    "expectedOutput": "Error: Solution.pathSum() missing 2 required positional arguments: 'root' and 'targetSum'",
+    "hidden": false
+  },
+  {
+    "input": "[\"root\"]",
+    "expectedOutput": "Error: Solution.pathSum() missing 2 required positional arguments: 'root' and 'targetSum'",
+    "hidden": false
+  },
+  {
+    "input": "[\"root = [0,1,1], targetSum = 1\"]",
+    "expectedOutput": "[[0,1],[0,1]]",
+    "hidden": true
+  },
+  {
+    "input": "[\"root = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], targetSum = 45\"]",
+    "expectedOutput": "[]",
+    "hidden": true
+  },
+  {
+    "input": "[\"root = [1,null,2,null,3,null,4,null,5,null,6], targetSum = 21\"]",
+    "expectedOutput": "[[1,2,3,4,5,6]]",
+    "hidden": true
+  }
+]

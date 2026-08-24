@@ -1,0 +1,5 @@
+class Solution {
+    countRangeSum(nums, lower, upper) {
+        // TODO: implement
+    }
+}

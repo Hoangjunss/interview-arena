@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"aaa\", \"bbb\", \"ccc\", \"zzz\", \"aaa\", \"zzz\"]]",
+    "expectedOutput": "[['aaa', 'bbb', 'ccc', 'zzz', 'aaa', 'zzz']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abcdefghijklmnopqrstuvwxyz\", \"bcdefghijklmnopqrstuvwxyza\", \"zabcdefghijklmnopqrstuvwxy\"]]",
+    "expectedOutput": "[['abcdefghijklmnopqrstuvwxyz', 'bcdefghijklmnopqrstuvwxyza', 'zabcdefghijklmnopqrstuvwxy']]",
+    "hidden": false
+  },
+  {
+    "input": "[[\"aaa\", \"bbb\", \"ccc\", \"xyz\", \"zyz\", \"aba\", \"bab\", \"aab\", \"abb\", \"abc\", \"bca\", \"cab\"]]",
+    "expectedOutput": "[['aaa', 'bbb', 'ccc'], ['xyz', 'abc'], ['zyz', 'bab'], ['aba'], ['aab'], ['abb'], ['bca'], ['cab']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"az\", \"za\", \"ba\", \"ab\", \"yx\", \"xy\"]]",
+    "expectedOutput": "[['az', 'ba', 'yx'], ['za', 'ab', 'xy']]",
+    "hidden": true
+  },
+  {
+    "input": "[[\"az\", \"za\", \"abc\", \"bca\", \"cab\", \"xyz\", \"zyx\"]]",
+    "expectedOutput": "[['az'], ['za'], ['abc', 'xyz'], ['bca'], ['cab'], ['zyx']]",
+    "hidden": true
+  }
+]

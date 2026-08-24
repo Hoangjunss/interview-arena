@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"x = 3, y = 7, target = 1\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"x = 7, y = 3, target = 1\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"x = 8, y = 5, target = 9\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"x = 2, y = 6, target = 5\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"x = 10, y = 10, target = 15\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    insert(intervals, newInterval) {
+        // TODO: implement
+    }
+}

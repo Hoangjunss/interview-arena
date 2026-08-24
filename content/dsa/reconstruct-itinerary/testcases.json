@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[[\"JFK\", \"NRT\"], [\"NRT\", \"JFK\"]]]",
+    "expectedOutput": "['JFK', 'NRT', 'JFK']",
+    "hidden": false
+  },
+  {
+    "input": "[[[\"JFK\", \"MUC\"], [\"MUC\", \"LHR\"], [\"LHR\", \"SFO\"], [\"SFO\", \"SJC\"]]]",
+    "expectedOutput": "['JFK', 'MUC', 'LHR', 'SFO', 'SJC']",
+    "hidden": false
+  },
+  {
+    "input": "[[[\"JFK\", \"AXA\"], [\"AXA\", \"TIA\"], [\"TIA\", \"JFK\"], [\"JFK\", \"AXA\"]]]",
+    "expectedOutput": "['JFK', 'AXA', 'TIA', 'JFK', 'AXA']",
+    "hidden": true
+  },
+  {
+    "input": "[[[\"EZE\", \"TIA\"], [\"EZE\", \"HOU\"], [\"AXA\", \"TIA\"], [\"JFK\", \"AXA\"], [\"ANU\", \"JFK\"], [\"TIA\", \"ANU\"], [\"JFK\", \"TIA\"]]]",
+    "expectedOutput": "['JFK', 'AXA', 'TIA', 'ANU', 'JFK', 'TIA']",
+    "hidden": true
+  },
+  {
+    "input": "[[[\"JFK\", \"PEK\"], [\"PEK\", \"LAX\"], [\"LAX\", \"JFK\"], [\"JFK\", \"ORD\"], [\"ORD\", \"SFO\"]]]",
+    "expectedOutput": "['JFK', 'PEK', 'LAX', 'JFK', 'ORD', 'SFO']",
+    "hidden": true
+  }
+]

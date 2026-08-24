@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"head = [100,90,80,70,60], n = 3\"]",
+    "expectedOutput": "[100,90,70,60]",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [1,2], n = 1\"]",
+    "expectedOutput": "[1]",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [5,4,3,2,1], n = 5\"]",
+    "expectedOutput": "[4,3,2,1]",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [1,2,3,4,5], n = 2\"]",
+    "expectedOutput": "[1,2,3,5]",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [1,2,3,4,5,6,7,8,9,10], n = 5\"]",
+    "expectedOutput": "[1,2,3,4,5,7,8,9,10]",
+    "hidden": true
+  }
+]

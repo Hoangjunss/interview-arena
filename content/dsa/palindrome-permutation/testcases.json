@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"abcdef\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"zyyzzzzz\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"abcdedcba\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"a\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"abcabcabc\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

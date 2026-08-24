@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"x = 3, y = 1\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"x = 7, y = 15\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"x = 1073741823, y = 2147483647\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"x = 1023, y = 512\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  },
+  {
+    "input": "[\"x = 2147483647, y = 0\"]",
+    "expectedOutput": "31",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"pattern = \\\"aaaa\\\", s = \\\"dog cat cat dog\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"pattern = \\\"abc\\\", s = \\\"dog dog dog\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"pattern = \\\"abcd\\\", s = \\\"dog cat elephant fish\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"pattern = \\\"aaaa\\\", s = \\\"dog dog dog dog\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"pattern = \\\"he\\\", s = \\\"unit\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

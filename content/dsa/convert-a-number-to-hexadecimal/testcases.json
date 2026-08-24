@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[31]",
+    "expectedOutput": "1f",
+    "hidden": false
+  },
+  {
+    "input": "[10]",
+    "expectedOutput": "a",
+    "hidden": false
+  },
+  {
+    "input": "[-4294967296]",
+    "expectedOutput": "",
+    "hidden": true
+  },
+  {
+    "input": "[16777215]",
+    "expectedOutput": "ffffff",
+    "hidden": true
+  },
+  {
+    "input": "[-16777215]",
+    "expectedOutput": "ff000001",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    findPaths(m, n, maxMove, startRow, startColumn) {
+        // TODO: implement
+    }
+}

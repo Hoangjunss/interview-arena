@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"aabbccc\"]",
+    "expectedOutput": "7",
+    "hidden": false
+  },
+  {
+    "input": "[\"abccccdd\"]",
+    "expectedOutput": "7",
+    "hidden": false
+  },
+  {
+    "input": "[\"zyyzzzzz\"]",
+    "expectedOutput": "8",
+    "hidden": true
+  },
+  {
+    "input": "[\"abcdedcba\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  },
+  {
+    "input": "[\"aabbbb\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  }
+]

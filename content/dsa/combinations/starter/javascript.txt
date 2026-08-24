@@ -1,0 +1,5 @@
+class Solution {
+    combine(n, k) {
+        // TODO: implement
+    }
+}

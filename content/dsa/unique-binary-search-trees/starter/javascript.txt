@@ -1,0 +1,5 @@
+class Solution {
+    numTrees(n) {
+        // TODO: implement
+    }
+}

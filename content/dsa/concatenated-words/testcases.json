@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"hello\", \"world\", \"helloworld\", \"worldhello\"]]",
+    "expectedOutput": "['helloworld', 'worldhello']",
+    "hidden": false
+  },
+  {
+    "input": "[[\"apple\", \"banana\", \"appbanana\", \"banapple\", \"app\", \"ban\"]]",
+    "expectedOutput": "['banapple', 'appbanana']",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\", \"aa\", \"aaa\", \"aaaa\", \"aaaaa\", \"aaaaaa\", \"aaaaaaa\", \"aaaaaaaa\", \"aaaaaaaaa\", \"aaaaaaaaaa\"]]",
+    "expectedOutput": "['aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa']",
+    "hidden": true
+  },
+  {
+    "input": "[[\"cat\", \"dog\", \"catdog\"]]",
+    "expectedOutput": "['catdog']",
+    "hidden": true
+  },
+  {
+    "input": "[[\"a\", \"aa\", \"aaa\", \"aaaa\", \"aaaaa\"]]",
+    "expectedOutput": "['aa', 'aaa', 'aaaa', 'aaaaa']",
+    "hidden": true
+  }
+]

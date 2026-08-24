@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"Reverse each word\"]",
+    "expectedOutput": "esreveR hcae drow",
+    "hidden": false
+  },
+  {
+    "input": "[\"Python Programming\"]",
+    "expectedOutput": "nohtyP gnimmargorP",
+    "hidden": false
+  },
+  {
+    "input": "[\"Python is fun\"]",
+    "expectedOutput": "nohtyP si nuf",
+    "hidden": true
+  },
+  {
+    "input": "[\"reverse each word\"]",
+    "expectedOutput": "esrever hcae drow",
+    "hidden": true
+  },
+  {
+    "input": "[\"Mr Ding\"]",
+    "expectedOutput": "rM gniD",
+    "hidden": true
+  }
+]

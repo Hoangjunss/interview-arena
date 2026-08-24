@@ -1,0 +1,5 @@
+class Solution {
+    wordsTyping(sentence, rows, cols) {
+        // TODO: implement
+    }
+}

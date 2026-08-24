@@ -1,0 +1,5 @@
+class Solution {
+    validUtf8(data) {
+        // TODO: implement
+    }
+}

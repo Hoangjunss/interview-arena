@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"10\"]",
+    "expectedOutput": "9",
+    "hidden": false
+  },
+  {
+    "input": "[\"1001\"]",
+    "expectedOutput": "999",
+    "hidden": false
+  },
+  {
+    "input": "[\"1234\"]",
+    "expectedOutput": "1221",
+    "hidden": true
+  },
+  {
+    "input": "[\"123321\"]",
+    "expectedOutput": "122221",
+    "hidden": true
+  },
+  {
+    "input": "[\"999999999\"]",
+    "expectedOutput": "1000000001",
+    "hidden": true
+  }
+]

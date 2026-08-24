@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"m = 3, n = 3, maxMove = 1, startRow = 1, startColumn = 1\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 5, n = 5, maxMove = 50, startRow = 0, startColumn = 0\"]",
+    "expectedOutput": "101070018",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 2, n = 2, maxMove = 2, startRow = 0, startColumn = 0\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 3, n = 3, maxMove = 0, startRow = 1, startColumn = 1\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 4, n = 4, maxMove = 0, startRow = 2, startColumn = 2\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

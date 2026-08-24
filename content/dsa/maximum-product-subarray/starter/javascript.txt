@@ -1,0 +1,5 @@
+class Solution {
+    maxProduct(nums) {
+        // TODO: implement
+    }
+}

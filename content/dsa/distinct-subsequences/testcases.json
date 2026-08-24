@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"abc\\\", t = \\\"abcd\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abcd\\\", t = \\\"abcd\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"rabbbit\\\", t = \\\"rabbit\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"aaa\\\", t = \\\"a\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"\\\", t = \\\"abc\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

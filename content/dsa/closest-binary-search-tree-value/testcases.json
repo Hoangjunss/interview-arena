@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"target\"]",
+    "expectedOutput": "Error: Solution.closestValue() missing 2 required positional arguments: 'root' and 'target'",
+    "hidden": false
+  },
+  {
+    "input": "[\"root\"]",
+    "expectedOutput": "Error: Solution.closestValue() missing 2 required positional arguments: 'root' and 'target'",
+    "hidden": false
+  },
+  {
+    "input": "[\"root = [8,4,12,2,6,10,14,1,3,5,7,9,11,13,15], target = 13.000000\"]",
+    "expectedOutput": "13",
+    "hidden": true
+  },
+  {
+    "input": "[\"{\\\"root\\\": [1,null,3], \\\"target\\\": 2.571429}\"]",
+    "expectedOutput": "Error: Solution.closestValue() missing 2 required positional arguments: 'root' and 'target'",
+    "hidden": true
+  },
+  {
+    "input": "[\"root = [3,1,4,null,2], target = 0.285714\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

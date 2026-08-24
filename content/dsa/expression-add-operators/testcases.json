@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"num = \\\"232\\\", target = 8\"]",
+    "expectedOutput": "['2+3*2', '2*3+2']",
+    "hidden": false
+  },
+  {
+    "input": "[\"num = \\\"123\\\", target = 6\"]",
+    "expectedOutput": "['1+2+3', '1*2*3']",
+    "hidden": false
+  },
+  {
+    "input": "[\"num = \\\"00\\\", target = 0\"]",
+    "expectedOutput": "['0+0', '0-0', '0*0']",
+    "hidden": true
+  },
+  {
+    "input": "[\"num = \\\"105\\\", target = 5\"]",
+    "expectedOutput": "['1*0+5', '10-5']",
+    "hidden": true
+  },
+  {
+    "input": "[\"num = \\\"3\\\", target = 3\"]",
+    "expectedOutput": "['3']",
+    "hidden": true
+  }
+]

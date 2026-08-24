@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"maxChoosableInteger = 15, desiredTotal = 50\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"maxChoosableInteger = 10, desiredTotal = 0\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"maxChoosableInteger = 10, desiredTotal = 15\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"maxChoosableInteger = 8, desiredTotal = 25\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"maxChoosableInteger = 10, desiredTotal = 40\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

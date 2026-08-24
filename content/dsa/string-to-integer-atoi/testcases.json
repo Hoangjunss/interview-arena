@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"2147483647\"]",
+    "expectedOutput": "2147483647",
+    "hidden": false
+  },
+  {
+    "input": "[\"42 with words\"]",
+    "expectedOutput": "42",
+    "hidden": false
+  },
+  {
+    "input": "[\"20000000000000000000000000000000000000000\"]",
+    "expectedOutput": "2147483647",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"   \\\"+-12\\\"\"]",
+    "expectedOutput": "Error: Solution.myAtoi() missing 1 required positional argument: 's'",
+    "hidden": true
+  },
+  {
+    "input": "[\"-2147483649\"]",
+    "expectedOutput": "-2147483648",
+    "hidden": true
+  }
+]

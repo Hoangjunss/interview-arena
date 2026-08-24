@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"n = 10, bad = 3\"]",
+    "expectedOutput": "Error: Solution.firstBadVersion() got an unexpected keyword argument 'bad'",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 2147483647, bad = 1702766719\"]",
+    "expectedOutput": "Error: Solution.firstBadVersion() got an unexpected keyword argument 'bad'",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 10, bad = 2\"]",
+    "expectedOutput": "Error: Solution.firstBadVersion() got an unexpected keyword argument 'bad'",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 5, bad = 4\"]",
+    "expectedOutput": "Error: Solution.firstBadVersion() got an unexpected keyword argument 'bad'",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 1, bad = 1\"]",
+    "expectedOutput": "Error: Solution.firstBadVersion() got an unexpected keyword argument 'bad'",
+    "hidden": true
+  }
+]

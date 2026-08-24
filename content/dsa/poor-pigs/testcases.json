@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"buckets = 4, minutesToDie = 15, minutesToTest = 15\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"buckets = 1, minutesToDie = 1, minutesToTest = 1\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"buckets = 1000, minutesToDie = 1, minutesToTest = 100\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"buckets = 4, minutesToDie = 15, minutesToTest = 30\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"buckets = 1, minutesToDie = 10, minutesToTest = 10\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

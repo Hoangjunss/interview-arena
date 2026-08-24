@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"((((((()))))))\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"{[()]}\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"[[[[[[{{{{}}}}]]]]]]\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"({[(])})\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"([)]\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

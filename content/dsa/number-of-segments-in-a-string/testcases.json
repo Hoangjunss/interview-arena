@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"Hello, my name is John\"]",
+    "expectedOutput": "5",
+    "hidden": false
+  },
+  {
+    "input": "[\"Hello\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"Punctuation,should,not:be;problematic\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"New\\nlines\\nare\\nalso\\nsegments\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  },
+  {
+    "input": "[\"Mixed    \\t  \\n  delimiters    should    work\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  }
+]

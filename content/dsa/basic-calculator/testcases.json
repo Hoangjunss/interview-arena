@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"30 - (5 + (10 - 15) + 20)\"]",
+    "expectedOutput": "10",
+    "hidden": false
+  },
+  {
+    "input": "[\"2147483647\"]",
+    "expectedOutput": "2147483647",
+    "hidden": false
+  },
+  {
+    "input": "[\"-2147483647\"]",
+    "expectedOutput": "-2147483647",
+    "hidden": true
+  },
+  {
+    "input": "[\"- (3 + (2 - 1))\"]",
+    "expectedOutput": "-4",
+    "hidden": true
+  },
+  {
+    "input": "[\"1 + (2 + 3) + (4 + (5 + 6))\"]",
+    "expectedOutput": "21",
+    "hidden": true
+  }
+]

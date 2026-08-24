@@ -1,0 +1,5 @@
+class Solution {
+    addBinary(a, b) {
+        // TODO: implement
+    }
+}

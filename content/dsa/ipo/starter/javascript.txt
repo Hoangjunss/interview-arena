@@ -1,0 +1,5 @@
+class Solution {
+    findMaximizedCapital(k, w, profits, capital) {
+        // TODO: implement
+    }
+}

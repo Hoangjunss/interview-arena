@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[237, 130, 130, 130]]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[[237, 128, 128, 130, 128, 128]]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[[238, 130, 130]]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[[31, 130, 130, 130]]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[[237, 130, 130, 130, 130]]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

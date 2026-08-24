@@ -1,0 +1,5 @@
+class Solution {
+    __init__(val=0, left=None, right=None) {
+        // TODO: implement
+    }
+}

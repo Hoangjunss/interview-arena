@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"abcdabcdabcdabcdabcdabcdabcdabc\"]",
+    "expectedOutput": "abc7[dabc]",
+    "hidden": false
+  },
+  {
+    "input": "[\"abcabcabcabcabcabcabc\"]",
+    "expectedOutput": "7[abc]",
+    "hidden": false
+  },
+  {
+    "input": "[\"xyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy\"]",
+    "expectedOutput": "21[xy]",
+    "hidden": true
+  },
+  {
+    "input": "[\"abbbabbbcabbbabbbc\"]",
+    "expectedOutput": "2[2[abbb]c]",
+    "hidden": true
+  },
+  {
+    "input": "[\"aabcaabcd\"]",
+    "expectedOutput": "2[aabc]d",
+    "hidden": true
+  }
+]

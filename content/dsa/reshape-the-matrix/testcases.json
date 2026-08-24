@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"mat = [[1,2,3],[4,5,6]], r = 1, c = 6\"]",
+    "expectedOutput": "[[1,2,3,4,5,6]]",
+    "hidden": false
+  },
+  {
+    "input": "[\"mat = [[1,2],[3,4]], r = 1, c = 4\"]",
+    "expectedOutput": "[[1,2,3,4]]",
+    "hidden": false
+  },
+  {
+    "input": "[\"mat = [[1,2,3],[4,5,6]], r = 3, c = 2\"]",
+    "expectedOutput": "[[1,2],[3,4],[5,6]]",
+    "hidden": true
+  },
+  {
+    "input": "[\"mat = [[1,2,3],[4,5,6]], r = 3, c = 1\"]",
+    "expectedOutput": "[[1,2,3],[4,5,6]]",
+    "hidden": true
+  },
+  {
+    "input": "[\"mat = [[1,2,3],[4,5,6]], r = 1, c = 3\"]",
+    "expectedOutput": "[[1,2,3],[4,5,6]]",
+    "hidden": true
+  }
+]

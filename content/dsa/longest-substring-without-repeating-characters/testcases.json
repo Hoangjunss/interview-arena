@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"abcabcbb\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"bbbbb\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"pwwkew\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"abcdabcabcabcd\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"abcdefgabcdefgabcdefgabcdefg\"]",
+    "expectedOutput": "7",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    numWays(n, k) {
+        // TODO: implement
+    }
+}

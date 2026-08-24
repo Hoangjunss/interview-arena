@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"picture = [[\\\"B\\\",\\\"W\\\"],[\\\"W\\\",\\\"B\\\"]], target = 1\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"picture = [['W','W','B'],['W','W','B'],['W','W','B']], target = 1\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"picture = [['B','W','B'],['W','B','W'],['B','W','B']], target = 2\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"picture = [[\\\"W\\\",\\\"B\\\",\\\"W\\\",\\\"B\\\",\\\"B\\\",\\\"W\\\"],[\\\"W\\\",\\\"B\\\",\\\"W\\\",\\\"B\\\",\\\"B\\\",\\\"W\\\"],[\\\"W\\\",\\\"B\\\",\\\"W\\\",\\\"B\\\",\\\"B\\\",\\\"W\\\"],[\\\"W\\\",\\\"W\\\",\\\"B\\\",\\\"W\\\",\\\"B\\\",\\\"W\\\"]], target = 3\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  },
+  {
+    "input": "[\"picture = [['B','B','B'],['B','B','B'],['B','B','B']], target = 3\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  }
+]

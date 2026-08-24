@@ -1,0 +1,5 @@
+class Solution {
+    triangleNumber(nums) {
+        // TODO: implement
+    }
+}

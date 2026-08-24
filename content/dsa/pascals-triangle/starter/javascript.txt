@@ -1,0 +1,5 @@
+class Solution {
+    generate(numRows) {
+        // TODO: implement
+    }
+}

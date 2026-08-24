@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"100000000000000000000000000000000000\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"1203\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"12358132134558914423337761098715972584467376111128914423337761098715972584467376\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"000\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"112358\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    nextGreaterElements(nums) {
+        // TODO: implement
+    }
+}

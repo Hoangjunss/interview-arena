@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[31]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[10]",
+    "expectedOutput": "5",
+    "hidden": false
+  },
+  {
+    "input": "[32]",
+    "expectedOutput": "31",
+    "hidden": true
+  },
+  {
+    "input": "[5]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[1023]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"a\", \"b\", \"c\", \"d\", \"e\", \" \", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\"]]",
+    "expectedOutput": "None",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\"]]",
+    "expectedOutput": "None",
+    "hidden": false
+  },
+  {
+    "input": "[[\"h\", \"e\", \"l\", \"l\", \"o\", \" \", \"w\", \"o\", \"r\", \"l\", \"d\"]]",
+    "expectedOutput": "None",
+    "hidden": true
+  },
+  {
+    "input": "[[\"P\", \"y\", \"t\", \"h\", \"o\", \"n\", \" \", \"i\", \"s\", \" \", \"f\", \"u\", \"n\"]]",
+    "expectedOutput": "None",
+    "hidden": true
+  },
+  {
+    "input": "[[\"t\", \"h\", \"e\", \" \", \"s\", \"k\", \"y\", \" \", \"i\", \"s\", \" \", \"b\", \"l\", \"u\", \"e\"]]",
+    "expectedOutput": "None",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[1]",
+    "expectedOutput": "A",
+    "hidden": false
+  },
+  {
+    "input": "[28]",
+    "expectedOutput": "AB",
+    "hidden": false
+  },
+  {
+    "input": "[1045]",
+    "expectedOutput": "ANE",
+    "hidden": true
+  },
+  {
+    "input": "[2147483647]",
+    "expectedOutput": "FXSHRXW",
+    "hidden": true
+  },
+  {
+    "input": "[456976]",
+    "expectedOutput": "YYYZ",
+    "hidden": true
+  }
+]

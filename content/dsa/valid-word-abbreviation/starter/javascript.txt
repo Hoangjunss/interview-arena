@@ -1,0 +1,5 @@
+class Solution {
+    validWordAbbreviation(word, abbr) {
+        // TODO: implement
+    }
+}

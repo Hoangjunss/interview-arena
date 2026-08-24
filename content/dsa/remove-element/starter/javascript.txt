@@ -1,0 +1,5 @@
+class Solution {
+    removeElement(nums, val) {
+        // TODO: implement
+    }
+}

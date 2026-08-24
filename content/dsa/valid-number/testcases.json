@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"0089\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"-123.456e789\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"95a54e53\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"e3\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"4.\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

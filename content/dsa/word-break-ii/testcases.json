@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"aaaaaaa\\\", wordDict = [\\\"aa\\\",\\\"aaa\\\"]\"]",
+    "expectedOutput": "['aa aa aaa', 'aa aaa aa', 'aaa aa aa']",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"pineapplepenapple\\\", wordDict = [\\\"apple\\\",\\\"pen\\\",\\\"applepen\\\",\\\"pine\\\",\\\"pineapple\\\"]\"]",
+    "expectedOutput": "['pine apple pen apple', 'pine applepen apple', 'pineapple pen apple']",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"a\\\", wordDict = [\\\"a\\\"]\"]",
+    "expectedOutput": "['a']",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"catsanddog\\\", wordDict = [\\\"cat\\\",\\\"cats\\\",\\\"and\\\",\\\"sand\\\",\\\"dog\\\"]\"]",
+    "expectedOutput": "['cat sand dog', 'cats and dog']",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"catsandog\\\", wordDict = [\\\"cats\\\",\\\"dog\\\",\\\"sand\\\",\\\"and\\\",\\\"cat\\\"]\"]",
+    "expectedOutput": "[]",
+    "hidden": true
+  }
+]

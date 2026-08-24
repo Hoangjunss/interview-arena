@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"head = [1,2,6,3,4,5,6], val = 6\"]",
+    "expectedOutput": "[1,2,3,4,5]",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [10,20,30,40,50], val = 10\"]",
+    "expectedOutput": "[20,30,40,50]",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [50,20,30,20,10], val = 20\"]",
+    "expectedOutput": "[50,30,10]",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [1,1,1,1,1], val = 1\"]",
+    "expectedOutput": "None",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [50,40,30,20,10], val = 50\"]",
+    "expectedOutput": "[40,30,20,10]",
+    "hidden": true
+  }
+]

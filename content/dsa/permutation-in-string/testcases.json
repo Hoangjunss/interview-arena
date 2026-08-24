@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s1 = \\\"abc\\\", s2 = \\\"bbbccca\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"adc\\\", s2 = \\\"dcda\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"abc\\\", s2 = \\\"bbbccba\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"abcde\\\", s2 = \\\"adecb\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"test\\\", s2 = \\\"ttewest\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

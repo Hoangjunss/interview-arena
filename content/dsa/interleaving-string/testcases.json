@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s1 = \\\"abc\\\", s2 = \\\"abc\\\", s3 = \\\"aabbcc\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"\\\", s2 = \\\"a\\\", s3 = \\\"a\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"\\\", s2 = \\\"b\\\", s3 = \\\"b\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"a\\\", s2 = \\\"\\\", s3 = \\\"a\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"abc\\\", s2 = \\\"\\\", s3 = \\\"abc\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

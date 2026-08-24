@@ -1,0 +1,5 @@
+class Solution {
+    findDuplicate(paths) {
+        // TODO: implement
+    }
+}

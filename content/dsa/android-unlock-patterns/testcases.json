@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"m = 4, n = 4\"]",
+    "expectedOutput": "1624",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 7, n = 7\"]",
+    "expectedOutput": "72912",
+    "hidden": false
+  },
+  {
+    "input": "[\"m = 7, n = 8\"]",
+    "expectedOutput": "213616",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 2, n = 2\"]",
+    "expectedOutput": "56",
+    "hidden": true
+  },
+  {
+    "input": "[\"m = 4, n = 5\"]",
+    "expectedOutput": "8776",
+    "hidden": true
+  }
+]

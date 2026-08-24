@@ -1,0 +1,5 @@
+class Solution {
+    multiply(mat1, mat2) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    convertToBase7(num) {
+        // TODO: implement
+    }
+}

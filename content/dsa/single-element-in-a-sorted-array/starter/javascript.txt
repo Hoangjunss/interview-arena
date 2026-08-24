@@ -1,0 +1,5 @@
+class Solution {
+    singleNonDuplicate(nums) {
+        // TODO: implement
+    }
+}

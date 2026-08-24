@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"word1 = 'abc', word2 = 'def'\"]",
+    "expectedOutput": "6",
+    "hidden": false
+  },
+  {
+    "input": "[\"word1 = \\\"abcde\\\", word2 = \\\"fghij\\\"\"]",
+    "expectedOutput": "10",
+    "hidden": false
+  },
+  {
+    "input": "[\"word1 = \\\"abcdefghijklmnopqrstuvwxyz\\\", word2 = \\\"zyxwvutsrqponmlkjihgfedcba\\\"\"]",
+    "expectedOutput": "50",
+    "hidden": true
+  },
+  {
+    "input": "[\"word1 = \\\"sea\\\", word2 = \\\"eat\\\"\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"word1 = 'abcd', word2 = 'dcba'\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  }
+]

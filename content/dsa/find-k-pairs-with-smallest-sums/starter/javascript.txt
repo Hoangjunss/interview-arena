@@ -1,0 +1,5 @@
+class Solution {
+    kSmallestPairs(nums1, nums2, k) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    largestRectangleArea(heights) {
+        // TODO: implement
+    }
+}

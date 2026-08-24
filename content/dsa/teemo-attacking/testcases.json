@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"timeSeries = [0,1,2,3,4,5], duration = 1\"]",
+    "expectedOutput": "6",
+    "hidden": false
+  },
+  {
+    "input": "[\"timeSeries = [1,5,9], duration = 4\"]",
+    "expectedOutput": "12",
+    "hidden": false
+  },
+  {
+    "input": "[\"timeSeries = [1], duration = 5\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  },
+  {
+    "input": "[\"timeSeries = [10,14,15], duration = 5\"]",
+    "expectedOutput": "10",
+    "hidden": true
+  },
+  {
+    "input": "[\"timeSeries = [0,1,2,3,4], duration = 1\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  }
+]

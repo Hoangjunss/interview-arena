@@ -1,0 +1,5 @@
+class Solution {
+    nthSuperUglyNumber(n, primes) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    minArea(image, x, y) {
+        // TODO: implement
+    }
+}

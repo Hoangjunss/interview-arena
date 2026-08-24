@@ -1,0 +1,5 @@
+class Solution {
+    longestLine(mat) {
+        // TODO: implement
+    }
+}

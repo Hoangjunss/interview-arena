@@ -1,4 +1,5 @@
-function twoSum(nums, target) {
-    // TODO: implement
-    return []
+class Solution {
+    twoSum(nums, target) {
+        // TODO: implement
+    }
 }

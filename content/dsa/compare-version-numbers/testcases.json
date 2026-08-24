@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"version1 = \\\"0\\\", version2 = \\\"0.0.0\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"version1 = \\\"1.1.1.1\\\", version2 = \\\"1.1.1.1\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"version1 = \\\"1.2.3.4\\\", version2 = \\\"1.2.3\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"version1 = \\\"1.1.1.1\\\", version2 = \\\"1.1.1\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"version1 = \\\"1.0.0\\\", version2 = \\\"1\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"(()())\"]",
+    "expectedOutput": "6",
+    "hidden": false
+  },
+  {
+    "input": "[\"())\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"())(()\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"((((((()))))))\"]",
+    "expectedOutput": "14",
+    "hidden": true
+  },
+  {
+    "input": "[\"((())()())()\"]",
+    "expectedOutput": "12",
+    "hidden": true
+  }
+]

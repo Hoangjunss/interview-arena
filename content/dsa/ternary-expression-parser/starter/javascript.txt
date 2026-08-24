@@ -1,0 +1,5 @@
+class Solution {
+    parseTernary(expression) {
+        // TODO: implement
+    }
+}

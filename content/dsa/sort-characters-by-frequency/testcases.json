@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"aA\"]",
+    "expectedOutput": "aA",
+    "hidden": false
+  },
+  {
+    "input": "[\"2a554442f544asf\"]",
+    "expectedOutput": "4444455522aaffs",
+    "hidden": false
+  },
+  {
+    "input": "[\"2a554442f544asfasss\"]",
+    "expectedOutput": "44444ssssaaa55522ff",
+    "hidden": true
+  },
+  {
+    "input": "[\"zzzzZZZZ\"]",
+    "expectedOutput": "zzzzZZZZ",
+    "hidden": true
+  },
+  {
+    "input": "[\"bbaaccdd\"]",
+    "expectedOutput": "bbaaccdd",
+    "hidden": true
+  }
+]

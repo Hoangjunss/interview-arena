@@ -1,0 +1,5 @@
+class Solution {
+    isIsomorphic(s, t) {
+        // TODO: implement
+    }
+}

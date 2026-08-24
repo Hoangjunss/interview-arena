@@ -1,0 +1,5 @@
+class Solution {
+    reverseBits(n) {
+        // TODO: implement
+    }
+}

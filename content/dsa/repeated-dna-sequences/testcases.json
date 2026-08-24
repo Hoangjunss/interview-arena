@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"ACGACGACGACGACGACG\"]",
+    "expectedOutput": "['ACGACGACGA', 'CGACGACGAC', 'GACGACGACG']",
+    "hidden": false
+  },
+  {
+    "input": "[\"AAAAAAAAAAAAA\"]",
+    "expectedOutput": "['AAAAAAAAAA']",
+    "hidden": false
+  },
+  {
+    "input": "[\"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\"]",
+    "expectedOutput": "['AAAAACCCCC', 'CCCCCAAAAA']",
+    "hidden": true
+  },
+  {
+    "input": "[\"CGTTGCGTTGCGTTGCGTTG\"]",
+    "expectedOutput": "['CGTTGCGTTG', 'GTTGCGTTGC', 'TTGCGTTGCG', 'TGCGTTGCGT', 'GCGTTGCGTT']",
+    "hidden": true
+  },
+  {
+    "input": "[\"AAAAAAAAAATTTTTTTTTTAAAAAAAAAA\"]",
+    "expectedOutput": "['AAAAAAAAAA']",
+    "hidden": true
+  }
+]

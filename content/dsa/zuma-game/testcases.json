@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"board = \\\"RRR\\\", hand = \\\"RRR\\\"\"]",
+    "expectedOutput": "Error: name 're' is not defined",
+    "hidden": false
+  },
+  {
+    "input": "[\"board = \\\"RRYGGYYRR\\\", hand = \\\"GGBBB\\\"\"]",
+    "expectedOutput": "Error: name 're' is not defined",
+    "hidden": false
+  },
+  {
+    "input": "[\"board = \\\"RRWWRRBBRR\\\", hand = \\\"WB\\\"\"]",
+    "expectedOutput": "Error: name 're' is not defined",
+    "hidden": true
+  },
+  {
+    "input": "[\"board = \\\"WYGBR\\\", hand = \\\"WYGBR\\\"\"]",
+    "expectedOutput": "Error: name 're' is not defined",
+    "hidden": true
+  },
+  {
+    "input": "[\"board = \\\"WWRRBBWW\\\", hand = \\\"WRBRW\\\"\"]",
+    "expectedOutput": "Error: name 're' is not defined",
+    "hidden": true
+  }
+]

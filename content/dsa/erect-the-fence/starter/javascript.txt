@@ -1,0 +1,5 @@
+class Solution {
+    outerTrees(trees) {
+        // TODO: implement
+    }
+}

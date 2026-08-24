@@ -1,0 +1,5 @@
+class Solution {
+    findIntegers(n) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"root = [], targetSum = 0\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"root = [1,null,2,null,3,null,4,null,5], targetSum = 3\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"root = [1,-2,-3], targetSum = -2\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"AALL\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\"LLA\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"PPALLPLL\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"PLPLPL\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"PA\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

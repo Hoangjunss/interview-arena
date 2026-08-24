@@ -1,0 +1,5 @@
+class Solution {
+    isUgly(n) {
+        // TODO: implement
+    }
+}

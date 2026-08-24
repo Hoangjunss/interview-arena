@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"coins = [186,419,83,408], amount = 6249\"]",
+    "expectedOutput": "20",
+    "hidden": false
+  },
+  {
+    "input": "[\"coins = [3,7,405,436], amount = 8839\"]",
+    "expectedOutput": "25",
+    "hidden": false
+  },
+  {
+    "input": "[\"coins = [3, 7, 405], amount = 8839\"]",
+    "expectedOutput": "71",
+    "hidden": true
+  },
+  {
+    "input": "[\"coins = [2,5,10,1], amount = 27\"]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[\"coins = [1,2,5], amount = 1\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

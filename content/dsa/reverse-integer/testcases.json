@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[-2147483412]",
+    "expectedOutput": "-2143847412",
+    "hidden": false
+  },
+  {
+    "input": "[2147483647]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[120]",
+    "expectedOutput": "21",
+    "hidden": true
+  },
+  {
+    "input": "[-123]",
+    "expectedOutput": "-321",
+    "hidden": true
+  },
+  {
+    "input": "[1534236469]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

@@ -1,0 +1,5 @@
+class Solution {
+    lastRemaining(n) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"123\\\", t = \\\"1234\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abc\\\", t = \\\"abcd\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"ab\\\", t = \\\"acb\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"abcd\\\", t = \\\"abde\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"cat\\\", t = \\\"dog\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

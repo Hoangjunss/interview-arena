@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"a = 1000, b = -1000\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"a = -2, b = -3\"]",
+    "expectedOutput": "-5",
+    "hidden": false
+  },
+  {
+    "input": "[\"a = 0, b = 5\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  },
+  {
+    "input": "[\"a = 500, b = 500\"]",
+    "expectedOutput": "1000",
+    "hidden": true
+  },
+  {
+    "input": "[\"a = -5, b = -5\"]",
+    "expectedOutput": "-10",
+    "hidden": true
+  }
+]

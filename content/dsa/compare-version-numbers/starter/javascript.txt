@@ -1,0 +1,5 @@
+class Solution {
+    compareVersion(version1, version2) {
+        // TODO: implement
+    }
+}

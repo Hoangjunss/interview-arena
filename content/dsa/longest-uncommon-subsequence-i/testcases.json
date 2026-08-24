@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"a = \\\"aaa\\\", b = \\\"bbb\\\"\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"a = \\\"same\\\", b = \\\"same\\\"\"]",
+    "expectedOutput": "-1",
+    "hidden": false
+  },
+  {
+    "input": "[\"a = \\\"test\\\", b = \\\"testing\\\"\"]",
+    "expectedOutput": "7",
+    "hidden": true
+  },
+  {
+    "input": "[\"a = \\\"a\\\", b = \\\"b\\\"\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"a = \\\"abcde\\\", b = \\\"fghij\\\"\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s1 = \\\"abcdefghij\\\", s2 = \\\"ihgfedcbaj\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"noon\\\", s2 = \\\"onon\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"s1 = \\\"abc\\\", s2 = \\\"cab\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"abcdefghijklmnop\\\", s2 = \\\"ponmlkjihgfedcba\\\"\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"s1 = \\\"abcde\\\", s2 = \\\"caebd\\\"\"]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

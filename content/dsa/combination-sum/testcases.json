@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"candidates = [2,5,2,1,2], target = 5\"]",
+    "expectedOutput": "[[1,1,1,1,1],[1,1,1,2],[1,1,1,2],[1,1,1,2],[1,2,2],[1,2,2],[1,2,2],[1,2,2],[1,2,2],[1,2,2],[5]]",
+    "hidden": false
+  },
+  {
+    "input": "[\"candidates = [8,7,4,3], target = 11\"]",
+    "expectedOutput": "[[3,4,4],[3,8],[4,7]]",
+    "hidden": false
+  },
+  {
+    "input": "[\"candidates = [2,5,10], target = 10\"]",
+    "expectedOutput": "[[2,2,2,2,2],[5,5],[10]]",
+    "hidden": true
+  },
+  {
+    "input": "[\"candidates = [2,5,10], target = 15\"]",
+    "expectedOutput": "[[2,2,2,2,2,5],[5,5,5],[5,10]]",
+    "hidden": true
+  },
+  {
+    "input": "[\"candidates = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], target = 5\"]",
+    "expectedOutput": "Execution timed out",
+    "hidden": true
+  }
+]

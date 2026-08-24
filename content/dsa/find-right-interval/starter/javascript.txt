@@ -1,0 +1,5 @@
+class Solution {
+    findRightInterval(intervals) {
+        // TODO: implement
+    }
+}

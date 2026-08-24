@@ -1,0 +1,5 @@
+class Solution {
+    minMoves2(nums) {
+        // TODO: implement
+    }
+}

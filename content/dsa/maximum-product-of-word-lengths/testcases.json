@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"a\", \"ab\", \"abc\", \"d\", \"cd\", \"bcd\", \"abcd\"]]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[[\"eae\", \"eaecbaaa\", \"aadcba\", \"bae\", \"abc\", \"abcbb\", \"cba\", \"abcd\", \"ac\", \"ba\", \"aaaa\", \"d\", \"abac\", \"ababc\", \"abcabc\", \"a\", \"bc\", \"b\"]]",
+    "expectedOutput": "8",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abcw\", \"baz\", \"foo\", \"bar\", \"xtfn\", \"abcdef\"]]",
+    "expectedOutput": "16",
+    "hidden": true
+  },
+  {
+    "input": "[[\"a\", \"aa\", \"aaa\", \"aaaa\"]]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[[\"aa\", \"aaa\", \"aaaa\", \"aaaaa\", \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\", \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\", \"aa\"]]",
+    "expectedOutput": "0",
+    "hidden": true
+  }
+]

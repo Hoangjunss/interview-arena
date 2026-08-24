@@ -1,0 +1,5 @@
+class Solution {
+    minCost(costs) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    simplifyPath(path) {
+        // TODO: implement
+    }
+}

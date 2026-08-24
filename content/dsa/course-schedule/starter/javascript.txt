@@ -1,0 +1,5 @@
+class Solution {
+    canFinish(numCourses, prerequisites) {
+        // TODO: implement
+    }
+}

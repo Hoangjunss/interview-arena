@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[1000000000, 1000000000, 1000000000, 7]]",
+    "expectedOutput": "7",
+    "hidden": false
+  },
+  {
+    "input": "[[-1, -1, -1, 100]]",
+    "expectedOutput": "100",
+    "hidden": false
+  },
+  {
+    "input": "[[-2, -2, -2, 1]]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[[1000000, 1000000, 1000000, 2000000]]",
+    "expectedOutput": "2000000",
+    "hidden": true
+  },
+  {
+    "input": "[[1, 1, 1, 2, 2, 2, 3]]",
+    "expectedOutput": "3",
+    "hidden": true
+  }
+]

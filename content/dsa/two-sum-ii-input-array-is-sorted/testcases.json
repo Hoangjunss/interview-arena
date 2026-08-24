@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"numbers = [-3,-2,-1,0,0,1,2,3], target = 0\"]",
+    "expectedOutput": "[1,8]",
+    "hidden": false
+  },
+  {
+    "input": "[\"numbers = [-10,-5,0,5,10], target = 0\"]",
+    "expectedOutput": "[1,5]",
+    "hidden": false
+  },
+  {
+    "input": "[\"numbers = [1,2,3,4,5,6,7,8,9], target = 17\"]",
+    "expectedOutput": "[8,9]",
+    "hidden": true
+  },
+  {
+    "input": "[\"numbers = [-10,-5,-3,3,5,6,7,8,9], target = 0\"]",
+    "expectedOutput": "[2,5]",
+    "hidden": true
+  },
+  {
+    "input": "[\"numbers = [5,25,75], target = 100\"]",
+    "expectedOutput": "[2,3]",
+    "hidden": true
+  }
+]

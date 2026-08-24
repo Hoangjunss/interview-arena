@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"hello\\\", words = [\\\"world\\\"]\"]",
+    "expectedOutput": "hello",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"mississippi\\\", words = [\\\"issi\\\",\\\"issip\\\",\\\"is\\\",\\\"i\\\"]\"]",
+    "expectedOutput": "m<b>ississip</b>p<b>i</b>",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"abcd\\\", words = [\\\"e\\\",\\\"f\\\",\\\"g\\\"]\"]",
+    "expectedOutput": "abcd",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"hello\\\", words = [\\\"ll\\\",\\\"o\\\"]\"]",
+    "expectedOutput": "he<b>llo</b>",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"\\\", words = [\\\"a\\\"]\"]",
+    "expectedOutput": "",
+    "hidden": true
+  }
+]

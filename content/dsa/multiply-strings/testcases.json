@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"num1 = \\\"999999999999999999\\\", num2 = \\\"888888888888888888\\\"\"]",
+    "expectedOutput": "888888888888888887111111111111111112",
+    "hidden": false
+  },
+  {
+    "input": "[\"num1 = \\\"0\\\", num2 = \\\"12345\\\"\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"num1 = \\\"2\\\", num2 = \\\"3\\\"\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  },
+  {
+    "input": "[\"num1 = \\\"123456789\\\", num2 = \\\"987654321\\\"\"]",
+    "expectedOutput": "121932631112635269",
+    "hidden": true
+  },
+  {
+    "input": "[\"num1 = \\\"1000\\\", num2 = \\\"1000\\\"\"]",
+    "expectedOutput": "1000000",
+    "hidden": true
+  }
+]

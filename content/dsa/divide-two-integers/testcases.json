@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"dividend = 10, divisor = 3\"]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[\"dividend = -2147483648, divisor = 2\"]",
+    "expectedOutput": "-1073741824",
+    "hidden": false
+  },
+  {
+    "input": "[\"dividend = -2147483648, divisor = -1\"]",
+    "expectedOutput": "2147483647",
+    "hidden": true
+  },
+  {
+    "input": "[\"dividend = -1, divisor = -1\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"dividend = 2147483647, divisor = 1\"]",
+    "expectedOutput": "2147483647",
+    "hidden": true
+  }
+]

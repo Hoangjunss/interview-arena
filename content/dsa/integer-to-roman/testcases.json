@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[44]",
+    "expectedOutput": "XLIV",
+    "hidden": false
+  },
+  {
+    "input": "[9]",
+    "expectedOutput": "IX",
+    "hidden": false
+  },
+  {
+    "input": "[4]",
+    "expectedOutput": "IV",
+    "hidden": true
+  },
+  {
+    "input": "[2023]",
+    "expectedOutput": "MMXXIII",
+    "hidden": true
+  },
+  {
+    "input": "[589]",
+    "expectedOutput": "DLXXXIX",
+    "hidden": true
+  }
+]

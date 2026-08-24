@@ -1,0 +1,5 @@
+class Solution {
+    canCross(stones) {
+        // TODO: implement
+    }
+}

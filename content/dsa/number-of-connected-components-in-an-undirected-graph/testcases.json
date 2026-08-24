@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"n = 6, edges = [[0,1],[1,2],[3,4],[4,5]]\"]",
+    "expectedOutput": "2",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 7, edges = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6]]\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 3, edges = [[0,1]]\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 6, edges = [[0,1],[2,3],[4,5]]\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 4, edges = [[0,1],[2,3]]\"]",
+    "expectedOutput": "2",
+    "hidden": true
+  }
+]

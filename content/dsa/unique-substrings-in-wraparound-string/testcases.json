@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"qpqprstuvwxyzqpqprstuvwxyzqpqprstuvwxyz\"]",
+    "expectedOutput": "48",
+    "hidden": false
+  },
+  {
+    "input": "[\"abczabczabcz\"]",
+    "expectedOutput": "10",
+    "hidden": false
+  },
+  {
+    "input": "[\"abcdefghijklmnopqrstuvwxyz\"]",
+    "expectedOutput": "351",
+    "hidden": true
+  },
+  {
+    "input": "[\"azza\"]",
+    "expectedOutput": "3",
+    "hidden": true
+  },
+  {
+    "input": "[\"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"]",
+    "expectedOutput": "1",
+    "hidden": true
+  }
+]

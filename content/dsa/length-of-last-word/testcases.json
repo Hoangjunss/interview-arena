@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"Hello World\"]",
+    "expectedOutput": "5",
+    "hidden": false
+  },
+  {
+    "input": "[\"   fly me   to   the moon  \"]",
+    "expectedOutput": "4",
+    "hidden": false
+  },
+  {
+    "input": "[\"luffy is still joyboy\"]",
+    "expectedOutput": "6",
+    "hidden": true
+  },
+  {
+    "input": "[\"    a    \"]",
+    "expectedOutput": "1",
+    "hidden": true
+  },
+  {
+    "input": "[\"multiple   spaces   between   words\"]",
+    "expectedOutput": "5",
+    "hidden": true
+  }
+]

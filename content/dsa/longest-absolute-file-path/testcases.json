@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.ext\"]",
+    "expectedOutput": "20",
+    "hidden": false
+  },
+  {
+    "input": "[\"dir\\n\\tsubdir1\\n\\t\\tfile1.ext\\n\\t\\tsubsubdir1\\n\\tsubdir2\\n\\t\\tsubsubdir2\\n\\t\\t\\tfile2.ext\"]",
+    "expectedOutput": "32",
+    "hidden": false
+  },
+  {
+    "input": "[\"a\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"file1.txt\\nfile2.txt\\nlongfile.txt\"]",
+    "expectedOutput": "12",
+    "hidden": true
+  },
+  {
+    "input": "[\"data\\n\\ttemp\\n\\t\\ttempfile1.csv\\n\\t\\ttempfile2.csv\\n\\tlogs\\n\\t\\terror.log\\n\\t\\tinfo.log\\n\\t\\tdebug.log\"]",
+    "expectedOutput": "23",
+    "hidden": true
+  }
+]

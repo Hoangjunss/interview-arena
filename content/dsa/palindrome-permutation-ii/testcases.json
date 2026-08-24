@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"abcba\"]",
+    "expectedOutput": "['bacab', 'abcba']",
+    "hidden": false
+  },
+  {
+    "input": "[\"abac\"]",
+    "expectedOutput": "[]",
+    "hidden": false
+  },
+  {
+    "input": "[\"aabbaa\"]",
+    "expectedOutput": "['baaaab', 'abaaba', 'aabbaa']",
+    "hidden": true
+  },
+  {
+    "input": "[\"abcdcba\"]",
+    "expectedOutput": "['cbadabc', 'bcadacb', 'cabdbac', 'acbdbca', 'bacdcab', 'abcdcba']",
+    "hidden": true
+  },
+  {
+    "input": "[\"abcdedcba\"]",
+    "expectedOutput": "['dcbaeabcd', 'cdbaeabdc', 'dbcaeacbd', 'bdcaeacdb', 'cbdaeadbc', 'bcdaeadcb', 'dcabebacd', 'cdabebadc', 'dacbebcad', 'adcbebcda', 'cadbebdac', 'acdbebdca', 'dbacecabd', 'bdacecadb', 'dabcecbad', 'adbcecbda', 'badcecdab', 'abdcecdba', 'cbadedabc', 'bcadedacb', 'cabdedbac', 'acbdedbca', 'bacdedcab', 'abcdedcba']",
+    "hidden": true
+  }
+]

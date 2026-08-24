@@ -1,0 +1,12 @@
+import sys
+
+{{USER_CODE}}
+
+def main():
+    lines = sys.stdin.read().split("\n")
+    nums = [int(x.strip()) for x in lines[0].split(",") if x.strip()]
+    target = int(lines[1].strip())
+    print(search(nums, target))
+
+if __name__ == "__main__":
+    main()

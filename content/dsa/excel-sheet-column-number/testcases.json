@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"MAD\"]",
+    "expectedOutput": "8818",
+    "hidden": false
+  },
+  {
+    "input": "[\"AAA\"]",
+    "expectedOutput": "703",
+    "hidden": false
+  },
+  {
+    "input": "[\"ZY\"]",
+    "expectedOutput": "701",
+    "hidden": true
+  },
+  {
+    "input": "[\"AC\"]",
+    "expectedOutput": "29",
+    "hidden": true
+  },
+  {
+    "input": "[\"Z\"]",
+    "expectedOutput": "26",
+    "hidden": true
+  }
+]

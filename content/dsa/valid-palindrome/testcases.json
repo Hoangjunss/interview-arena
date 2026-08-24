@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"race a car\"]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[\" \"]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[\"Able was I ere I saw Elba\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"__Level__, __level__\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[\"No lemon, no melon\"]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

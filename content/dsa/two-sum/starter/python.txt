@@ -1,3 +1,2 @@
-def two_sum(nums, target):
-    # TODO: implement
-    return []
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:

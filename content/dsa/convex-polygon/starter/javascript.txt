@@ -1,0 +1,5 @@
+class Solution {
+    isConvex(points) {
+        // TODO: implement
+    }
+}

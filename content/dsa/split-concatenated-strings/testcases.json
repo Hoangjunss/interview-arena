@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"hello\", \"world\"]]",
+    "expectedOutput": "worldolleh",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abcd\", \"abdc\", \"acbd\", \"acdb\"]]",
+    "expectedOutput": "dcdbcabdcadcbaab",
+    "hidden": false
+  },
+  {
+    "input": "[[\"aabb\", \"bbaa\", \"ccdd\", \"ddcc\"]]",
+    "expectedOutput": "ddddccbbaabbaacc",
+    "hidden": true
+  },
+  {
+    "input": "[[\"a\", \"b\", \"c\"]]",
+    "expectedOutput": "cab",
+    "hidden": true
+  },
+  {
+    "input": "[[\"dog\", \"cat\", \"bat\"]]",
+    "expectedOutput": "ttabgodca",
+    "hidden": true
+  }
+]

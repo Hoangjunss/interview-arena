@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"acbbaca\\\", t = \\\"aba\\\"\"]",
+    "expectedOutput": "baca",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"aabbcc\\\", t = \\\"abc\\\"\"]",
+    "expectedOutput": "abbc",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"aaaaaaa\\\", t = \\\"aa\\\"\"]",
+    "expectedOutput": "aa",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"a\\\", t = \\\"aa\\\"\"]",
+    "expectedOutput": "",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"abcd\\\", t = \\\"bd\\\"\"]",
+    "expectedOutput": "bcd",
+    "hidden": true
+  }
+]

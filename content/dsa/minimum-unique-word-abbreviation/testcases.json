@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"target = \\\"internationalization\\\", dictionary = [\\\"international\\\", \\\"intermittent\\\", \\\"interact\\\"]\"]",
+    "expectedOutput": "20",
+    "hidden": false
+  },
+  {
+    "input": "[\"target = \\\"apple\\\", dictionary = [\\\"blade\\\", \\\"plain\\\", \\\"amber\\\"]\"]",
+    "expectedOutput": "3l1",
+    "hidden": false
+  },
+  {
+    "input": "[\"target = \\\"cat\\\", dictionary = [\\\"dog\\\", \\\"dot\\\"]\"]",
+    "expectedOutput": "c2",
+    "hidden": true
+  },
+  {
+    "input": "[\"target = \\\"internationalization\\\", dictionary = [\\\"international\\\", \\\"interstate\\\", \\\"interpersonal\\\"]\"]",
+    "expectedOutput": "20",
+    "hidden": true
+  },
+  {
+    "input": "[\"target = \\\"internationalization\\\", dictionary = [\\\"inter\\\", \\\"national\\\", \\\"ization\\\"]\"]",
+    "expectedOutput": "20",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"head = [3,2,0,-4], pos = 1\"]",
+    "expectedOutput": "Error: Solution.hasCycle() got an unexpected keyword argument 'pos'",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [1,2,3,4,5], pos = 2\"]",
+    "expectedOutput": "Error: Solution.hasCycle() got an unexpected keyword argument 'pos'",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [], pos = -1\"]",
+    "expectedOutput": "Error: Solution.hasCycle() got an unexpected keyword argument 'pos'",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [1,2,3,4,5], pos = 3\"]",
+    "expectedOutput": "Error: Solution.hasCycle() got an unexpected keyword argument 'pos'",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [1,2], pos = 0\"]",
+    "expectedOutput": "Error: Solution.hasCycle() got an unexpected keyword argument 'pos'",
+    "hidden": true
+  }
+]

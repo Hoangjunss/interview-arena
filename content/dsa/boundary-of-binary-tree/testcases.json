@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"root = [1,null,2,null,3,null,4,null,5]\"]",
+    "expectedOutput": "[1,5,4,3,2]",
+    "hidden": false
+  },
+  {
+    "input": "[\"root = [1,null,3,null,4]\"]",
+    "expectedOutput": "[1,4,3]",
+    "hidden": false
+  },
+  {
+    "input": "[\"root = [1,2,null,3,4,null,5,null,6]\"]",
+    "expectedOutput": "[1,2,3,5,6]",
+    "hidden": true
+  },
+  {
+    "input": "[[1, 2, 3]]",
+    "expectedOutput": "[1,2,3]",
+    "hidden": true
+  },
+  {
+    "input": "[[1, 2, 3, 4]]",
+    "expectedOutput": "[1,2,4,3]",
+    "hidden": true
+  }
+]

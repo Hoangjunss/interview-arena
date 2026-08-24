@@ -1,0 +1,5 @@
+class Solution {
+    minPatches(nums, n) {
+        // TODO: implement
+    }
+}

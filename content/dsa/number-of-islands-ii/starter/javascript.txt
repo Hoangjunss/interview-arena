@@ -1,0 +1,5 @@
+class Solution {
+    numIslands2(m, n, positions) {
+        // TODO: implement
+    }
+}

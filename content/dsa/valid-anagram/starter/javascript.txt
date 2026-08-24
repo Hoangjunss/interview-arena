@@ -1,0 +1,5 @@
+class Solution {
+    isAnagram(s, t) {
+        // TODO: implement
+    }
+}

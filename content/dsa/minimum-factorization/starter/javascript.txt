@@ -1,0 +1,5 @@
+class Solution {
+    smallestFactorization(num) {
+        // TODO: implement
+    }
+}

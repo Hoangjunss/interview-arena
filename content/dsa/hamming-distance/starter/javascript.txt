@@ -1,0 +1,5 @@
+class Solution {
+    hammingDistance(x, y) {
+        // TODO: implement
+    }
+}

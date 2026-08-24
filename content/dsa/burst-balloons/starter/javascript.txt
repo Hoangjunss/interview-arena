@@ -1,0 +1,5 @@
+class Solution {
+    maxCoins(nums) {
+        // TODO: implement
+    }
+}

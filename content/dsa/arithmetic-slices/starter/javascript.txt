@@ -1,0 +1,5 @@
+class Solution {
+    numberOfArithmeticSlices(nums) {
+        // TODO: implement
+    }
+}

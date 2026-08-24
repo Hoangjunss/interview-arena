@@ -1,0 +1,5 @@
+class Solution {
+    countBits(n) {
+        // TODO: implement
+    }
+}

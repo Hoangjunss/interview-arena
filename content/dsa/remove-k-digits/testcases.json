@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"num = \\\"100\\\", k = 1\"]",
+    "expectedOutput": "0",
+    "hidden": false
+  },
+  {
+    "input": "[\"num = \\\"999\\\", k = 2\"]",
+    "expectedOutput": "9",
+    "hidden": false
+  },
+  {
+    "input": "[\"num = \\\"1234567890\\\", k = 9\"]",
+    "expectedOutput": "0",
+    "hidden": true
+  },
+  {
+    "input": "[\"num = \\\"111111\\\", k = 2\"]",
+    "expectedOutput": "1111",
+    "hidden": true
+  },
+  {
+    "input": "[\"num = \\\"987654321\\\", k = 5\"]",
+    "expectedOutput": "4321",
+    "hidden": true
+  }
+]

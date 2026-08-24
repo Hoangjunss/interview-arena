@@ -1,0 +1,5 @@
+class Solution {
+    singleNumber(nums) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,5 @@
+class Solution {
+    summaryRanges(nums) {
+        // TODO: implement
+    }
+}

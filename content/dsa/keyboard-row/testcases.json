@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"Hello\", \"Alaska\", \"Dad\", \"Peace\"]]",
+    "expectedOutput": "['Alaska', 'Dad']",
+    "hidden": false
+  },
+  {
+    "input": "[[\"qwerty\", \"ASDFGH\", \"zxcvbN\"]]",
+    "expectedOutput": "['qwerty', 'ASDFGH', 'zxcvbN']",
+    "hidden": false
+  },
+  {
+    "input": "[[\"QwErTy\", \"aSdF\", \"zXcV\"]]",
+    "expectedOutput": "['QwErTy', 'aSdF', 'zXcV']",
+    "hidden": true
+  },
+  {
+    "input": "[[\"AAAAA\", \"eeeee\", \"QQQqq\", \"zzzzz\"]]",
+    "expectedOutput": "['AAAAA', 'eeeee', 'QQQqq', 'zzzzz']",
+    "hidden": true
+  },
+  {
+    "input": "[[\"QwErTy\", \"AsDfGh\", \"ZxCvBn\"]]",
+    "expectedOutput": "['QwErTy', 'AsDfGh', 'ZxCvBn']",
+    "hidden": true
+  }
+]

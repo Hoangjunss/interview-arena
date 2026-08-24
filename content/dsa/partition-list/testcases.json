@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"head = [], x = 0\"]",
+    "expectedOutput": "None",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [5,4,3,2,1], x = 3\"]",
+    "expectedOutput": "[2,1,5,4,3]",
+    "hidden": false
+  },
+  {
+    "input": "[\"head = [100,-100,50,0,-50], x = 0\"]",
+    "expectedOutput": "[-100,-50,100,50,0]",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [1,1,1,1,1], x = 2\"]",
+    "expectedOutput": "[1,1,1,1,1]",
+    "hidden": true
+  },
+  {
+    "input": "[\"head = [1,2,3,4,5], x = 3\"]",
+    "expectedOutput": "[1,2,3,4,5]",
+    "hidden": true
+  }
+]

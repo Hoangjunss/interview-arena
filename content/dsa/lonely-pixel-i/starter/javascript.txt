@@ -1,0 +1,5 @@
+class Solution {
+    findLonelyPixel(picture) {
+        // TODO: implement
+    }
+}

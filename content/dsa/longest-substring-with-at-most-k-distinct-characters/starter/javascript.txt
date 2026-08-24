@@ -1,0 +1,5 @@
+class Solution {
+    lengthOfLongestSubstringKDistinct(s, k) {
+        // TODO: implement
+    }
+}

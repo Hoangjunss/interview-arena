@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"n = 13, k = 2\"]",
+    "expectedOutput": "10",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 1, k = 1\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"n = 100000, k = 50000\"]",
+    "expectedOutput": "54998",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 10, k = 10\"]",
+    "expectedOutput": "9",
+    "hidden": true
+  },
+  {
+    "input": "[\"n = 1000000, k = 100000\"]",
+    "expectedOutput": "189998",
+    "hidden": true
+  }
+]

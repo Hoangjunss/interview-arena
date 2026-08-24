@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"abc\", \"b\", \"cde\"]]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abc\", \"b\"]]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[[\"abc\", \"bdf\"]]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abcd\", \"bnrt\", \"crm\", \"dte\", \"e\"]]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[[\"abcd\", \"bnrt\", \"crmy\", \"dtye\"]]",
+    "expectedOutput": "true",
+    "hidden": true
+  }
+]

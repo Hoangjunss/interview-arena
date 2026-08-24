@@ -1,0 +1,6 @@
+{{USER_CODE}}
+
+const lines = require('fs').readFileSync(0, 'utf8').split('\n')
+const nums = lines[0].split(',').map(x => parseInt(x.trim(), 10))
+const target = parseInt(lines[1].trim(), 10)
+console.log(search(nums, target))

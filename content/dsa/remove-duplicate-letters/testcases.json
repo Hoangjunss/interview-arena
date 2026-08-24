@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"abcdefghijklmnopqrstuvwxyz\"]",
+    "expectedOutput": "abcdefghijklmnopqrstuvwxyz",
+    "hidden": false
+  },
+  {
+    "input": "[\"rumeblidofervobenly\"]",
+    "expectedOutput": "rumbidfevonly",
+    "hidden": false
+  },
+  {
+    "input": "[\"thesqtitxyetpxooxlqskyae\"]",
+    "expectedOutput": "heitpoxlqskya",
+    "hidden": true
+  },
+  {
+    "input": "[\"thesqquishs\"]",
+    "expectedOutput": "tequihs",
+    "hidden": true
+  },
+  {
+    "input": "[\"a\"]",
+    "expectedOutput": "a",
+    "hidden": true
+  }
+]

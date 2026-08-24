@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[-2, 0, 0, 2, 2]]",
+    "expectedOutput": "[[-2,0,2]]",
+    "hidden": false
+  },
+  {
+    "input": "[[0, 0, 0]]",
+    "expectedOutput": "[[0,0,0]]",
+    "hidden": false
+  },
+  {
+    "input": "[[-1, 0, 1, 2, -1, -4]]",
+    "expectedOutput": "[[-1,-1,2],[-1,0,1]]",
+    "hidden": true
+  },
+  {
+    "input": "[[-2, 0, 1, 1, 2]]",
+    "expectedOutput": "[[-2,0,2],[-2,1,1]]",
+    "hidden": true
+  },
+  {
+    "input": "[[1, 2, -2, -1]]",
+    "expectedOutput": "[]",
+    "hidden": true
+  }
+]

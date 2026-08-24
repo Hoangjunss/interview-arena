@@ -1,0 +1,5 @@
+class Solution {
+    convert(s, numRows) {
+        // TODO: implement
+    }
+}

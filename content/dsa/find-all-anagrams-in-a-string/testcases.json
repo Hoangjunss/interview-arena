@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"s = \\\"hello\\\", p = \\\"billion\\\"\"]",
+    "expectedOutput": "[]",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"aaaaa\\\", p = \\\"a\\\"\"]",
+    "expectedOutput": "[0,1,2,3,4]",
+    "hidden": false
+  },
+  {
+    "input": "[\"s = \\\"bbaa\\\", p = \\\"ab\\\"\"]",
+    "expectedOutput": "[1]",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"abab\\\", p = \\\"ab\\\"\"]",
+    "expectedOutput": "[0,1,2]",
+    "hidden": true
+  },
+  {
+    "input": "[\"s = \\\"abacbabc\\\", p = \\\"abc\\\"\"]",
+    "expectedOutput": "[1,2,3,5]",
+    "hidden": true
+  }
+]

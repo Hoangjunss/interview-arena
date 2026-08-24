@@ -1,0 +1,5 @@
+class Solution {
+    generateMatrix(n) {
+        // TODO: implement
+    }
+}

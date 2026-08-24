@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"x = 3.00000, n = 0\"]",
+    "expectedOutput": "1",
+    "hidden": false
+  },
+  {
+    "input": "[\"x = 10.00000, n = -3\"]",
+    "expectedOutput": "0.001",
+    "hidden": false
+  },
+  {
+    "input": "[\"x = 5.00000, n = 1\"]",
+    "expectedOutput": "5.0",
+    "hidden": true
+  },
+  {
+    "input": "[\"x = 2.00000, n = -2\"]",
+    "expectedOutput": "0.25",
+    "hidden": true
+  },
+  {
+    "input": "[\"x = 0.10000, n = 2\"]",
+    "expectedOutput": "0.010000000000000002",
+    "hidden": true
+  }
+]

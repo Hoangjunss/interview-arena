@@ -1,0 +1,5 @@
+class Solution {
+    minDistance(height, width, tree, squirrel, nuts) {
+        // TODO: implement
+    }
+}

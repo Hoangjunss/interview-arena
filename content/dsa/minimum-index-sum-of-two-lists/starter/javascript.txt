@@ -1,0 +1,5 @@
+class Solution {
+    findRestaurant(list1, list2) {
+        // TODO: implement
+    }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[1221]",
+    "expectedOutput": "true",
+    "hidden": false
+  },
+  {
+    "input": "[10]",
+    "expectedOutput": "false",
+    "hidden": false
+  },
+  {
+    "input": "[123421]",
+    "expectedOutput": "false",
+    "hidden": true
+  },
+  {
+    "input": "[1]",
+    "expectedOutput": "true",
+    "hidden": true
+  },
+  {
+    "input": "[-121]",
+    "expectedOutput": "false",
+    "hidden": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[[\"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\", \"a\"]]",
+    "expectedOutput": "3",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\"]]",
+    "expectedOutput": "10",
+    "hidden": false
+  },
+  {
+    "input": "[[\"a\", \"b\", \"b\", \"b\", \"b\", \"b\", \"b\", \"b\", \"b\", \"b\", \"b\", \"b\", \"b\"]]",
+    "expectedOutput": "4",
+    "hidden": true
+  },
+  {
+    "input": "[[\"a\", \"a\", \"b\", \"b\", \"c\", \"c\", \"c\"]]",
+    "expectedOutput": "6",
+    "hidden": true
+  },
+  {
+    "input": "[[\"a\", \"2\", \"b\", \"2\", \"c\", \"3\"]]",
+    "expectedOutput": "6",
+    "hidden": true
+  }
+]

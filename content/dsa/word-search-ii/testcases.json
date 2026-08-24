@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"board = [['o','a','a','n'],['e','t','a','e'],['i','h','k','r'],['i','f','l','v']], words = ['oath','pea','eat','rain']\"]",
+    "expectedOutput": "['oath', 'eat']",
+    "hidden": false
+  },
+  {
+    "input": "[\"board = [[\\\"a\\\",\\\"a\\\"]], words = [\\\"a\\\"]\"]",
+    "expectedOutput": "['a']",
+    "hidden": false
+  },
+  {
+    "input": "[\"board = [[\\\"o\\\",\\\"a\\\",\\\"a\\\",\\\"n\\\"],[\\\"e\\\",\\\"t\\\",\\\"a\\\",\\\"e\\\"],[\\\"i\\\",\\\"h\\\",\\\"k\\\",\\\"r\\\"],[\\\"i\\\",\\\"f\\\",\\\"l\\\",\\\"v\\\"]], words = [\\\"oath\\\",\\\"pea\\\",\\\"eat\\\",\\\"rain\\\"]\"]",
+    "expectedOutput": "['oath', 'eat']",
+    "hidden": true
+  },
+  {
+    "input": "[\"abc\\\"],\"]",
+    "expectedOutput": "Error: Solution.findWords() missing 2 required positional arguments: 'board' and 'words'",
+    "hidden": true
+  },
+  {
+    "input": "[\"board = [[\\\"a\\\"],[\\\"a\\\"]], words = [\\\"a\\\"]\"]",
+    "expectedOutput": "['a']",
+    "hidden": true
+  }
+]

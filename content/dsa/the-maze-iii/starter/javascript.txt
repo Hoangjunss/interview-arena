@@ -1,0 +1,5 @@
+class Solution {
+    findShortestWay(maze, ball, hole) {
+        // TODO: implement
+    }
+}

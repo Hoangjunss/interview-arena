@@ -1,0 +1,27 @@
+[
+  {
+    "input": "[\"hello\"]",
+    "expectedOutput": "\"holle\"",
+    "hidden": false
+  },
+  {
+    "input": "[\"leetcode\"]",
+    "expectedOutput": "\"leotcede\"",
+    "hidden": false
+  },
+  {
+    "input": "[\"HELLO world\"]",
+    "expectedOutput": "HoLLO wErld",
+    "hidden": true
+  },
+  {
+    "input": "[\"Fly High\"]",
+    "expectedOutput": "Fly High",
+    "hidden": true
+  },
+  {
+    "input": "[\"AbcdeEfghI\"]",
+    "expectedOutput": "IbcdEefghA",
+    "hidden": true
+  }
+]
