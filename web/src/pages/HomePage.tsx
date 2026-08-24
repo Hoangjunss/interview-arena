@@ -1,5 +1,5 @@
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/useAuth'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
@@ -15,35 +15,65 @@ import {
   Code2, 
   Sparkles, 
   Trophy,
-  Compass,
-  CheckSquare
+  CheckCircle2,
+  HelpCircle,
+  ChevronDown,
+  Check,
+  X,
+  Zap,
+  ShieldCheck
 } from 'lucide-react'
 
 export function HomePage() {
   const { user } = useAuth()
+  
+  // States for interactive landing page elements
+  const [activeTab, setActiveTab] = useState<'theory' | 'flashcards' | 'dsa' | 'ai'>('theory')
+  const [activeFaq, setActiveFaq] = useState<number | null>(null)
+
+  // FAQ Data
+  const FAQS = [
+    {
+      q: 'Hệ thống thẻ nhớ (SRS) hoạt động như thế nào?',
+      a: 'SRS (Spaced Repetition System) sử dụng thuật toán SM-2 để tự động tính toán thời điểm tối ưu bạn sắp quên một khái niệm và nhắc bạn ôn tập lại. Giúp chuyển kiến thức từ trí nhớ ngắn hạn sang dài hạn hiệu quả gấp 3 lần.'
+    },
+    {
+      q: 'Trình chấm bài DSA (Data Structures & Algorithms) sử dụng công nghệ gì?',
+      a: 'Interview Arena tích hợp trực tiếp với Judge0 - hệ thống biên dịch và thực thi code sandboxed an toàn. Bạn soạn thảo code qua Monaco Editor (tương tự VS Code) và được chấm điểm tự động đối chiếu với các bộ test cases chuẩn.'
+    },
+    {
+      q: 'AI Mock Interview hoạt động và chấm điểm ra sao?',
+      a: 'Hệ thống AI đóng vai trò là nhà tuyển dụng chuyên nghiệp, đặt câu hỏi dựa trên CV hoặc vị trí tuyển dụng. Sau mỗi lượt thoại, câu trả lời của bạn được phân tích về mặt kỹ thuật, thái độ và độ chính xác để đưa ra điểm số kèm nhận xét cải thiện chi tiết.'
+    },
+    {
+      q: 'Tôi có thể sử dụng các tính năng miễn phí không?',
+      a: 'Có. Gói FREE của chúng tôi cung cấp đầy đủ quyền truy cập kho câu hỏi lý thuyết, ôn tập flashcard không giới hạn, cùng hạn ngạch 3 lượt phỏng vấn AI và 20 lượt chấm bài DSA mỗi ngày.'
+    }
+  ]
 
   // -------------------------------------------------------------
-  // LOGGED OUT VIEW (Asymmetric Split Screen - Editorial Theme)
+  // LOGGED OUT VIEW (Dynamic SaaS Landing Page - Editorial Theme)
   // -------------------------------------------------------------
   if (!user) {
     return (
-      <div className="flex flex-col gap-24 py-6">
-        {/* Hero Section: Split layout */}
+      <div className="flex flex-col gap-28 py-6">
+        
+        {/* 1. Hero Section: Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6 text-left">
             <Badge variant="outline" className="border-accent/40 text-accent font-medium px-3 py-1 text-xs tracking-wide">
               <Flame className="mr-1.5 h-3.5 w-3.5 text-accent animate-pulse" />
-              Nền Tảng Luyện Phỏng Vấn Công Nghệ Toàn Diện
+              Nền Tảng Luyện Phỏng Vấn Công Nghệ Hàng Đầu
             </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-              Sẵn sàng cho mọi cuộc <br />
+              Chinh phục mọi vòng <br />
               <span className="bg-gradient-to-r from-accent via-fuchsia-400 to-purple-500 bg-clip-text text-transparent">
                 phỏng vấn kỹ thuật
               </span>
             </h1>
 
-            <p className="text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-2xl">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
               Nâng tầm kỹ năng lập trình và trả lời phỏng vấn. Tích hợp ngân hàng câu hỏi đồ sộ, hệ thống thẻ ghi nhớ SRS thông minh, môi trường thực thi code DSA và mô phỏng phỏng vấn thử 1-1 với AI.
             </p>
 
@@ -75,12 +105,12 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Right Side: Visual Dashboard Card Stack */}
+          {/* Right Side: Showcase stack */}
           <div className="lg:col-span-5 relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-purple-500/5 blur-3xl rounded-full" />
             <div className="relative bg-card/30 border border-border/80 rounded-2xl p-6 shadow-2xl backdrop-blur-sm space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-border/40">
-                <span className="text-xs font-mono text-muted-foreground tracking-wider uppercase">Bảng điều khiển mẫu</span>
+                <span className="text-xs font-mono text-muted-foreground tracking-wider uppercase">Arena Overview</span>
                 <div className="flex space-x-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-border" />
                   <span className="w-2.5 h-2.5 rounded-full bg-border" />
@@ -88,18 +118,14 @@ export function HomePage() {
                 </div>
               </div>
 
-              {/* Module Previews */}
               <div className="space-y-3">
                 <div className="bg-card/60 border border-border p-4 rounded-xl flex items-start space-x-3">
                   <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
                     <BookOpen className="h-4 w-4" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-bold truncate">Ngân hàng câu hỏi</p>
-                      <Badge variant="secondary" className="text-[10px] scale-90">Active</Badge>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-0.5">Phân loại chi tiết theo vị trí & level</p>
+                    <p className="text-sm font-bold text-left">Ngân hàng câu hỏi</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 text-left">Phân loại chi tiết theo vị trí & level</p>
                   </div>
                 </div>
 
@@ -108,11 +134,8 @@ export function HomePage() {
                     <Brain className="h-4 w-4" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-bold truncate">Thẻ nhớ Spaced Repetition</p>
-                      <Badge variant="secondary" className="text-[10px] scale-90">SRS System</Badge>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-0.5">Thuật toán SM-2 nhắc nhở thông minh</p>
+                    <p className="text-sm font-bold text-left">Thẻ nhớ Spaced Repetition</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 text-left">Thuật toán SM-2 nhắc nhở thông minh</p>
                   </div>
                 </div>
 
@@ -121,24 +144,8 @@ export function HomePage() {
                     <Bot className="h-4 w-4" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-bold truncate">Phỏng vấn giả lập 1-1</p>
-                      <Badge variant="secondary" className="text-[10px] scale-90">AI Evaluator</Badge>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-0.5">Chấm điểm chi tiết và gợi ý cải thiện</p>
-                  </div>
-                </div>
-
-                <div className="bg-card/60 border border-border p-4 rounded-xl flex items-start space-x-3">
-                  <div className="p-2 rounded-lg bg-green-500/10 text-green-400">
-                    <Code2 className="h-4 w-4" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-bold truncate">Luyện thuật toán DSA</p>
-                      <Badge variant="secondary" className="text-[10px] scale-90">Judge0 Live</Badge>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-0.5">Trình soạn thảo Monaco & biên dịch trực tiếp</p>
+                    <p className="text-sm font-bold text-left">Phỏng vấn giả lập 1-1</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 text-left">Chấm điểm chi tiết và gợi ý cải thiện</p>
                   </div>
                 </div>
               </div>
@@ -146,39 +153,239 @@ export function HomePage() {
           </div>
         </div>
 
-        {/* Roadmap Roadmap Section (No fake stats, honest structure) */}
+        {/* 2. Interactive Feature Showcase Section */}
         <div className="space-y-8">
-          <div className="text-left space-y-2">
-            <h2 className="text-2xl font-bold tracking-tight">Lộ trình ôn tập khoa học</h2>
-            <p className="text-muted-foreground text-sm">Các bước được xây dựng nhằm tối ưu thời gian và hiệu quả ôn luyện của ứng viên.</p>
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-extrabold tracking-tight">Trải nghiệm tính năng trực tiếp</h2>
+            <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+              Nhấp vào các thẻ bên dưới để xem mô phỏng hoạt động thực tế của nền tảng.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-card/20 border border-border/60 rounded-xl p-6 space-y-4">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">1</div>
-              <h3 className="font-bold text-base">Củng cố lý thuyết</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Quét nhanh các câu hỏi lý thuyết theo công nghệ chuyên sâu (React, Spring Boot, Docker, System Design...) để lấp lỗ hổng kiến thức.
-              </p>
+          {/* Selector Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto">
+            {[
+              { id: 'theory', label: 'Kho Lý Thuyết', icon: BookOpen, color: 'text-blue-400' },
+              { id: 'flashcards', label: 'Thẻ Nhớ SRS', icon: Brain, color: 'text-purple-400' },
+              { id: 'dsa', label: 'Thuật Toán DSA', icon: Code2, color: 'text-green-400' },
+              { id: 'ai', label: 'Phỏng Vấn AI', icon: Bot, color: 'text-accent' }
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all duration-200 ${
+                  activeTab === tab.id
+                    ? 'border-accent bg-accent/10 text-foreground'
+                    : 'border-border text-muted-foreground hover:border-accent/30 hover:text-foreground'
+                }`}
+              >
+                <tab.icon className={`h-4.5 w-4.5 ${tab.color}`} />
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Interactive Screen Preview */}
+          <div className="bg-card/40 border border-border rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto shadow-lg relative min-h-[300px] flex items-center justify-center">
+            
+            {activeTab === 'theory' && (
+              <div className="w-full space-y-4 text-left">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-muted-foreground uppercase">Module: Lý thuyết</span>
+                  <Badge variant="secondary" className="bg-blue-400/10 text-blue-400 border border-blue-400/20">Mid/Senior</Badge>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="text-lg font-bold text-foreground">Q: Sự khác nhau giữa `useEffect` và `useLayoutEffect` trong React?</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed bg-card/60 p-4 rounded-xl border border-border">
+                    `useEffect` chạy bất đồng bộ (asynchronously) sau khi trình duyệt đã vẽ xong giao diện (paint). `useLayoutEffect` chạy đồng bộ (synchronously) ngay sau khi DOM được thay đổi nhưng trước khi trình duyệt paint. Hãy dùng `useLayoutEffect` khi cần tính toán kích thước DOM để tránh hiện tượng giật màn hình (flicker).
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'flashcards' && (
+              <div className="w-full space-y-6 text-center max-w-md mx-auto">
+                <span className="text-xs font-mono text-muted-foreground uppercase block text-left">Module: Thẻ nhớ</span>
+                <div className="bg-card/80 border-2 border-dashed border-border p-8 rounded-2xl shadow-inner space-y-4">
+                  <Badge className="bg-purple-500/10 text-purple-400 border border-purple-500/20">Lý thuyết mạng</Badge>
+                  <h4 className="text-lg font-bold text-foreground">3-way handshake trong TCP là gì?</h4>
+                  <p className="text-xs text-muted-foreground">Nhấp để xem câu trả lời ôn tập SRS</p>
+                  <Button size="sm" className="bg-primary hover:bg-primary/95 text-primary-foreground font-semibold rounded-lg px-6">
+                    Lật thẻ câu hỏi
+                  </Button>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'dsa' && (
+              <div className="w-full space-y-4 text-left">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-muted-foreground uppercase">Module: DSA Editor</span>
+                  <Badge variant="secondary" className="bg-green-400/10 text-green-400 border border-green-400/20">Accepted</Badge>
+                </div>
+                <div className="bg-muted/40 p-4 rounded-xl border border-border font-mono text-xs text-foreground space-y-2">
+                  <p className="text-muted-foreground">// Solution for Binary Search</p>
+                  <p><span className="text-accent">class</span> Solution &#123;</p>
+                  <p>&nbsp;&nbsp;search(nums, target) &#123;</p>
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-500">let</span> left = 0, right = nums.length - 1;</p>
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-accent">while</span> (left &lt;= right) &#123; ... &#125;</p>
+                  <p>&nbsp;&nbsp;&#125;</p>
+                  <p>&#125;</p>
+                </div>
+                <div className="flex justify-between items-center text-xs text-muted-foreground bg-green-500/10 border border-green-500/20 p-3 rounded-lg text-green-400">
+                  <span>Runtime: 45ms</span>
+                  <span>Memory: 42.1 MB</span>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'ai' && (
+              <div className="w-full space-y-4 text-left">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-muted-foreground uppercase">Module: Phỏng vấn giả lập</span>
+                  <Badge variant="secondary" className="bg-accent/10 text-accent border border-accent/20">Score: 8.5/10</Badge>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex space-x-3 items-start">
+                    <span className="bg-accent/15 text-accent p-1.5 rounded-lg text-xs font-bold">Interviewer</span>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed bg-card/60 p-3 rounded-xl border border-border flex-1">
+                      Hãy giải thích cách bạn xử lý xung đột dữ liệu (data race) khi nhiều thread cùng ghi vào một vùng nhớ?
+                    </p>
+                  </div>
+                  <div className="flex space-x-3 items-start justify-end">
+                    <p className="text-xs sm:text-sm text-foreground leading-relaxed bg-accent/10 p-3 rounded-xl border border-accent/20 flex-1 text-right">
+                      Tôi sẽ sử dụng cơ chế Lock (Mutex) để đồng bộ hóa quyền truy cập, hoặc áp dụng các cấu trúc dữ liệu Thread-safe như ConcurrentHashMap trong Java.
+                    </p>
+                    <span className="bg-primary/10 text-primary p-1.5 rounded-lg text-xs font-bold">Candidate</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </div>
+
+        {/* 3. Pricing Comparison Section */}
+        <div className="space-y-8 max-w-4xl mx-auto">
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-extrabold tracking-tight">Lựa chọn gói dịch vụ</h2>
+            <p className="text-muted-foreground text-sm">Nâng cấp để mở khóa giới hạn tối đa cho việc luyện tập phỏng vấn.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {/* Free Card */}
+            <div className="bg-card/20 border border-border/80 rounded-2xl p-8 flex flex-col justify-between space-y-8">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold">Free Plan</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Dành cho việc bắt đầu luyện tập cơ bản</p>
+                </div>
+                <div className="text-3xl font-black">$0<span className="text-sm font-normal text-muted-foreground"> / tháng</span></div>
+                
+                <ul className="space-y-3 text-sm text-left">
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-green-500 shrink-0" />
+                    <span className="text-muted-foreground">Kho câu hỏi lý thuyết đầy đủ</span>
+                  </li>
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-green-500 shrink-0" />
+                    <span className="text-muted-foreground">Hệ thống thẻ nhớ SRS không giới hạn</span>
+                  </li>
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-green-500 shrink-0" />
+                    <span className="text-muted-foreground">3 lượt phỏng vấn AI mỗi ngày</span>
+                  </li>
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-green-500 shrink-0" />
+                    <span className="text-muted-foreground">20 lượt nộp bài DSA mỗi ngày</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Button asChild variant="outline" className="w-full border-border font-bold py-3 rounded-xl hover:bg-muted/40">
+                <Link to="/register">Bắt đầu ngay</Link>
+              </Button>
             </div>
-            <div className="bg-card/20 border border-border/60 rounded-xl p-6 space-y-4">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">2</div>
-              <h3 className="font-bold text-base">Rèn luyện phản xạ (SRS)</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Đưa các khái niệm cốt lõi vào Flashcard. Thuật toán sẽ phân bổ thời gian ôn tập tối ưu để thông tin chuyển hẳn vào trí nhớ dài hạn.
-              </p>
-            </div>
-            <div className="bg-card/20 border border-border/60 rounded-xl p-6 space-y-4">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">3</div>
-              <h3 className="font-bold text-base">Mô phỏng áp lực phòng thi</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Tham gia phỏng vấn thoại/chat giả lập với AI. Làm bài test DSA áp lực thời gian để rèn luyện sự tự tin khi bước vào phỏng vấn thật.
-              </p>
+
+            {/* Pro Card */}
+            <div className="bg-card border-2 border-accent rounded-2xl p-8 flex flex-col justify-between space-y-8 relative overflow-hidden shadow-xl shadow-accent/5">
+              <div className="absolute top-0 right-0 bg-accent text-accent-foreground font-mono text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-bl-xl">
+                Popular
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold flex items-center space-x-1.5">
+                    <span>Pro Plan</span>
+                    <Sparkles className="h-4 w-4 text-accent" />
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">Dành cho ôn luyện cao độ và bứt phá sự nghiệp</p>
+                </div>
+                <div className="text-3xl font-black">$5<span className="text-sm font-normal text-muted-foreground"> / tháng</span></div>
+                
+                <ul className="space-y-3 text-sm text-left">
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-accent shrink-0" />
+                    <span className="text-foreground font-medium">Không giới hạn phỏng vấn thử AI</span>
+                  </li>
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-accent shrink-0" />
+                    <span className="text-foreground font-medium">Không giới hạn nộp bài DSA</span>
+                  </li>
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-accent shrink-0" />
+                    <span className="text-muted-foreground">Đầy đủ 4 ngôn ngữ (Python, JS, Java, C++)</span>
+                  </li>
+                  <li className="flex items-center space-x-2.5">
+                    <CheckCircle2 className="h-4.5 w-4.5 text-accent shrink-0" />
+                    <span className="text-muted-foreground">Băng thông thực thi ưu tiên tốc độ cao</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3 rounded-xl shadow-lg shadow-accent/10">
+                <Link to="/register">Nâng cấp Pro</Link>
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* CTA Banner */}
+        {/* 4. FAQ Section */}
+        <div className="space-y-8 max-w-3xl mx-auto">
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-extrabold tracking-tight">Câu hỏi thường gặp</h2>
+            <p className="text-muted-foreground text-sm">Một số giải đáp nhanh giúp bạn làm quen với nền tảng.</p>
+          </div>
+
+          <div className="space-y-4">
+            {FAQS.map((faq, index) => (
+              <div 
+                key={index} 
+                className="bg-card/30 border border-border rounded-xl overflow-hidden transition-all duration-200"
+              >
+                <button
+                  onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+                  className="w-full px-6 py-4 flex items-center justify-between font-semibold text-sm text-foreground hover:bg-card/55 transition-colors text-left"
+                >
+                  <span className="flex items-center gap-2">
+                    <HelpCircle className="h-4 w-4 text-accent shrink-0" />
+                    {faq.q}
+                  </span>
+                  <ChevronDown className={`h-4.5 w-4.5 text-muted-foreground transition-transform duration-200 ${
+                    activeFaq === index ? 'rotate-180' : ''
+                  }`} />
+                </button>
+                {activeFaq === index && (
+                  <div className="px-6 pb-4 pt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border/40 text-left">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 5. CTA Bottom Section */}
         <div className="rounded-2xl border border-accent/20 bg-gradient-to-r from-accent/5 via-purple-500/5 to-transparent p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-left">
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight">Sẵn sàng bước vào Arena?</h3>
@@ -191,6 +398,7 @@ export function HomePage() {
             </Link>
           </Button>
         </div>
+
       </div>
     )
   }
