@@ -5,6 +5,7 @@ import { LoginPage } from './pages/LoginPage'
 import { RegisterPage } from './pages/RegisterPage'
 import { QuestionBankPage } from './pages/QuestionBankPage'
 import { QuestionDetailPage } from './pages/QuestionDetailPage'
+import { FlashcardsPage } from './pages/FlashcardsPage'
 import './index.css'
 
 function HomePage() {
@@ -20,7 +21,10 @@ function HomePage() {
           </p>
           <div className="cta-group">
             <Link className="btn-primary" to="/questions">
-              Bắt đầu luyện tập
+              Kho câu hỏi
+            </Link>
+            <Link className="btn-secondary" to="/flashcards">
+              Ôn tập thẻ nhớ (SRS)
             </Link>
             <button
               className="btn-secondary"
@@ -60,6 +64,7 @@ export default function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/questions" element={<QuestionBankPage />} />
           <Route path="/questions/:id" element={<QuestionDetailPage />} />
+          <Route path="/flashcards" element={<FlashcardsPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
