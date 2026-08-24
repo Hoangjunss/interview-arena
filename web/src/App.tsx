@@ -3,6 +3,8 @@ import { AuthProvider } from './auth/AuthContext'
 import { useAuth } from './auth/useAuth'
 import { LoginPage } from './pages/LoginPage'
 import { RegisterPage } from './pages/RegisterPage'
+import { QuestionBankPage } from './pages/QuestionBankPage'
+import { QuestionDetailPage } from './pages/QuestionDetailPage'
 import './index.css'
 
 function HomePage() {
@@ -17,7 +19,7 @@ function HomePage() {
             Xin chào, <strong>{user.displayName}</strong> ({user.email})! Sẵn sàng luyện tập phỏng vấn chưa?
           </p>
           <div className="cta-group">
-            <Link className="btn-primary" to="/dashboard">
+            <Link className="btn-primary" to="/questions">
               Bắt đầu luyện tập
             </Link>
             <button
@@ -56,6 +58,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/questions" element={<QuestionBankPage />} />
+          <Route path="/questions/:id" element={<QuestionDetailPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
