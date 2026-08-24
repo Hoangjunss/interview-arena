@@ -1,0 +1,22 @@
+---
+id: docker-image-cho-go-app-toi-uu-the-nao
+position: backend
+technology: testing-\u0026-tooling
+level: senior
+tags: [scraped, luyenphongvan]
+source: MANUAL
+status: ACTIVE
+created_at: 2026-08-24
+---
+
+## Câu hỏi (VI)
+Docker image cho Go app tối ưu thế nào?
+
+## Question (EN)
+How do you optimize a Docker image for a Go app?
+
+## Đáp án chi tiết (VI)
+Cách gọn nhất là dùng multi-stage build: stage đầu tiên sử dụng image `golang:1.22-alpine` để compile source thành binary, stage thứ hai chỉ dùng `scratch` (image rỗng hoàn toàn) hoặc `gcr.io/distroless/static` rồi copy binary vào, cho ra final image chỉ 5-15MB thay vì hơn 1GB của golang base image. Để binary chạy được trên scratch image, cần set `CGO_ENABLED=0` khi build để tạo static binary không phụ thuộc vào thư viện C bên ngoài. Nên tách layer `COPY go.mod go.sum` và `RUN go mod download` riêng trước khi copy source code, để Docker cache lại dependency layer và chỉ rebuild khi dependency thay đổi, giúp tăng tốc build đáng kể.
+
+## Detailed Answer (EN)
+Use multi-stage builds: the first stage uses `golang:1.22-alpine` to compile the binary; the second stage uses `scratch` (empty image) or `gcr.io/distroless/static` and only copies the binary in — yielding a final image of 5-15MB versus 1GB+ for the full golang base image. Set `CGO_ENABLED=0` at build time to produce a fully static binary that runs on scratch without external C libraries. Split `COPY go.mod go.sum` and `RUN go mod download` into their own layer before copying source code so Docker caches the dependency layer and only rebuilds it when dependencies change, significantly speeding up builds.
