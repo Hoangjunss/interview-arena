@@ -38,6 +38,7 @@ public class InterviewSession {
     private Instant completedAt;
 
     public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
     public UUID getUserId() { return userId; }
     public void setUserId(UUID userId) { this.userId = userId; }
     public String getPosition() { return position; }
