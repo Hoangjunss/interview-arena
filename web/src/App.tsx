@@ -6,6 +6,7 @@ import { RegisterPage } from './pages/RegisterPage'
 import { QuestionBankPage } from './pages/QuestionBankPage'
 import { QuestionDetailPage } from './pages/QuestionDetailPage'
 import { FlashcardsPage } from './pages/FlashcardsPage'
+import { QuizPage } from './pages/QuizPage'
 import './index.css'
 
 function HomePage() {
@@ -65,6 +66,7 @@ export default function App() {
           <Route path="/questions" element={<QuestionBankPage />} />
           <Route path="/questions/:id" element={<QuestionDetailPage />} />
           <Route path="/flashcards" element={<FlashcardsPage />} />
+          <Route path="/quiz/:questionId" element={<QuizPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

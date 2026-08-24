@@ -42,6 +42,8 @@ export function QuestionDetailPage() {
     )
   }
 
+  const isQuiz = detail.markdownBody.includes('## Đáp án trắc nghiệm')
+
   return (
     <div className="home-container" style={{ textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
@@ -53,9 +55,16 @@ export function QuestionDetailPage() {
             Vị trí: <strong>{detail.position}</strong> • Công nghệ: <strong>{detail.technology}</strong> • Trình độ: <strong>{detail.level}</strong>
           </span>
         </div>
-        <Link className="btn-secondary" to="/questions" style={{ padding: '8px 16px', fontSize: '14px' }}>
-          Quay lại
-        </Link>
+        <div style={{ display: 'flex', gap: '12px' }}>
+          {isQuiz && (
+            <Link className="btn-primary" to={`/quiz/${detail.id}`} style={{ padding: '8px 16px', fontSize: '14px' }}>
+              Làm trắc nghiệm 📝
+            </Link>
+          )}
+          <Link className="btn-secondary" to="/questions" style={{ padding: '8px 16px', fontSize: '14px' }}>
+            Quay lại
+          </Link>
+        </div>
       </div>
 
       <div style={{
