@@ -48,6 +48,12 @@ app:
   dsa:
     free-daily-quota: ${DSA_FREE_DAILY_QUOTA:20}
     max-source-length: 20000
+  stripe:
+    secret-key: ${STRIPE_SECRET_KEY:}
+    webhook-secret: ${STRIPE_WEBHOOK_SECRET:}
+    price-id: ${STRIPE_PRICE_ID:}
+    success-url: ${STRIPE_SUCCESS_URL:http://localhost:5173/billing?checkout=success}
+    cancel-url: ${STRIPE_CANCEL_URL:http://localhost:5173/billing?checkout=cancelled}
 
 
 management:

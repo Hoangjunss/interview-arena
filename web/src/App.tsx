@@ -13,6 +13,7 @@ import { InterviewSessionPage } from './pages/InterviewSessionPage'
 import { ProgressPage } from './pages/ProgressPage'
 import { DsaListPage } from './pages/DsaListPage'
 import { DsaProblemPage } from './pages/DsaProblemPage'
+import BillingPage from './pages/BillingPage'
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/dsa" element={<DsaListPage />} />
             <Route path="/dsa/:slug" element={<DsaProblemPage />} />
             <Route path="/progress" element={<ProgressPage />} />
+            <Route path="/billing" element={<BillingPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

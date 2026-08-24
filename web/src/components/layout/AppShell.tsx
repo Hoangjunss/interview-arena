@@ -65,6 +65,9 @@ export function AppShell() {
             {user ? (
               <div className="flex items-center gap-3">
                 <span className="text-xs text-muted-foreground hidden lg:block">{user.email}</span>
+                <NavLink to="/billing" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                  Gói dịch vụ
+                </NavLink>
                 <button
                   onClick={logout}
                   title={`${user.displayName} — Click để đăng xuất`}
@@ -110,11 +113,18 @@ export function AppShell() {
                   </SheetClose>
                 ))}
                 {user && (
-                  <SheetClose asChild>
-                    <Button variant="ghost" onClick={logout} className="justify-start px-0">
-                      Đăng xuất
-                    </Button>
-                  </SheetClose>
+                  <>
+                    <SheetClose asChild>
+                      <NavLink to="/billing" className="flex items-center gap-2 text-sm font-medium transition-colors text-muted-foreground hover:text-foreground">
+                        Gói dịch vụ
+                      </NavLink>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Button variant="ghost" onClick={logout} className="justify-start px-0">
+                        Đăng xuất
+                      </Button>
+                    </SheetClose>
+                  </>
                 )}
               </nav>
             </SheetContent>

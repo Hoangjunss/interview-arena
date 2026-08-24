@@ -20,4 +20,11 @@ public class SubscriptionService {
             .filter(s -> s.getExpiresAt() == null || s.getExpiresAt().isAfter(Instant.now()))
             .isPresent();
     }
+
+    public Plan getPlan(UUID userId) {
+        return repository.findByUserId(userId)
+            .filter(s -> s.getExpiresAt() == null || s.getExpiresAt().isAfter(Instant.now()))
+            .map(Subscription::getPlan)
+            .orElse(Plan.FREE);
+    }
 }
