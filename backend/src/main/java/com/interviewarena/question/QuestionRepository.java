@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public interface QuestionRepository extends JpaRepository<Question, UUID> {
     Optional<Question> findBySlug(String slug);
+    List<Question> findByStatus(QuestionStatus status);
     List<Question> findByStatusAndPositionAndTechnologyAndLevel(
         QuestionStatus status, String position, String technology, String level);
 }
