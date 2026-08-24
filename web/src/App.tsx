@@ -7,6 +7,8 @@ import { QuestionBankPage } from './pages/QuestionBankPage'
 import { QuestionDetailPage } from './pages/QuestionDetailPage'
 import { FlashcardsPage } from './pages/FlashcardsPage'
 import { QuizPage } from './pages/QuizPage'
+import { InterviewSetupPage } from './pages/InterviewSetupPage'
+import { InterviewSessionPage } from './pages/InterviewSessionPage'
 import './index.css'
 
 function HomePage() {
@@ -26,6 +28,9 @@ function HomePage() {
             </Link>
             <Link className="btn-secondary" to="/flashcards">
               Ôn tập thẻ nhớ (SRS)
+            </Link>
+            <Link className="btn-primary" to="/interviews/new">
+              Phỏng vấn thử AI 🤖
             </Link>
             <button
               className="btn-secondary"
@@ -67,6 +72,8 @@ export default function App() {
           <Route path="/questions/:id" element={<QuestionDetailPage />} />
           <Route path="/flashcards" element={<FlashcardsPage />} />
           <Route path="/quiz/:questionId" element={<QuizPage />} />
+          <Route path="/interviews/new" element={<InterviewSetupPage />} />
+          <Route path="/interviews/:sessionId" element={<InterviewSessionPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

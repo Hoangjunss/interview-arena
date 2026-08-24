@@ -54,4 +54,8 @@ public class InterviewPromptBuilder {
             """));
         return messages;
     }
+
+    public int totalQuestions() {
+        return totalQuestions;
+    }
 }
