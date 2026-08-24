@@ -2,9 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { interviewApi } from '../api/interview'
 import type { InterviewSession } from '../types/interview'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { toast } from '@/components/ui/sonner'
+import { cn } from '@/lib/utils'
 
 function getPollInterval() {
-  return (window as any).__TEST_POLL_INTERVAL_MS__ || 2000
+  return (window as unknown as Record<string, number>).__TEST_POLL_INTERVAL_MS__ || 2000
 }
 
 export function InterviewSessionPage() {
@@ -26,8 +32,8 @@ export function InterviewSessionPage() {
         if (result.status !== 'ACTIVE' && pollRef.current) {
           clearInterval(pollRef.current)
         }
-      } catch (err: any) {
-        setError(err.message || 'Lỗi kết nối máy chủ.')
+      } catch (err: unknown) {
+        setError((err as Error).message || 'Lỗi kết nối máy chủ.')
       }
     }
 
@@ -52,8 +58,10 @@ export function InterviewSessionPage() {
     try {
       await interviewApi.submitAnswer(sessionId, answer)
       setAnswer('')
-    } catch (err: any) {
-      setError(err.message || 'Lỗi gửi câu trả lời.')
+    } catch (err: unknown) {
+      const message = (err as Error).message || 'Lỗi gửi câu trả lời.'
+      setError(message)
+      toast.error(message)
     } finally {
       setSubmitting(false)
     }
@@ -61,18 +69,20 @@ export function InterviewSessionPage() {
 
   if (error && !session) {
     return (
-      <div className="home-container" style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-        <h1 className="hero-title" style={{ fontSize: '32px' }}>Có lỗi xảy ra</h1>
-        <div className="auth-alert" style={{ marginBottom: '24px' }}>{error}</div>
-        <Link className="btn-primary" to="/interviews/new">Thiết lập lại</Link>
+      <div className="flex flex-col items-center gap-6 text-center">
+        <h1 className="font-mono text-2xl font-semibold">Có lỗi xảy ra</h1>
+        <Alert variant="destructive"><AlertDescription>{error}</AlertDescription></Alert>
+        <Button asChild>
+          <Link to="/interviews/new">Thiết lập lại</Link>
+        </Button>
       </div>
     )
   }
 
   if (!session) {
     return (
-      <div className="home-container" style={{ maxWidth: '600px', margin: '0 auto' }}>
-        <p style={{ color: 'var(--text)' }}>Đang tải phiên phỏng vấn...</p>
+      <div className="flex flex-col gap-4">
+        <p className="text-muted-foreground">Đang tải phiên phỏng vấn...</p>
       </div>
     )
   }
@@ -82,152 +92,85 @@ export function InterviewSessionPage() {
   const isFailed = session.status === 'FAILED'
 
   return (
-    <div className="home-container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', height: '85vh' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexShrink: 0 }}>
-        <div>
-          <h1 className="hero-title" style={{ fontSize: '28px', margin: 0 }}>Phỏng vấn thử AI</h1>
-          <span style={{ fontSize: '13px', color: 'var(--text)' }}>
-            Vị trí: <strong style={{ textTransform: 'capitalize' }}>{session.turns[0]?.questionText ? 'Đang phỏng vấn' : ''}</strong>
-          </span>
-        </div>
-        <Link className="btn-secondary" to="/" style={{ padding: '8px 16px', fontSize: '14px' }}>
-          Thoát
-        </Link>
+    <div className="flex h-[85vh] flex-col gap-5">
+      <div className="flex items-center justify-between">
+        <h1 className="font-mono text-xl font-semibold">Phỏng vấn thử AI</h1>
+        <Button asChild variant="secondary" size="sm">
+          <Link to="/">Thoát</Link>
+        </Button>
       </div>
 
-      {/* Chat logs area */}
-      <div
-        style={{
-          flex: 1,
-          overflowY: 'auto',
-          padding: '24px',
-          borderRadius: '16px',
-          background: 'var(--code-bg)',
-          border: '1px solid var(--border)',
-          marginBottom: '20px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '20px'
-        }}
-      >
-        {session.turns.map(turn => (
-          <div key={turn.turnOrder} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {/* AI Question */}
-            <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-              <div
-                style={{
-                  maxWidth: '75%',
-                  padding: '16px 20px',
-                  borderRadius: '16px 16px 16px 4px',
-                  background: 'var(--bg)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--text-h)',
-                  fontSize: '15px',
-                  lineHeight: 1.6
-                }}
-              >
-                <div style={{ fontSize: '11px', color: 'var(--accent)', fontWeight: 600, marginBottom: '6px' }}>
-                  AI INTERVIEWER • CÂU HỎI {turn.turnOrder}
-                </div>
-                {turn.questionText}
-              </div>
-            </div>
-
-            {/* User Answer */}
-            {turn.answerText && (
-              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <div
-                  style={{
-                    maxWidth: '75%',
-                    padding: '16px 20px',
-                    borderRadius: '16px 16px 4px 16px',
-                    background: 'var(--accent)',
-                    color: 'white',
-                    fontSize: '15px',
-                    lineHeight: 1.6
-                  }}
-                >
-                  <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontWeight: 600, marginBottom: '6px' }}>
-                    BẠN
+      <Card className="flex-1 overflow-y-auto">
+        <CardContent className="flex flex-col gap-5 py-6">
+          {session.turns.map(turn => (
+            <div key={turn.turnOrder} className="flex flex-col gap-3">
+              <div className="flex justify-start">
+                <div className="max-w-[75%] rounded-2xl rounded-bl-sm border border-border bg-background px-5 py-4 text-sm leading-relaxed">
+                  <div className="mb-1.5 font-mono text-[11px] font-semibold text-accent">
+                    AI INTERVIEWER • CÂU HỎI {turn.turnOrder}
                   </div>
-                  {turn.answerText}
+                  {turn.questionText}
                 </div>
               </div>
-            )}
 
-            {/* Turn Feedback (only when completed) */}
-            {turn.feedback && (
-              <div style={{ display: 'flex', justifyContent: 'flex-start', paddingLeft: '16px' }}>
-                <div
-                  style={{
-                    maxWidth: '70%',
-                    padding: '12px 16px',
-                    borderRadius: '8px',
-                    background: 'rgba(16,185,129,0.05)',
-                    borderLeft: '4px solid #10b981',
-                    fontSize: '14px',
-                    color: 'var(--text-h)',
-                    lineHeight: 1.5
-                  }}
-                >
-                  <strong style={{ color: '#10b981' }}>Nhận xét câu trả lời {turn.turnOrder}:</strong> {turn.feedback}
+              {turn.answerText && (
+                <div className="flex justify-end">
+                  <div className="max-w-[75%] rounded-2xl rounded-br-sm bg-accent px-5 py-4 text-sm leading-relaxed text-accent-foreground">
+                    <div className="mb-1.5 font-mono text-[11px] font-semibold opacity-70">BẠN</div>
+                    {turn.answerText}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
 
-        {session.status === 'COMPLETED' && (
-          <div
-            style={{
-              padding: '32px',
-              borderRadius: '16px',
-              border: '2px dashed #10b981',
-              background: 'rgba(16, 185, 129, 0.05)',
-              textAlign: 'center',
-              marginTop: '20px'
-            }}
-          >
-            <h2 style={{ color: '#10b981', fontSize: '28px', margin: '0 0 8px' }}>Phiên phỏng vấn hoàn thành!</h2>
-            <p style={{ fontSize: '16px', margin: '0 0 20px', color: 'var(--text)' }}>
-              AI đã đánh giá tổng quan năng lực kỹ thuật và trình bày của bạn.
-            </p>
-            <div style={{ display: 'inline-block', padding: '16px 32px', borderRadius: '50px', background: '#10b981', color: 'white', fontSize: '24px', fontWeight: 'bold' }}>
-              Điểm số: {session.finalScore}/100
+              {turn.feedback && (
+                <div className="flex justify-start pl-4">
+                  <div className="max-w-[70%] rounded-lg border-l-4 border-success bg-success/5 px-4 py-3 text-sm leading-normal">
+                    <strong className="text-success">Nhận xét câu trả lời {turn.turnOrder}:</strong> {turn.feedback}
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
-        )}
+          ))}
 
-        {isFailed && (
-          <div
-            style={{
-              padding: '24px',
-              borderRadius: '16px',
-              border: '1px solid #ef4444',
-              background: 'rgba(239,68,68,0.05)',
-              color: '#ef4444',
-              textAlign: 'center'
-            }}
-          >
-            <strong>Lỗi chấm điểm:</strong> LLM phản hồi không đúng định dạng. Phiên phỏng vấn bị hủy.
-          </div>
-        )}
+          {session.status === 'COMPLETED' && (
+            <div className="mt-4 flex flex-col items-center gap-4 rounded-2xl border-2 border-dashed border-success bg-success/5 py-8 text-center">
+              <h2 className="text-2xl font-semibold text-success">Phiên phỏng vấn hoàn thành!</h2>
+              <p className="text-muted-foreground">
+                AI đã đánh giá tổng quan năng lực kỹ thuật và trình bày của bạn.
+              </p>
+              <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-success font-mono text-2xl font-bold text-success">
+                {session.finalScore}
+              </div>
+            </div>
+          )}
 
-        {session.status === 'ACTIVE' && !waitingForAnswer && (
-          <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '8px', color: 'var(--text)' }}>
-            <span style={{ fontStyle: 'italic', fontSize: '14px' }}>AI đang suy nghĩ và viết câu hỏi tiếp theo...</span>
-          </div>
-        )}
+          {isFailed && (
+            <Alert variant="destructive">
+              <AlertDescription>
+                <strong>Lỗi chấm điểm:</strong> LLM phản hồi không đúng định dạng. Phiên phỏng vấn bị hủy.
+              </AlertDescription>
+            </Alert>
+          )}
 
-        <div ref={chatEndRef} />
-      </div>
+          {session.status === 'ACTIVE' && !waitingForAnswer && (
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="flex gap-1">
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.3s]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.15s]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground" />
+              </span>
+              <span className="italic">AI đang suy nghĩ và viết câu hỏi tiếp theo...</span>
+            </div>
+          )}
 
-      {/* Input area */}
+          <div ref={chatEndRef} />
+        </CardContent>
+      </Card>
+
       {waitingForAnswer && (
-        <div style={{ display: 'flex', gap: '12px', flexShrink: 0, marginBottom: '20px' }}>
-          <textarea
-            className="form-input"
-            style={{ flex: 1, resize: 'none', height: '60px', padding: '14px' }}
+        <div className="flex gap-3">
+          <Textarea
+            className={cn('h-[60px] flex-1 resize-none')}
             placeholder="Nhập câu trả lời của bạn"
             value={answer}
             onChange={e => setAnswer(e.target.value)}
@@ -239,14 +182,9 @@ export function InterviewSessionPage() {
               }
             }}
           />
-          <button
-            className="auth-btn"
-            style={{ width: '100px', height: '60px' }}
-            onClick={submit}
-            disabled={submitting || !answer.trim()}
-          >
+          <Button className="h-[60px] w-24" onClick={submit} disabled={submitting || !answer.trim()}>
             {submitting ? 'Đang gửi...' : 'Gửi'}
-          </button>
+          </Button>
         </div>
       )}
     </div>

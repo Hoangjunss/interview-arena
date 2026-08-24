@@ -2,6 +2,13 @@ import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { questionsApi } from '../api/questions'
 import type { QuestionSummary } from '../types/question'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Skeleton } from '@/components/ui/skeleton'
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
 
 const POSITIONS = ['frontend', 'backend', 'devops', 'ai', 'database']
 const LEVELS = ['junior', 'mid', 'senior']
@@ -15,132 +22,111 @@ export function QuestionBankPage() {
   const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
 
-  const prevFiltersRef = useRef({ position, technology, level })
+  const filtersRef = useRef({ position, technology, level })
 
   useEffect(() => {
-    const prev = prevFiltersRef.current
-    const filtersChanged = prev.position !== position || prev.technology !== technology || prev.level !== level
-    
-    prevFiltersRef.current = { position, technology, level }
+    const prev = filtersRef.current
+    const filtersChanged =
+      prev.position !== position ||
+      prev.technology !== technology ||
+      prev.level !== level
+    filtersRef.current = { position, technology, level }
 
-    if (filtersChanged && page !== 0) {
-      setPage(0)
-      return
-    }
+    const fetchPage = filtersChanged ? 0 : page
 
     setLoading(true)
-    questionsApi.list(position, technology.toLowerCase(), level, page, 10)
+    questionsApi.list(position, technology.toLowerCase(), level, fetchPage, 10)
       .then(res => {
         setQuestions(res.content)
         setTotalPages(res.totalPages)
+        if (filtersChanged) setPage(0)
       })
       .finally(() => setLoading(false))
   }, [position, technology, level, page])
 
   return (
-    <div className="home-container" style={{ textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
-        <h1 className="hero-title" style={{ fontSize: '40px', margin: 0 }}>Kho câu hỏi</h1>
-        <Link className="btn-secondary" to="/" style={{ padding: '8px 16px', fontSize: '14px' }}>
-          Quay lại
-        </Link>
-      </div>
+    <div className="flex flex-col gap-8">
+      <h1 className="font-mono text-3xl font-semibold">Kho câu hỏi</h1>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '16px',
-        marginBottom: '32px',
-        padding: '24px',
-        background: 'var(--code-bg)',
-        borderRadius: '12px',
-        border: '1px solid var(--border)'
-      }}>
-        <div className="form-group" style={{ margin: 0 }}>
-          <label className="form-label">Vị trí</label>
-          <select className="form-input" value={position} onChange={e => setPosition(e.target.value)}>
-            {POSITIONS.map(p => <option key={p} value={p}>{p}</option>)}
-          </select>
-        </div>
-
-        <div className="form-group" style={{ margin: 0 }}>
-          <label className="form-label">Công nghệ</label>
-          <input
-            className="form-input"
-            value={technology}
-            onChange={e => setTechnology(e.target.value)}
-            placeholder="Ví dụ: react, spring-boot"
-          />
-        </div>
-
-        <div className="form-group" style={{ margin: 0 }}>
-          <label className="form-label">Trình độ</label>
-          <select className="form-input" value={level} onChange={e => setLevel(e.target.value)}>
-            {LEVELS.map(l => <option key={l} value={l}>{l}</option>)}
-          </select>
-        </div>
-      </div>
+      <Card>
+        <CardContent className="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-3">
+          <div>
+            <Label htmlFor="position">Vị trí</Label>
+            <Select value={position} onValueChange={setPosition}>
+              <SelectTrigger id="position"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                {POSITIONS.map(p => <SelectItem key={p} value={p}>{p}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label htmlFor="technology">Công nghệ</Label>
+            <Input
+              id="technology"
+              value={technology}
+              onChange={e => setTechnology(e.target.value)}
+              placeholder="Ví dụ: react, spring-boot"
+            />
+          </div>
+          <div>
+            <Label htmlFor="level">Trình độ</Label>
+            <Select value={level} onValueChange={setLevel}>
+              <SelectTrigger id="level"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                {LEVELS.map(l => <SelectItem key={l} value={l}>{l}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          </div>
+        </CardContent>
+      </Card>
 
       {loading ? (
-        <p style={{ textAlign: 'center', color: 'var(--text)' }}>Đang tải câu hỏi...</p>
+        <div className="flex flex-col gap-3">
+          {Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-20 w-full" />)}
+        </div>
       ) : questions.length === 0 ? (
-        <p style={{ textAlign: 'center', color: 'var(--text)', padding: '40px' }}>
-          Không tìm thấy câu hỏi nào phù hợp với bộ lọc hiện tại.
-        </p>
+        <Card>
+          <CardContent className="py-12 text-center text-muted-foreground">
+            Không tìm thấy câu hỏi nào phù hợp với bộ lọc hiện tại.
+          </CardContent>
+        </Card>
       ) : (
-        <div style={{ display: 'grid', gap: '12px' }}>
+        <div className="flex flex-col gap-3">
           {questions.map(q => (
-            <Link
-              key={q.id}
-              to={`/questions/${q.id}`}
-              style={{
-                display: 'block',
-                padding: '20px',
-                borderRadius: '8px',
-                background: 'var(--bg)',
-                border: '1px solid var(--border)',
-                textDecoration: 'none',
-                color: 'var(--text-h)',
-                transition: 'transform 0.2s, border-color 0.2s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateX(4px)'
-                e.currentTarget.style.borderColor = 'var(--accent)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'none'
-                e.currentTarget.style.borderColor = 'var(--border)'
-              }}
-            >
-              <h2 style={{ fontSize: '18px', margin: 0, textTransform: 'capitalize' }}>
-                {q.slug.replace(/-/g, ' ')}
-              </h2>
-              <span style={{ fontSize: '12px', color: 'var(--text)' }}>
-                {q.position} • {q.technology} • {q.level}
-              </span>
+            <Link key={q.id} to={`/questions/${q.id}`}>
+              <Card className="transition-colors hover:border-accent">
+                <CardContent className="flex flex-col gap-2 py-4">
+                  <h2 className="text-lg font-medium capitalize">{q.slug.replace(/-/g, ' ')}</h2>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">{q.position}</Badge>
+                    <Badge variant="secondary">{q.technology}</Badge>
+                    <Badge variant="outline">{q.level}</Badge>
+                  </div>
+                </CardContent>
+              </Card>
             </Link>
           ))}
           {totalPages > 1 && (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginTop: '24px' }}>
-              <button
-                className="btn-secondary"
+            <div className="mt-4 flex items-center justify-center gap-4">
+              <Button
+                variant="secondary"
+                size="sm"
                 disabled={page === 0}
                 onClick={() => setPage(p => Math.max(0, p - 1))}
-                style={{ padding: '8px 16px', fontSize: '14px', cursor: page === 0 ? 'not-allowed' : 'pointer', opacity: page === 0 ? 0.5 : 1 }}
               >
                 Trang trước
-              </button>
-              <span style={{ color: 'var(--text)', fontSize: '14px' }}>
-                Trang <strong>{page + 1}</strong> / {totalPages}
+              </Button>
+              <span className="text-sm text-muted-foreground">
+                Trang <strong className="text-foreground">{page + 1}</strong> / {totalPages}
               </span>
-              <button
-                className="btn-secondary"
+              <Button
+                variant="secondary"
+                size="sm"
                 disabled={page >= totalPages - 1}
                 onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
-                style={{ padding: '8px 16px', fontSize: '14px', cursor: page >= totalPages - 1 ? 'not-allowed' : 'pointer', opacity: page >= totalPages - 1 ? 0.5 : 1 }}
               >
                 Trang sau
-              </button>
+              </Button>
             </div>
           )}
         </div>

@@ -3,6 +3,11 @@ import { useParams, Link } from 'react-router-dom'
 import { questionsApi } from '../api/questions'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 import type { QuestionDetail } from '../types/question'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Skeleton } from '@/components/ui/skeleton'
 
 export function QuestionDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -17,7 +22,7 @@ export function QuestionDetailPage() {
       questionsApi.detail(id)
         .then(setDetail)
         .catch(err => {
-          setError(err.message || 'Không thể tải chi tiết câu hỏi này.')
+          setError((err as Error).message || 'Không thể tải chi tiết câu hỏi này.')
         })
         .finally(() => setLoading(false))
     }
@@ -25,19 +30,22 @@ export function QuestionDetailPage() {
 
   if (loading) {
     return (
-      <div className="home-container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <p style={{ color: 'var(--text)' }}>Đang tải chi tiết câu hỏi...</p>
+      <div className="flex flex-col gap-4">
+        <Skeleton className="h-10 w-1/2" />
+        <Skeleton className="h-64 w-full" />
       </div>
     )
   }
 
   if (error || !detail) {
     return (
-      <div className="home-container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
-        <div className="auth-alert" style={{ marginBottom: '24px' }}>{error || 'Không tìm thấy câu hỏi.'}</div>
-        <Link className="btn-secondary" to="/questions">
-          Quay lại kho câu hỏi
-        </Link>
+      <div className="flex flex-col gap-6">
+        <Alert variant="destructive">
+          <AlertDescription>{error || 'Không tìm thấy câu hỏi.'}</AlertDescription>
+        </Alert>
+        <Button asChild variant="secondary" className="w-fit">
+          <Link to="/questions">Quay lại kho câu hỏi</Link>
+        </Button>
       </div>
     )
   }
@@ -45,38 +53,33 @@ export function QuestionDetailPage() {
   const isQuiz = detail.markdownBody.includes('## Đáp án trắc nghiệm')
 
   return (
-    <div className="home-container" style={{ textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+    <div className="flex flex-col gap-8">
+      <div className="flex items-center justify-between gap-4">
         <div>
-          <h1 className="hero-title" style={{ fontSize: '36px', margin: 0, textTransform: 'capitalize' }}>
-            {detail.slug.replace(/-/g, ' ')}
-          </h1>
-          <span style={{ fontSize: '14px', color: 'var(--text)' }}>
-            Vị trí: <strong>{detail.position}</strong> • Công nghệ: <strong>{detail.technology}</strong> • Trình độ: <strong>{detail.level}</strong>
-          </span>
+          <h1 className="font-mono text-2xl font-semibold capitalize">{detail.slug.replace(/-/g, ' ')}</h1>
+          <div className="mt-2 flex gap-2">
+            <Badge variant="secondary">{detail.position}</Badge>
+            <Badge variant="secondary">{detail.technology}</Badge>
+            <Badge variant="outline">{detail.level}</Badge>
+          </div>
         </div>
-        <div style={{ display: 'flex', gap: '12px' }}>
+        <div className="flex gap-2">
           {isQuiz && (
-            <Link className="btn-primary" to={`/quiz/${detail.id}`} style={{ padding: '8px 16px', fontSize: '14px' }}>
-              Làm trắc nghiệm 📝
-            </Link>
+            <Button asChild size="sm">
+              <Link to={`/quiz/${detail.id}`}>Làm trắc nghiệm 📝</Link>
+            </Button>
           )}
-          <Link className="btn-secondary" to="/questions" style={{ padding: '8px 16px', fontSize: '14px' }}>
-            Quay lại
-          </Link>
+          <Button asChild variant="secondary" size="sm">
+            <Link to="/questions">Quay lại</Link>
+          </Button>
         </div>
       </div>
 
-      <div style={{
-        padding: '40px',
-        borderRadius: '16px',
-        background: 'var(--code-bg)',
-        border: '1px solid var(--border)',
-        boxShadow: 'var(--shadow)',
-        marginBottom: '40px'
-      }}>
-        <MarkdownRenderer content={detail.markdownBody} />
-      </div>
+      <Card>
+        <CardContent className="prose prose-invert max-w-none py-8">
+          <MarkdownRenderer content={detail.markdownBody} />
+        </CardContent>
+      </Card>
     </div>
   )
 }

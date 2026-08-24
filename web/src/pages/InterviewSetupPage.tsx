@@ -2,19 +2,25 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { ApiError } from '../api/client'
 import { interviewApi } from '../api/interview'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
+import { Alert, AlertDescription } from '@/components/ui/alert'
 
 const POSITIONS = [
   { value: 'frontend', label: 'Frontend Developer' },
   { value: 'backend', label: 'Backend Developer' },
   { value: 'devops', label: 'DevOps Engineer' },
   { value: 'ai', label: 'AI Engineer' },
-  { value: 'database', label: 'Database Administrator' }
+  { value: 'database', label: 'Database Administrator' },
 ]
 
 const LEVELS = [
   { value: 'junior', label: 'Junior' },
   { value: 'mid', label: 'Middle' },
-  { value: 'senior', label: 'Senior' }
+  { value: 'senior', label: 'Senior' },
 ]
 
 export function InterviewSetupPage() {
@@ -44,87 +50,63 @@ export function InterviewSetupPage() {
   }
 
   return (
-    <div className="home-container" style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'left' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
-        <h1 className="hero-title" style={{ fontSize: '32px', margin: 0 }}>Thiết lập phỏng vấn</h1>
-        <Link className="btn-secondary" to="/" style={{ padding: '8px 16px', fontSize: '14px' }}>
-          Hủy
-        </Link>
+    <div className="mx-auto flex max-w-lg flex-col gap-6">
+      <div className="flex items-center justify-between">
+        <h1 className="font-mono text-2xl font-semibold">Thiết lập phỏng vấn</h1>
+        <Button asChild variant="secondary" size="sm">
+          <Link to="/">Hủy</Link>
+        </Button>
       </div>
 
-      <div
-        className="auth-card"
-        style={{
-          padding: '40px',
-          borderRadius: '16px',
-          background: 'var(--code-bg)',
-          border: '1px solid var(--border)',
-          boxShadow: 'var(--shadow)'
-        }}
-      >
-        <p style={{ color: 'var(--text)', fontSize: '15px', marginBottom: '24px', lineHeight: 1.6 }}>
-          Chọn vị trí tuyển dụng, công nghệ mục tiêu và trình độ mong muốn của bạn. AI sẽ đóng vai người phỏng vấn để kiểm tra kiến thức của bạn.
-        </p>
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base font-normal text-muted-foreground">
+            Chọn vị trí tuyển dụng, công nghệ mục tiêu và trình độ mong muốn của bạn. AI sẽ đóng vai người phỏng vấn để kiểm tra kiến thức của bạn.
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-4">
+          {error && (
+            <Alert variant="destructive">
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
 
-        {error && (
-          <div className="auth-alert" role="alert" style={{ marginBottom: '24px' }}>
-            {error}
+          <div>
+            <Label htmlFor="position">Vị trí phỏng vấn</Label>
+            <Select value={position} onValueChange={setPosition}>
+              <SelectTrigger id="position"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                {POSITIONS.map(p => <SelectItem key={p.value} value={p.value}>{p.label}</SelectItem>)}
+              </SelectContent>
+            </Select>
           </div>
-        )}
 
-        <div className="form-group">
-          <label className="form-label">Vị trí phỏng vấn</label>
-          <select
-            value={position}
-            onChange={e => setPosition(e.target.value)}
-            className="form-input"
-            style={{ appearance: 'none', background: 'var(--bg)', cursor: 'pointer' }}
-          >
-            {POSITIONS.map(p => (
-              <option key={p.value} value={p.value}>
-                {p.label}
-              </option>
-            ))}
-          </select>
-        </div>
+          <div>
+            <Label htmlFor="technology">Công nghệ cốt lõi (ví dụ: React, Java, Docker)</Label>
+            <Input
+              id="technology"
+              value={technology}
+              onChange={e => setTechnology(e.target.value)}
+              placeholder="Ví dụ: React, Spring Boot, AWS"
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label className="form-label">Công nghệ cốt lõi (ví dụ: React, Java, Docker)</label>
-          <input
-            type="text"
-            className="form-input"
-            value={technology}
-            onChange={e => setTechnology(e.target.value)}
-            placeholder="Ví dụ: React, Spring Boot, AWS"
-            required
-          />
-        </div>
+          <div>
+            <Label htmlFor="level">Cấp độ chuyên môn</Label>
+            <Select value={level} onValueChange={setLevel}>
+              <SelectTrigger id="level"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                {LEVELS.map(l => <SelectItem key={l.value} value={l.value}>{l.label}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          </div>
 
-        <div className="form-group">
-          <label className="form-label">Cấp độ chuyên môn</label>
-          <select
-            value={level}
-            onChange={e => setLevel(e.target.value)}
-            className="form-input"
-            style={{ appearance: 'none', background: 'var(--bg)', cursor: 'pointer' }}
-          >
-            {LEVELS.map(l => (
-              <option key={l.value} value={l.value}>
-                {l.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <button
-          className="auth-btn"
-          onClick={start}
-          disabled={loading || !technology.trim()}
-          style={{ marginTop: '16px' }}
-        >
-          {loading ? 'Đang khởi tạo phiên...' : 'Bắt đầu phỏng vấn'}
-        </button>
-      </div>
+          <Button onClick={start} disabled={loading || !technology.trim()} className="mt-2">
+            {loading ? 'Đang khởi tạo phiên...' : 'Bắt đầu phỏng vấn'}
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   )
 }

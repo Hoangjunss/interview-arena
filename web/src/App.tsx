@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './auth/AuthContext'
-import { useAuth } from './auth/useAuth'
+import { AppShell } from './components/layout/AppShell'
+import { HomePage } from './pages/HomePage'
 import { LoginPage } from './pages/LoginPage'
 import { RegisterPage } from './pages/RegisterPage'
 import { QuestionBankPage } from './pages/QuestionBankPage'
@@ -10,75 +11,24 @@ import { QuizPage } from './pages/QuizPage'
 import { InterviewSetupPage } from './pages/InterviewSetupPage'
 import { InterviewSessionPage } from './pages/InterviewSessionPage'
 import { ProgressPage } from './pages/ProgressPage'
-import './index.css'
-
-function HomePage() {
-  const { user, logout } = useAuth()
-
-  return (
-    <div className="home-container">
-      <h1 className="hero-title">Interview Arena</h1>
-      {user ? (
-        <>
-          <p className="hero-subtitle">
-            Xin chào, <strong>{user.displayName}</strong> ({user.email})! Sẵn sàng luyện tập phỏng vấn chưa?
-          </p>
-          <div className="cta-group">
-            <Link className="btn-primary" to="/questions">
-              Kho câu hỏi
-            </Link>
-            <Link className="btn-secondary" to="/flashcards">
-              Ôn tập thẻ nhớ (SRS)
-            </Link>
-            <Link className="btn-primary" to="/interviews/new">
-              Phỏng vấn thử AI 🤖
-            </Link>
-            <Link className="btn-secondary" to="/progress">
-              Tiến độ của tôi 📊
-            </Link>
-            <button
-              className="btn-secondary"
-              onClick={logout}
-              style={{ cursor: 'pointer' }}
-            >
-              Đăng xuất
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <p className="hero-subtitle">
-            Nền tảng luyện phỏng vấn AI, ôn tập câu hỏi qua thẻ ghi nhớ (Flashcards SRS) và mô phỏng phỏng vấn trực tiếp.
-          </p>
-          <div className="cta-group">
-            <Link className="btn-primary" to="/login">
-              Đăng nhập
-            </Link>
-            <Link className="btn-secondary" to="/register">
-              Đăng ký tài khoản
-            </Link>
-          </div>
-        </>
-      )}
-    </div>
-  )
-}
 
 export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/questions" element={<QuestionBankPage />} />
-          <Route path="/questions/:id" element={<QuestionDetailPage />} />
-          <Route path="/flashcards" element={<FlashcardsPage />} />
-          <Route path="/quiz/:questionId" element={<QuizPage />} />
-          <Route path="/interviews/new" element={<InterviewSetupPage />} />
-          <Route path="/interviews/:sessionId" element={<InterviewSessionPage />} />
-          <Route path="/progress" element={<ProgressPage />} />
+          <Route element={<AppShell />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/questions" element={<QuestionBankPage />} />
+            <Route path="/questions/:id" element={<QuestionDetailPage />} />
+            <Route path="/flashcards" element={<FlashcardsPage />} />
+            <Route path="/quiz/:questionId" element={<QuizPage />} />
+            <Route path="/interviews/new" element={<InterviewSetupPage />} />
+            <Route path="/interviews/:sessionId" element={<InterviewSessionPage />} />
+            <Route path="/progress" element={<ProgressPage />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

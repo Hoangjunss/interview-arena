@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { questionsApi } from '../api/questions'
-import { quizApi, QuizResult } from '../api/quiz'
+import { quizApi, type QuizResult } from '../api/quiz'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 import type { QuestionDetail } from '../types/question'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
+import { cn } from '@/lib/utils'
+import { toast } from '@/components/ui/sonner'
 
 function parseOptions(markdownBody: string): string[] {
   const match = markdownBody.match(/## Đáp án trắc nghiệm\s*\n((?:- \[[ x]] .*\n?)+)/)
@@ -44,103 +50,75 @@ export function QuizPage() {
       setResult(r)
     } catch (err) {
       console.error('Failed to submit choice', err)
+      toast.error('Không thể nộp câu trả lời, thử lại sau.')
+      setSelectedIndex(null)
     }
   }
 
   if (loading) {
     return (
-      <div className="home-container" style={{ maxWidth: '700px', margin: '0 auto' }}>
-        <p style={{ color: 'var(--text)' }}>Đang tải câu hỏi...</p>
+      <div className="flex flex-col gap-4">
+        <Skeleton className="h-8 w-1/3" />
+        <Skeleton className="h-40 w-full" />
       </div>
     )
   }
 
   if (!detail) {
     return (
-      <div className="home-container" style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-        <h1 className="hero-title" style={{ fontSize: '32px' }}>Không tìm thấy câu hỏi</h1>
-        <div className="cta-group">
-          <Link className="btn-primary" to="/questions">Quay lại kho câu hỏi</Link>
-        </div>
+      <div className="flex flex-col items-center gap-6 text-center">
+        <h1 className="font-mono text-2xl font-semibold">Không tìm thấy câu hỏi</h1>
+        <Button asChild>
+          <Link to="/questions">Quay lại kho câu hỏi</Link>
+        </Button>
       </div>
     )
   }
 
-  // Extract explanation from markdown body
   const explanationSplit = detail.markdownBody.split(/(## Giải thích \(VI\)|## Explanation \(EN\))/i)
   const explanationMarkdown = explanationSplit.length > 2 ? explanationSplit.slice(1).join('\n') : ''
-
-  // Get question content without the options and explanation
   const questionContent = detail.markdownBody.split(/## Đáp án trắc nghiệm/i)[0]
 
   return (
-    <div className="home-container" style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'left' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
-        <h1 className="hero-title" style={{ fontSize: '32px', margin: 0 }}>Luyện trắc nghiệm</h1>
-        <Link className="btn-secondary" to="/questions" style={{ padding: '8px 16px', fontSize: '14px' }}>
-          Quay lại
-        </Link>
+    <div className="flex flex-col gap-8">
+      <div className="flex items-center justify-between">
+        <h1 className="font-mono text-2xl font-semibold">Luyện trắc nghiệm</h1>
+        <Button asChild variant="secondary" size="sm">
+          <Link to="/questions">Quay lại</Link>
+        </Button>
       </div>
 
-      <div
-        style={{
-          padding: '28px',
-          borderRadius: '16px',
-          background: 'var(--code-bg)',
-          border: '1px solid var(--border)',
-          marginBottom: '28px',
-        }}
-      >
-        <div style={{ fontSize: '14px', color: 'var(--text)', marginBottom: '12px', textTransform: 'uppercase', fontWeight: 600 }}>
-          {detail.position} • {detail.technology} • {detail.level}
-        </div>
-        <MarkdownRenderer content={questionContent} />
-      </div>
+      <Card>
+        <CardContent className="py-6">
+          <div className="mb-3 flex gap-2">
+            <Badge variant="secondary">{detail.position}</Badge>
+            <Badge variant="secondary">{detail.technology}</Badge>
+            <Badge variant="outline">{detail.level}</Badge>
+          </div>
+          <div className="prose prose-invert max-w-none">
+            <MarkdownRenderer content={questionContent} />
+          </div>
+        </CardContent>
+      </Card>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+      <div className="flex flex-col gap-3">
         {options.map((option, i) => {
-          let itemStyle: React.CSSProperties = {
-            padding: '18px 24px',
-            borderRadius: '12px',
-            border: '1px solid var(--border)',
-            background: 'var(--code-bg)',
-            cursor: result === null ? 'pointer' : 'default',
-            textAlign: 'left',
-            fontSize: '16px',
-            color: 'var(--text-h)',
-            transition: 'border-color 0.2s, background 0.2s',
-            display: 'block',
-            width: '100%',
-          }
-
-          if (result !== null) {
-            if (i === result.correctIndex) {
-              itemStyle.borderColor = '#10b981'
-              itemStyle.background = 'rgba(16, 185, 129, 0.1)'
-            } else if (i === selectedIndex && !result.correct) {
-              itemStyle.borderColor = '#ef4444'
-              itemStyle.background = 'rgba(239, 68, 68, 0.1)'
-            }
-          }
+          const isCorrect = result !== null && i === result.correctIndex
+          const isWrongSelection = result !== null && i === selectedIndex && !result.correct
 
           return (
             <button
               key={i}
               onClick={() => handleOptionClick(i)}
               disabled={result !== null}
-              style={itemStyle}
-              onMouseEnter={e => {
-                if (result === null) {
-                  e.currentTarget.style.borderColor = 'var(--accent)'
-                }
-              }}
-              onMouseLeave={e => {
-                if (result === null) {
-                  e.currentTarget.style.borderColor = 'var(--border)'
-                }
-              }}
+              className={cn(
+                'flex w-full items-center gap-3 rounded-xl border border-border bg-card px-6 py-4 text-left text-base transition-colors',
+                result === null && 'hover:border-accent',
+                isCorrect && 'border-success bg-success/10',
+                isWrongSelection && 'border-danger bg-danger/10'
+              )}
             >
-              <span style={{ fontWeight: 600, marginRight: '12px' }}>{String.fromCharCode(65 + i)}.</span>
+              <span className="font-mono font-semibold">{String.fromCharCode(65 + i)}.</span>
               {option}
             </button>
           )
@@ -148,25 +126,21 @@ export function QuizPage() {
       </div>
 
       {result && (
-        <div
-          style={{
-            padding: '24px',
-            borderRadius: '16px',
-            border: `1px solid ${result.correct ? '#10b981' : '#ef4444'}`,
-            background: result.correct ? 'rgba(16, 185, 129, 0.05)' : 'rgba(239, 68, 68, 0.05)',
-            marginBottom: '32px',
-          }}
-        >
-          <h3 style={{ margin: '0 0 12px', color: result.correct ? '#10b981' : '#ef4444', fontSize: '20px' }}>
-            {result.correct ? 'Chính xác! 🎉' : 'Chưa chính xác. ❌'}
-          </h3>
-          {explanationMarkdown && (
-            <div style={{ borderTop: '1px solid var(--border)', paddingTop: '12px', marginTop: '12px' }}>
-              <h4 style={{ margin: '0 0 8px', fontSize: '16px', color: 'var(--text-h)' }}>Giải thích chi tiết:</h4>
-              <MarkdownRenderer content={explanationMarkdown} />
-            </div>
-          )}
-        </div>
+        <Card className={cn(result.correct ? 'border-success' : 'border-danger')}>
+          <CardContent className="py-6">
+            <h3 className={cn('mb-3 text-xl font-semibold', result.correct ? 'text-success' : 'text-danger')}>
+              {result.correct ? 'Chính xác! 🎉' : 'Chưa chính xác. ❌'}
+            </h3>
+            {explanationMarkdown && (
+              <div className="border-t border-border pt-3">
+                <h4 className="mb-2 text-base font-medium">Giải thích chi tiết:</h4>
+                <div className="prose prose-invert max-w-none text-sm">
+                  <MarkdownRenderer content={explanationMarkdown} />
+                </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       )}
     </div>
   )

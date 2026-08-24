@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { flashcardsApi, DueCard, ReviewRating } from '../api/flashcards'
+import { flashcardsApi, type DueCard, type ReviewRating } from '../api/flashcards'
 import { questionsApi } from '../api/questions'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 import type { QuestionDetail } from '../types/question'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 
 export function FlashcardsPage() {
   const [cards, setCards] = useState<DueCard[] | null>(null)
@@ -27,6 +30,19 @@ export function FlashcardsPage() {
     }
   }, [cards, index])
 
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (!cards || index >= cards.length || loadingCard) return
+      if (e.key === '1') rate('AGAIN')
+      if (e.key === '2') rate('HARD')
+      if (e.key === '3') rate('GOOD')
+      if (e.key === '4') rate('EASY')
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cards, index, loadingCard])
+
   async function rate(rating: ReviewRating) {
     if (!cards) return
     await flashcardsApi.review(cards[index].questionId, rating)
@@ -35,26 +51,27 @@ export function FlashcardsPage() {
 
   if (cards === null) {
     return (
-      <div className="home-container" style={{ maxWidth: '600px', margin: '0 auto' }}>
-        <p style={{ color: 'var(--text)' }}>Đang tải danh sách thẻ...</p>
+      <div className="flex flex-col gap-4">
+        <Skeleton className="h-10 w-1/3" />
+        <Skeleton className="h-72 w-full" />
       </div>
     )
   }
 
   if (index >= cards.length) {
     return (
-      <div className="home-container" style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 20px' }}>
-        <h1 className="hero-title" style={{ fontSize: '40px' }}>Hoàn thành!</h1>
-        <p className="hero-subtitle">
+      <div className="flex flex-col items-center gap-6 py-12 text-center">
+        <h1 className="font-mono text-3xl font-semibold">Hoàn thành!</h1>
+        <p className="max-w-md text-muted-foreground">
           Không còn thẻ nào cần ôn tập hôm nay. Chúc mừng bạn đã hoàn thành mục tiêu! 🎉
         </p>
-        <div className="cta-group">
-          <Link className="btn-primary" to="/questions">
-            Xem kho câu hỏi
-          </Link>
-          <Link className="btn-secondary" to="/">
-            Trang chủ
-          </Link>
+        <div className="flex gap-4">
+          <Button asChild>
+            <Link to="/questions">Xem kho câu hỏi</Link>
+          </Button>
+          <Button asChild variant="secondary">
+            <Link to="/">Trang chủ</Link>
+          </Button>
         </div>
       </div>
     )
@@ -63,106 +80,62 @@ export function FlashcardsPage() {
   const card = cards[index]
 
   return (
-    <div className="home-container" style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'left' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center justify-between">
         <div>
-          <h1 className="hero-title" style={{ fontSize: '32px', margin: 0 }}>Luyện thẻ nhớ (SRS)</h1>
-          <span style={{ fontSize: '14px', color: 'var(--text)' }}>
-            Còn lại: <strong>{cards.length - index}</strong> thẻ
+          <h1 className="font-mono text-2xl font-semibold">Luyện thẻ nhớ (SRS)</h1>
+          <span className="text-sm text-muted-foreground">
+            Còn lại: <strong className="text-foreground">{cards.length - index}</strong> thẻ
           </span>
         </div>
-        <Link className="btn-secondary" to="/" style={{ padding: '8px 16px', fontSize: '14px' }}>
-          Thoát
-        </Link>
+        <Button asChild variant="secondary" size="sm">
+          <Link to="/">Thoát</Link>
+        </Button>
       </div>
 
-      <div
-        onClick={() => {
-          if (!loadingCard) setIsFlipped(!isFlipped)
-        }}
-        style={{
-          padding: '40px',
-          borderRadius: '16px',
-          background: 'var(--code-bg)',
-          border: '1px solid var(--border)',
-          boxShadow: 'var(--shadow)',
-          minHeight: '280px',
-          cursor: 'pointer',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
-          transition: 'transform 0.3s, border-color 0.2s',
-          transform: isFlipped ? 'rotateY(360deg)' : 'none',
-          marginBottom: '32px',
-          position: 'relative'
-        }}
-        onMouseEnter={e => {
-          e.currentTarget.style.borderColor = 'var(--accent)'
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.borderColor = 'var(--border)'
-        }}
-      >
-        <div style={{ position: 'absolute', top: '16px', right: '16px', fontSize: '12px', color: 'var(--text)' }}>
-          {isFlipped ? 'Đang hiện đáp án' : 'Nhấp để lật thẻ'}
-        </div>
-
-        {loadingCard ? (
-          <p style={{ color: 'var(--text)' }}>Đang tải nội dung...</p>
-        ) : !isFlipped ? (
-          <div>
-            <h2 style={{ fontSize: '24px', margin: '0 0 16px', textTransform: 'capitalize' }}>
-              {card.slug.replace(/-/g, ' ')}
-            </h2>
-            {detail && <div style={{ fontSize: '16px', color: 'var(--text-h)', textAlign: 'left' }}><MarkdownRenderer content={detail.markdownBody.split(/(## Đáp án chi tiết|## Detailed Answer)/i)[0]} /></div>}
+      <div className="[perspective:1200px]">
+        <Card
+          onClick={() => { if (!loadingCard) setIsFlipped(!isFlipped) }}
+          className="relative flex min-h-[280px] cursor-pointer flex-col items-center justify-center text-center transition-[transform] duration-300 hover:border-accent [transform-style:preserve-3d]"
+          style={{ transform: isFlipped ? 'rotateY(180deg)' : 'none' }}
+        >
+          <div className="absolute right-4 top-4 text-xs text-muted-foreground [backface-visibility:hidden]">
+            {isFlipped ? 'Đang hiện đáp án' : 'Nhấp để lật thẻ'}
           </div>
-        ) : (
-          <div style={{ textAlign: 'left', width: '100%' }}>
-            <h2 style={{ fontSize: '20px', borderBottom: '1px solid var(--border)', paddingBottom: '8px', marginTop: 0 }}>
-              Đáp án
-            </h2>
-            {detail ? (
-              <div style={{ fontSize: '15px' }}>
-                <MarkdownRenderer content={detail.markdownBody} />
+
+          <CardContent className="w-full py-6 [backface-visibility:hidden]" style={{ transform: isFlipped ? 'rotateY(180deg)' : 'none' }}>
+            {loadingCard ? (
+              <p className="text-muted-foreground">Đang tải nội dung...</p>
+            ) : !isFlipped ? (
+              <div>
+                <h2 className="mb-4 text-xl font-semibold capitalize">{card.slug.replace(/-/g, ' ')}</h2>
+                {detail && (
+                  <div className="prose prose-invert max-w-none text-left text-base">
+                    <MarkdownRenderer content={detail.markdownBody.split(/(## Đáp án chi tiết|## Detailed Answer)/i)[0]} />
+                  </div>
+                )}
               </div>
             ) : (
-              <p style={{ color: 'var(--text)' }}>Không tìm thấy đáp án.</p>
+              <div className="w-full text-left">
+                <h2 className="mb-2 border-b border-border pb-2 text-lg font-semibold">Đáp án</h2>
+                {detail ? (
+                  <div className="prose prose-invert max-w-none text-sm">
+                    <MarkdownRenderer content={detail.markdownBody} />
+                  </div>
+                ) : (
+                  <p className="text-muted-foreground">Không tìm thấy đáp án.</p>
+                )}
+              </div>
             )}
-          </div>
-        )}
+          </CardContent>
+        </Card>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
-        <button
-          className="auth-btn"
-          style={{ background: '#ef4444', fontSize: '14px', padding: '10px' }}
-          onClick={() => rate('AGAIN')}
-        >
-          Again
-        </button>
-        <button
-          className="auth-btn"
-          style={{ background: '#f59e0b', fontSize: '14px', padding: '10px' }}
-          onClick={() => rate('HARD')}
-        >
-          Hard
-        </button>
-        <button
-          className="auth-btn"
-          style={{ background: 'var(--accent)', fontSize: '14px', padding: '10px' }}
-          onClick={() => rate('GOOD')}
-        >
-          Good
-        </button>
-        <button
-          className="auth-btn"
-          style={{ background: '#10b981', fontSize: '14px', padding: '10px' }}
-          onClick={() => rate('EASY')}
-        >
-          Easy
-        </button>
+      <div className="grid grid-cols-4 gap-3">
+        <Button variant="destructive" onClick={() => rate('AGAIN')}>Again</Button>
+        <Button variant="warning" onClick={() => rate('HARD')}>Hard</Button>
+        <Button onClick={() => rate('GOOD')}>Good</Button>
+        <Button variant="success" onClick={() => rate('EASY')}>Easy</Button>
       </div>
     </div>
   )
