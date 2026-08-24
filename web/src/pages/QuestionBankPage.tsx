@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { questionsApi } from '../api/questions'
 import type { QuestionSummary } from '../types/question'
@@ -15,12 +15,19 @@ export function QuestionBankPage() {
   const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
 
-  // Reset page to 0 when filters change
-  useEffect(() => {
-    setPage(0)
-  }, [position, technology, level])
+  const prevFiltersRef = useRef({ position, technology, level })
 
   useEffect(() => {
+    const prev = prevFiltersRef.current
+    const filtersChanged = prev.position !== position || prev.technology !== technology || prev.level !== level
+    
+    prevFiltersRef.current = { position, technology, level }
+
+    if (filtersChanged && page !== 0) {
+      setPage(0)
+      return
+    }
+
     setLoading(true)
     questionsApi.list(position, technology.toLowerCase(), level, page, 10)
       .then(res => {

@@ -33,6 +33,7 @@ public class FlashcardService {
         this.redisTemplate = redisTemplate;
     }
 
+    @org.springframework.transaction.annotation.Transactional
     public void reviewCard(UUID userId, UUID questionId, ReviewRating rating) {
         FlashcardReview review = repository.findByUserIdAndQuestionId(userId, questionId)
             .orElseGet(() -> {
@@ -50,8 +51,12 @@ public class FlashcardService {
         review.setLastReviewedAt(Instant.now());
         repository.save(review);
 
-        redisTemplate.opsForZSet().add(
-            "srs:due:" + userId, questionId.toString(), (double) result.dueAt().getEpochSecond());
+        try {
+            redisTemplate.opsForZSet().add(
+                "srs:due:" + userId, questionId.toString(), (double) result.dueAt().getEpochSecond());
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to update Redis due list. Rolling back database save.", e);
+        }
     }
 
     public List<DueCardResponse> dueCards(UUID userId) {
