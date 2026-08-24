@@ -4,7 +4,8 @@ import com.interviewarena.question.dto.QuestionDetailResponse;
 import com.interviewarena.question.dto.QuestionSummaryResponse;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -19,12 +20,10 @@ public class QuestionService {
         this.contentReader = contentReader;
     }
 
-    public List<QuestionSummaryResponse> list(String position, String technology, String level) {
+    public Page<QuestionSummaryResponse> list(String position, String technology, String level, Pageable pageable) {
         return questionRepository
-            .findByStatusAndPositionAndTechnologyAndLevel(QuestionStatus.ACTIVE, position, technology, level)
-            .stream()
-            .map(q -> new QuestionSummaryResponse(q.getId(), q.getSlug(), q.getPosition(), q.getTechnology(), q.getLevel()))
-            .toList();
+            .findByStatusAndPositionAndTechnologyAndLevel(QuestionStatus.ACTIVE, position, technology, level, pageable)
+            .map(q -> new QuestionSummaryResponse(q.getId(), q.getSlug(), q.getPosition(), q.getTechnology(), q.getLevel()));
     }
 
     public QuestionDetailResponse getDetail(UUID id) {

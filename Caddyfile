@@ -1,0 +1,13 @@
+# Caddyfile for production
+:80 {
+    # Proxy API and Health endpoints to Spring Boot backend
+    reverse_proxy /api/* backend:8080
+    reverse_proxy /actuator/health backend:8080
+
+    # Serve built static frontend files
+    root * /var/www/html
+    file_server
+
+    # Fallback to index.html for Single Page App routing
+    try_files {path} /index.html
+}

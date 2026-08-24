@@ -73,7 +73,7 @@ class AuthControllerTest {
 
         String token = objectMapper.readTree(loginResponse).get("token").asText();
 
-        mockMvc.perform(get("/api/health")
+        mockMvc.perform(get("/api/progress")
                 .header("Authorization", "Bearer " + token))
             .andExpect(status().isOk());
     }

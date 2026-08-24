@@ -38,6 +38,7 @@ public class Question {
     private Instant syncedAt;
 
     public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
     public String getSlug() { return slug; }
     public void setSlug(String slug) { this.slug = slug; }
     public String getPosition() { return position; }

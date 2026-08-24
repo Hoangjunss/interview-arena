@@ -11,14 +11,24 @@ export function QuestionBankPage() {
   const [technology, setTechnology] = useState('react')
   const [level, setLevel] = useState('junior')
   const [questions, setQuestions] = useState<QuestionSummary[]>([])
+  const [page, setPage] = useState(0)
+  const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
+
+  // Reset page to 0 when filters change
+  useEffect(() => {
+    setPage(0)
+  }, [position, technology, level])
 
   useEffect(() => {
     setLoading(true)
-    questionsApi.list(position, technology.toLowerCase(), level)
-      .then(setQuestions)
+    questionsApi.list(position, technology.toLowerCase(), level, page, 10)
+      .then(res => {
+        setQuestions(res.content)
+        setTotalPages(res.totalPages)
+      })
       .finally(() => setLoading(false))
-  }, [position, technology, level])
+  }, [position, technology, level, page])
 
   return (
     <div className="home-container" style={{ textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
@@ -103,6 +113,29 @@ export function QuestionBankPage() {
               </span>
             </Link>
           ))}
+          {totalPages > 1 && (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginTop: '24px' }}>
+              <button
+                className="btn-secondary"
+                disabled={page === 0}
+                onClick={() => setPage(p => Math.max(0, p - 1))}
+                style={{ padding: '8px 16px', fontSize: '14px', cursor: page === 0 ? 'not-allowed' : 'pointer', opacity: page === 0 ? 0.5 : 1 }}
+              >
+                Trang trước
+              </button>
+              <span style={{ color: 'var(--text)', fontSize: '14px' }}>
+                Trang <strong>{page + 1}</strong> / {totalPages}
+              </span>
+              <button
+                className="btn-secondary"
+                disabled={page >= totalPages - 1}
+                onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
+                style={{ padding: '8px 16px', fontSize: '14px', cursor: page >= totalPages - 1 ? 'not-allowed' : 'pointer', opacity: page >= totalPages - 1 ? 0.5 : 1 }}
+              >
+                Trang sau
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

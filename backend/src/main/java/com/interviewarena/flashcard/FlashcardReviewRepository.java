@@ -3,6 +3,9 @@ package com.interviewarena.flashcard;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
@@ -15,4 +18,7 @@ public interface FlashcardReviewRepository extends JpaRepository<FlashcardReview
 
     @EntityGraph(attributePaths = {"question"})
     List<FlashcardReview> findByUserIdAndDueAtLessThanEqual(UUID userId, Instant now);
+
+    @Query("SELECT r.questionId FROM FlashcardReview r WHERE r.userId = :userId AND r.dueAt <= :now")
+    List<UUID> findDueQuestionIds(@Param("userId") UUID userId, @Param("now") Instant now);
 }

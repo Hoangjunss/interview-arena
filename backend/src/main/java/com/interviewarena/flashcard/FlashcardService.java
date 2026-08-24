@@ -9,11 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Service
 public class FlashcardService {
@@ -57,19 +55,43 @@ public class FlashcardService {
     }
 
     public List<DueCardResponse> dueCards(UUID userId) {
-        List<Question> activeQuestions = questionRepository.findByStatus(QuestionStatus.ACTIVE);
-        List<FlashcardReview> reviews = repository.findByUserId(userId);
-
-        Map<UUID, FlashcardReview> reviewMap = reviews.stream()
-            .collect(Collectors.toMap(FlashcardReview::getQuestionId, Function.identity()));
-
         Instant now = Instant.now();
+        Set<UUID> dueIds = new java.util.HashSet<>();
 
-        return activeQuestions.stream()
-            .filter(q -> {
-                FlashcardReview r = reviewMap.get(q.getId());
-                return r == null || !r.getDueAt().isAfter(now);
-            })
+        // 1. Fetch never-reviewed card IDs from DB
+        List<UUID> neverReviewedIds = questionRepository.findNeverReviewedQuestionIds(userId);
+        dueIds.addAll(neverReviewedIds);
+
+        // 2. Try fetching due reviewed cards from Redis
+        boolean redisSuccess = false;
+        try {
+            String redisKey = "srs:due:" + userId;
+            Set<String> memberIds = redisTemplate.opsForZSet().rangeByScore(redisKey, 0, now.getEpochSecond());
+            if (memberIds != null) {
+                for (String id : memberIds) {
+                    dueIds.add(UUID.fromString(id));
+                }
+                redisSuccess = true;
+            }
+        } catch (Exception e) {
+            System.err.println("Redis error in dueCards, falling back to DB: " + e.getMessage());
+        }
+
+        // 3. Fallback to DB if Redis query failed
+        if (!redisSuccess) {
+            List<UUID> dueReviewedIds = repository.findDueQuestionIds(userId, now);
+            dueIds.addAll(dueReviewedIds);
+        }
+
+        if (dueIds.isEmpty()) {
+            return List.of();
+        }
+
+        // 4. Batch fetch details from DB
+        List<Question> questions = questionRepository.findAllById(dueIds);
+
+        return questions.stream()
+            .filter(q -> q.getStatus() == QuestionStatus.ACTIVE)
             .map(q -> new DueCardResponse(q.getId(), q.getSlug()))
             .toList();
     }

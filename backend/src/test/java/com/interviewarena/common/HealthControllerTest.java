@@ -10,7 +10,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@SpringBootTest(properties = {
+    "management.health.defaults.enabled=false",
+    "management.health.ping.enabled=true"
+})
 @AutoConfigureMockMvc(addFilters = false)
 class HealthControllerTest {
 
@@ -19,7 +22,7 @@ class HealthControllerTest {
 
     @Test
     void health_returns200AndUpStatus() throws Exception {
-        mockMvc.perform(get("/api/health"))
+        mockMvc.perform(get("/actuator/health"))
             .andExpect(status().isOk())
             .andExpect(content().json("{\"status\":\"UP\"}"));
     }

@@ -1,14 +1,24 @@
 server:
   port: 8080
+  forward-headers-strategy: native
 
 spring:
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/interview_arena}
     username: ${DB_USERNAME:interview_arena}
     password: ${DB_PASSWORD:interview_arena}
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
   jpa:
     hibernate:
       ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
     open-in-view: false
   data:
     redis:
@@ -33,3 +43,12 @@ app:
     api-key: ${LLM_API_KEY:}
     base-url: ${LLM_API_BASE_URL:https://api.openai.com/v1}
     model: ${LLM_MODEL:gpt-4o-mini}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+  endpoint:
+    health:
+      show-details: when_authorized

@@ -18,6 +18,12 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.*;
 
+import java.util.List;
+import java.util.Set;
+import com.interviewarena.question.Question;
+import com.interviewarena.question.QuestionStatus;
+import com.interviewarena.flashcard.dto.DueCardResponse;
+
 @ExtendWith(MockitoExtension.class)
 class FlashcardServiceTest {
 
@@ -68,5 +74,63 @@ class FlashcardServiceTest {
 
         verify(repository).save(argThat(review ->
             review.getUserId().equals(userId) && review.getQuestionId().equals(questionId)));
+    }
+
+    @Test
+    void dueCards_returnsCombinedNeverReviewedAndRedisDueCards() {
+        UUID userId = UUID.randomUUID();
+        UUID neverReviewedId = UUID.randomUUID();
+        UUID redisDueId = UUID.randomUUID();
+
+        when(questionRepository.findNeverReviewedQuestionIds(userId)).thenReturn(List.of(neverReviewedId));
+        when(redisTemplate.opsForZSet()).thenReturn(zSetOperations);
+        when(zSetOperations.rangeByScore(eq("srs:due:" + userId), eq(0.0), anyDouble())).thenReturn(Set.of(redisDueId.toString()));
+
+        Question q1 = new Question();
+        q1.setId(neverReviewedId);
+        q1.setSlug("never-reviewed");
+        q1.setStatus(QuestionStatus.ACTIVE);
+
+        Question q2 = new Question();
+        q2.setId(redisDueId);
+        q2.setSlug("redis-due");
+        q2.setStatus(QuestionStatus.ACTIVE);
+
+        when(questionRepository.findAllById(any())).thenReturn(List.of(q1, q2));
+
+        FlashcardService service = new FlashcardService(repository, questionRepository, new Sm2Calculator(), redisTemplate);
+        List<DueCardResponse> result = service.dueCards(userId);
+
+        assertThat(result).hasSize(2);
+        assertThat(result).extracting(DueCardResponse::slug).containsExactlyInAnyOrder("never-reviewed", "redis-due");
+    }
+
+    @Test
+    void dueCards_fallsBackToDbWhenRedisThrowsException() {
+        UUID userId = UUID.randomUUID();
+        UUID neverReviewedId = UUID.randomUUID();
+        UUID dbDueId = UUID.randomUUID();
+
+        when(questionRepository.findNeverReviewedQuestionIds(userId)).thenReturn(List.of(neverReviewedId));
+        when(redisTemplate.opsForZSet()).thenThrow(new RuntimeException("Redis down"));
+        when(repository.findDueQuestionIds(eq(userId), any())).thenReturn(List.of(dbDueId));
+
+        Question q1 = new Question();
+        q1.setId(neverReviewedId);
+        q1.setSlug("never-reviewed");
+        q1.setStatus(QuestionStatus.ACTIVE);
+
+        Question q2 = new Question();
+        q2.setId(dbDueId);
+        q2.setSlug("db-due");
+        q2.setStatus(QuestionStatus.ACTIVE);
+
+        when(questionRepository.findAllById(any())).thenReturn(List.of(q1, q2));
+
+        FlashcardService service = new FlashcardService(repository, questionRepository, new Sm2Calculator(), redisTemplate);
+        List<DueCardResponse> result = service.dueCards(userId);
+
+        assertThat(result).hasSize(2);
+        assertThat(result).extracting(DueCardResponse::slug).containsExactlyInAnyOrder("never-reviewed", "db-due");
     }
 }

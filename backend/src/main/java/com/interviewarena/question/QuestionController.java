@@ -2,9 +2,10 @@ package com.interviewarena.question;
 
 import com.interviewarena.question.dto.QuestionDetailResponse;
 import com.interviewarena.question.dto.QuestionSummaryResponse;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -18,12 +19,14 @@ public class QuestionController {
     }
 
     @GetMapping
-    public List<QuestionSummaryResponse> list(
+    public Page<QuestionSummaryResponse> list(
         @RequestParam String position,
         @RequestParam String technology,
-        @RequestParam String level
+        @RequestParam String level,
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "10") int size
     ) {
-        return questionService.list(position, technology, level);
+        return questionService.list(position, technology, level, PageRequest.of(page, size));
     }
 
     @GetMapping("/{id}")

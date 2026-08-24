@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -39,15 +43,16 @@ class QuestionServiceTest {
 
     @Test
     void list_returnsOnlyActiveMatchingQuestions() {
+        PageRequest pageRequest = PageRequest.of(0, 10);
         when(questionRepository.findByStatusAndPositionAndTechnologyAndLevel(
-            QuestionStatus.ACTIVE, "frontend", "react", "mid"))
-            .thenReturn(List.of(activeQuestion()));
+            QuestionStatus.ACTIVE, "frontend", "react", "mid", pageRequest))
+            .thenReturn(new PageImpl<>(List.of(activeQuestion()), pageRequest, 1));
 
         QuestionService service = new QuestionService(questionRepository, contentReader);
-        List<QuestionSummaryResponse> result = service.list("frontend", "react", "mid");
+        Page<QuestionSummaryResponse> result = service.list("frontend", "react", "mid", pageRequest);
 
-        assertThat(result).hasSize(1);
-        assertThat(result.get(0).slug()).isEqualTo("react-q1");
+        assertThat(result.getContent()).hasSize(1);
+        assertThat(result.getContent().get(0).slug()).isEqualTo("react-q1");
     }
 
     @Test

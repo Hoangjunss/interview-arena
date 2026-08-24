@@ -12,9 +12,15 @@ describe('QuestionBankPage', () => {
   beforeEach(() => vi.clearAllMocks())
 
   it('lists questions returned for the default filters', async () => {
-    ;(questionsApi.list as any).mockResolvedValueOnce([
-      { id: '1', slug: 'react-q1', position: 'frontend', technology: 'react', level: 'junior' },
-    ])
+    ;(questionsApi.list as any).mockResolvedValueOnce({
+      content: [
+        { id: '1', slug: 'react-q1', position: 'frontend', technology: 'react', level: 'junior' },
+      ],
+      totalPages: 1,
+      totalElements: 1,
+      size: 10,
+      number: 0,
+    })
 
     render(
       <MemoryRouter>
