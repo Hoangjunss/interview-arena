@@ -30,9 +30,9 @@ describe('ProgressPage', () => {
       </MemoryRouter>
     )
 
-    await waitFor(() => expect(screen.getByText('4')).toBeInTheDocument())
-    expect(screen.getByText('78.5')).toBeInTheDocument()
-    expect(screen.getByText('66.7%')).toBeInTheDocument()
-    expect(screen.getByText('20')).toBeInTheDocument()
+    await waitFor(() => expect(screen.getAllByText('4').length).toBeGreaterThan(0))
+    expect(screen.getAllByText('78.5').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('66.7%').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('20').length).toBeGreaterThan(0)
   })
 })

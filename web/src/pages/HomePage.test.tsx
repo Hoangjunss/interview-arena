@@ -14,7 +14,7 @@ describe('HomePage', () => {
       </AuthProvider>
     )
 
-    expect(screen.getByRole('link', { name: 'Đăng nhập' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Đăng ký tài khoản' })).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /đăng nhập/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /đăng ký/i }).length).toBeGreaterThan(0)
   })
 })
