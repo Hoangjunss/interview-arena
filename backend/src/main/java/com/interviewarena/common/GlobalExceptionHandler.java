@@ -15,4 +15,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, String>> handleNotFound(NoSuchElementException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", e.getMessage()));
     }
+
+    @ExceptionHandler(com.interviewarena.interview.exception.QuotaExceededException.class)
+    public ResponseEntity<Map<String, String>> handleQuotaExceeded(com.interviewarena.interview.exception.QuotaExceededException e) {
+        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(Map.of("message", e.getMessage()));
+    }
 }

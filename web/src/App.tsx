@@ -9,6 +9,7 @@ import { FlashcardsPage } from './pages/FlashcardsPage'
 import { QuizPage } from './pages/QuizPage'
 import { InterviewSetupPage } from './pages/InterviewSetupPage'
 import { InterviewSessionPage } from './pages/InterviewSessionPage'
+import { ProgressPage } from './pages/ProgressPage'
 import './index.css'
 
 function HomePage() {
@@ -31,6 +32,9 @@ function HomePage() {
             </Link>
             <Link className="btn-primary" to="/interviews/new">
               Phỏng vấn thử AI 🤖
+            </Link>
+            <Link className="btn-secondary" to="/progress">
+              Tiến độ của tôi 📊
             </Link>
             <button
               className="btn-secondary"
@@ -74,6 +78,7 @@ export default function App() {
           <Route path="/quiz/:questionId" element={<QuizPage />} />
           <Route path="/interviews/new" element={<InterviewSetupPage />} />
           <Route path="/interviews/:sessionId" element={<InterviewSessionPage />} />
+          <Route path="/progress" element={<ProgressPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

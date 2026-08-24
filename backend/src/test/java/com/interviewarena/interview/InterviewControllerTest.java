@@ -26,10 +26,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class InterviewControllerTest {
 
     @Mock private InterviewService interviewService;
+    @Mock private InterviewQuotaService quotaService;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private MockMvc mockMvc() {
-        return MockMvcBuilders.standaloneSetup(new InterviewController(interviewService)).build();
+        return MockMvcBuilders.standaloneSetup(new InterviewController(interviewService, quotaService)).build();
     }
 
     private void authenticateAs(UUID userId) {

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { ApiError } from '../api/client'
 import { interviewApi } from '../api/interview'
 
 const POSITIONS = [
@@ -22,15 +23,22 @@ export function InterviewSetupPage() {
   const [technology, setTechnology] = useState('React')
   const [level, setLevel] = useState('mid')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   async function start() {
     if (!technology.trim()) return
     setLoading(true)
+    setError(null)
     try {
       const session = await interviewApi.start(position, technology, level)
       navigate(`/interviews/${session.sessionId}`)
     } catch (err) {
       console.error(err)
+      if (err instanceof ApiError && err.status === 429) {
+        setError('Bạn đã dùng hết lượt phỏng vấn AI miễn phí hôm nay. Nâng cấp Pro để tiếp tục.')
+      } else {
+        setError('Không thể bắt đầu phỏng vấn, thử lại sau.')
+      }
       setLoading(false)
     }
   }
@@ -57,6 +65,12 @@ export function InterviewSetupPage() {
         <p style={{ color: 'var(--text)', fontSize: '15px', marginBottom: '24px', lineHeight: 1.6 }}>
           Chọn vị trí tuyển dụng, công nghệ mục tiêu và trình độ mong muốn của bạn. AI sẽ đóng vai người phỏng vấn để kiểm tra kiến thức của bạn.
         </p>
+
+        {error && (
+          <div className="auth-alert" role="alert" style={{ marginBottom: '24px' }}>
+            {error}
+          </div>
+        )}
 
         <div className="form-group">
           <label className="form-label">Vị trí phỏng vấn</label>

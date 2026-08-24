@@ -11,6 +11,7 @@ import java.util.UUID;
 public interface FlashcardReviewRepository extends JpaRepository<FlashcardReview, UUID> {
     Optional<FlashcardReview> findByUserIdAndQuestionId(UUID userId, UUID questionId);
     List<FlashcardReview> findByUserId(UUID userId);
+    long countByUserId(UUID userId);
 
     @EntityGraph(attributePaths = {"question"})
     List<FlashcardReview> findByUserIdAndDueAtLessThanEqual(UUID userId, Instant now);

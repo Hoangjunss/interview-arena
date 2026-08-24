@@ -17,14 +17,18 @@ import java.util.UUID;
 public class InterviewController {
 
     private final InterviewService interviewService;
+    private final InterviewQuotaService quotaService;
 
-    public InterviewController(InterviewService interviewService) {
+    public InterviewController(InterviewService interviewService, InterviewQuotaService quotaService) {
         this.interviewService = interviewService;
+        this.quotaService = quotaService;
     }
 
     @PostMapping
     public ResponseEntity<InterviewSessionDto> start(@Valid @RequestBody StartInterviewRequest request) {
-        InterviewSessionDto dto = interviewService.startSession(currentUserId(), request);
+        UUID userId = currentUserId();
+        quotaService.checkAndConsume(userId);
+        InterviewSessionDto dto = interviewService.startSession(userId, request);
         return ResponseEntity.status(HttpStatus.CREATED).body(dto);
     }
 
