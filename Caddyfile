@@ -1,5 +1,9 @@
 # Caddyfile for production
-:80 {
+{
+	email {$ACME_EMAIL:admin@example.com}
+}
+
+{$DOMAIN:localhost} {
     # Proxy API and Health endpoints to Spring Boot backend
     reverse_proxy /api/* backend:8080
     reverse_proxy /actuator/health backend:8080

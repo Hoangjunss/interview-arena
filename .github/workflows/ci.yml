@@ -50,3 +50,11 @@ jobs:
 
       - name: Type-check
         run: npx tsc --noEmit
+
+  backup-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run backup rotation unit test
+        run: sh backup/test-rotate.sh
