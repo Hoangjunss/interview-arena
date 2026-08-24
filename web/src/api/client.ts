@@ -20,6 +20,7 @@ async function handle<T>(response: Response): Promise<T> {
     const body = await response.json().catch(() => ({ message: response.statusText }))
     throw new ApiError(response.status, body.message ?? 'Request failed')
   }
+  if (response.status === 204) return undefined as unknown as T
   return response.json() as Promise<T>
 }
 
@@ -36,4 +37,13 @@ export const apiClient = {
     })
     return handle<T>(response)
   },
+  put: async <T>(path: string, body: unknown): Promise<T> => {
+    const response = await fetch(path, {
+      method: 'PUT',
+      headers: buildHeaders(),
+      body: JSON.stringify(body),
+    })
+    return handle<T>(response)
+  },
 }
+

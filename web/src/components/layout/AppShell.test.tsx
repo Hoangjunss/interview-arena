@@ -23,8 +23,10 @@ describe('AppShell', () => {
   it('renders the nav links and the routed page content', () => {
     renderShell('/questions')
 
-    expect(screen.getByRole('link', { name: /kho câu hỏi/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /flashcards/i })).toBeInTheDocument()
+    // Links appear in both nav and footer — assert at least one is present
+    expect(screen.getAllByRole('link', { name: /kho câu hỏi/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /flashcards/i }).length).toBeGreaterThan(0)
     expect(screen.getByText('Questions content')).toBeInTheDocument()
   })
 })
+

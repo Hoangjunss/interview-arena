@@ -7,3 +7,10 @@ export interface AuthUser {
 export interface AuthResponse extends AuthUser {
   token: string
 }
+
+export interface UserProfile {
+  userId: string
+  email: string
+  displayName: string
+  createdAt: string
+}
