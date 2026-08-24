@@ -11,6 +11,8 @@ import { QuizPage } from './pages/QuizPage'
 import { InterviewSetupPage } from './pages/InterviewSetupPage'
 import { InterviewSessionPage } from './pages/InterviewSessionPage'
 import { ProgressPage } from './pages/ProgressPage'
+import { DsaListPage } from './pages/DsaListPage'
+import { DsaProblemPage } from './pages/DsaProblemPage'
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
             <Route path="/quiz/:questionId" element={<QuizPage />} />
             <Route path="/interviews/new" element={<InterviewSetupPage />} />
             <Route path="/interviews/:sessionId" element={<InterviewSessionPage />} />
+            <Route path="/dsa" element={<DsaListPage />} />
+            <Route path="/dsa/:slug" element={<DsaProblemPage />} />
             <Route path="/progress" element={<ProgressPage />} />
           </Route>
         </Routes>

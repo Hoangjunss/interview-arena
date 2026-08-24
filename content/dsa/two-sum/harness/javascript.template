@@ -1,0 +1,7 @@
+{{USER_CODE}}
+
+const lines = require('fs').readFileSync(0, 'utf8').split('\n')
+const nums = lines[0].split(',').map(s => parseInt(s.trim(), 10))
+const target = parseInt(lines[1].trim(), 10)
+const result = twoSum(nums, target)
+console.log(result.join(','))

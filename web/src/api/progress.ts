@@ -5,6 +5,7 @@ export interface Progress {
   averageInterviewScore: number
   quizAccuracyPercent: number
   cardsReviewedTotal: number
+  dsaProblemsSolved: number
 }
 
 export const progressApi = {

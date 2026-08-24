@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+{{USER_CODE}}
+
+int main() {
+    string line1, line2;
+    getline(cin, line1);
+    getline(cin, line2);
+
+    vector<int> nums;
+    stringstream ss(line1);
+    string item;
+    while (getline(ss, item, ',')) {
+        nums.push_back(stoi(item));
+    }
+    int target = stoi(line2);
+
+    vector<int> result = twoSum(nums, target);
+
+    for (size_t i = 0; i < result.size(); i++) {
+        if (i > 0) cout << ",";
+        cout << result[i];
+    }
+    cout << endl;
+    return 0;
+}

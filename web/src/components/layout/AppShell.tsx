@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { to: '/questions', label: 'Kho câu hỏi' },
   { to: '/flashcards', label: 'Flashcards' },
   { to: '/interviews/new', label: 'Phỏng vấn AI' },
+  { to: '/dsa', label: 'DSA' },
   { to: '/progress', label: 'Tiến độ' },
 ]
 

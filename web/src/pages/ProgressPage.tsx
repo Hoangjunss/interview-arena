@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { progressApi, type Progress } from '../api/progress'
 import { Link } from 'react-router-dom'
-import { Bot, TrendingUp, Target, Layers, Lightbulb, BookOpen, Brain, ArrowRight, Trophy, Flame } from 'lucide-react'
+import { Bot, TrendingUp, Target, Layers, Lightbulb, BookOpen, Brain, ArrowRight, Trophy, Flame, Code2 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
@@ -48,8 +48,8 @@ export function ProgressPage() {
           <Skeleton className="h-9 w-48" />
           <Skeleton className="mt-2 h-4 w-72" />
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-36 w-full" />)}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {Array.from({ length: 5 }).map((_, i) => <Skeleton key={i} className="h-36 w-full" />)}
         </div>
         <Skeleton className="h-48 w-full" />
       </div>
@@ -61,6 +61,7 @@ export function ProgressPage() {
     { icon: TrendingUp, label: 'Điểm phỏng vấn TB', value: progress.averageInterviewScore.toFixed(1), sub: '/ 10.0', color: 'text-accent', bg: 'bg-accent/10' },
     { icon: Target, label: 'Độ chính xác Quiz', value: `${progress.quizAccuracyPercent.toFixed(1)}%`, sub: 'câu đúng', color: 'text-warning', bg: 'bg-warning/10' },
     { icon: Layers, label: 'Thẻ ghi nhớ đã ôn', value: progress.cardsReviewedTotal, sub: 'lượt', color: 'text-green-400', bg: 'bg-green-400/10' },
+    { icon: Code2, label: 'Bài DSA đã giải', value: progress.dsaProblemsSolved, sub: 'bài', color: 'text-purple-400', bg: 'bg-purple-400/10' },
   ]
 
   const scoreLevel = getScoreLevel(progress.averageInterviewScore)
@@ -91,7 +92,7 @@ export function ProgressPage() {
       </div>
 
       {/* Stat cards */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {stats.map(stat => (
           <Card key={stat.label} className="group overflow-hidden transition-all hover:shadow-md">
             <CardContent className="flex flex-col gap-3 py-6 px-5">

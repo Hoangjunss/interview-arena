@@ -43,6 +43,12 @@ app:
     api-key: ${LLM_API_KEY:}
     base-url: ${LLM_API_BASE_URL:https://api.openai.com/v1}
     model: ${LLM_MODEL:gpt-4o-mini}
+  judge0:
+    base-url: ${JUDGE0_BASE_URL:http://localhost:2358}
+  dsa:
+    free-daily-quota: ${DSA_FREE_DAILY_QUOTA:20}
+    max-source-length: 20000
+
 
 management:
   endpoints:

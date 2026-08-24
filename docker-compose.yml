@@ -62,7 +62,46 @@ services:
     depends_on:
       - backend
 
+  judge0-db:
+    image: postgres:13.0
+    environment:
+      POSTGRES_DB: judge0
+      POSTGRES_USER: judge0
+      POSTGRES_PASSWORD: judge0
+    volumes:
+      - judge0_db_data:/var/lib/postgresql/data
+
+  judge0-redis:
+    image: redis:6.0
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "judge0redis"]
+    volumes:
+      - judge0_redis_data:/data
+
+  judge0-server:
+    image: judge0/judge0:1.13.0
+    volumes:
+      - ./judge0.conf:/judge0.conf:ro
+    privileged: true
+    ports:
+      - "127.0.0.1:2358:2358"
+    depends_on:
+      - judge0-db
+      - judge0-redis
+
+  judge0-workers:
+    image: judge0/judge0:1.13.0
+    command: ["./scripts/workers"]
+    volumes:
+      - ./judge0.conf:/judge0.conf:ro
+    privileged: true
+    depends_on:
+      - judge0-db
+      - judge0-redis
+
 volumes:
   pg_data:
   caddy_data:
   caddy_config:
+  judge0_db_data:
+  judge0_redis_data:
+

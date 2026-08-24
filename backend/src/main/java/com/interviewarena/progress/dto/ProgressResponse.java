@@ -4,5 +4,6 @@ public record ProgressResponse(
     int completedInterviews,
     double averageInterviewScore,
     double quizAccuracyPercent,
-    long cardsReviewedTotal
+    long cardsReviewedTotal,
+    long dsaProblemsSolved
 ) {}

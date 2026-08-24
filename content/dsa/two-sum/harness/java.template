@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    {{USER_CODE}}
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] numsStr = scanner.nextLine().trim().split(",");
+        int[] nums = new int[numsStr.length];
+        for (int i = 0; i < numsStr.length; i++) {
+            nums[i] = Integer.parseInt(numsStr[i].trim());
+        }
+        int target = Integer.parseInt(scanner.nextLine().trim());
+
+        Solution solution = new Solution();
+        int[] result = solution.twoSum(nums, target);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < result.length; i++) {
+            if (i > 0) sb.append(",");
+            sb.append(result[i]);
+        }
+        System.out.println(sb.toString());
+    }
+}

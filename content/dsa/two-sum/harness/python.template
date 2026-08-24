@@ -1,0 +1,13 @@
+import sys
+
+{{USER_CODE}}
+
+def main():
+    lines = sys.stdin.read().split("\n")
+    nums = [int(x.strip()) for x in lines[0].split(",")]
+    target = int(lines[1].strip())
+    result = two_sum(nums, target)
+    print(",".join(str(x) for x in result))
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,7 @@
 package com.interviewarena.progress;
 
+import com.interviewarena.dsa.DsaSubmissionRepository;
+import com.interviewarena.dsa.DsaVerdict;
 import com.interviewarena.flashcard.FlashcardReviewRepository;
 import com.interviewarena.interview.InterviewSession;
 import com.interviewarena.interview.InterviewSessionRepository;
@@ -23,6 +25,7 @@ class ProgressServiceTest {
     @Mock private InterviewSessionRepository interviewSessionRepository;
     @Mock private QuizAttemptRepository quizAttemptRepository;
     @Mock private FlashcardReviewRepository flashcardReviewRepository;
+    @Mock private DsaSubmissionRepository dsaSubmissionRepository;
 
     private InterviewSession completedSession(int score) {
         InterviewSession s = new InterviewSession();
@@ -38,21 +41,24 @@ class ProgressServiceTest {
     }
 
     @Test
-    void getProgress_aggregatesAcrossAllThreeActivityTypes() {
+    void getProgress_aggregatesAcrossAllActivityTypes() {
         UUID userId = UUID.randomUUID();
         when(interviewSessionRepository.findByUserIdAndStatus(userId, InterviewStatus.COMPLETED))
             .thenReturn(List.of(completedSession(80), completedSession(90)));
         when(quizAttemptRepository.findByUserId(userId))
             .thenReturn(List.of(attempt(true), attempt(true), attempt(false), attempt(true)));
         when(flashcardReviewRepository.countByUserId(userId)).thenReturn(12L);
+        when(dsaSubmissionRepository.countDistinctProblemIdByUserIdAndVerdict(userId, DsaVerdict.PASSED)).thenReturn(3L);
 
-        ProgressService service = new ProgressService(interviewSessionRepository, quizAttemptRepository, flashcardReviewRepository);
+        ProgressService service = new ProgressService(
+            interviewSessionRepository, quizAttemptRepository, flashcardReviewRepository, dsaSubmissionRepository);
         var result = service.getProgress(userId);
 
         assertThat(result.completedInterviews()).isEqualTo(2);
         assertThat(result.averageInterviewScore()).isEqualTo(85.0);
         assertThat(result.quizAccuracyPercent()).isEqualTo(75.0);
         assertThat(result.cardsReviewedTotal()).isEqualTo(12L);
+        assertThat(result.dsaProblemsSolved()).isEqualTo(3L);
     }
 
     @Test
@@ -61,12 +67,15 @@ class ProgressServiceTest {
         when(interviewSessionRepository.findByUserIdAndStatus(userId, InterviewStatus.COMPLETED)).thenReturn(List.of());
         when(quizAttemptRepository.findByUserId(userId)).thenReturn(List.of());
         when(flashcardReviewRepository.countByUserId(userId)).thenReturn(0L);
+        when(dsaSubmissionRepository.countDistinctProblemIdByUserIdAndVerdict(userId, DsaVerdict.PASSED)).thenReturn(0L);
 
-        ProgressService service = new ProgressService(interviewSessionRepository, quizAttemptRepository, flashcardReviewRepository);
+        ProgressService service = new ProgressService(
+            interviewSessionRepository, quizAttemptRepository, flashcardReviewRepository, dsaSubmissionRepository);
         var result = service.getProgress(userId);
 
         assertThat(result.completedInterviews()).isZero();
         assertThat(result.averageInterviewScore()).isEqualTo(0.0);
         assertThat(result.quizAccuracyPercent()).isEqualTo(0.0);
+        assertThat(result.dsaProblemsSolved()).isZero();
     }
 }

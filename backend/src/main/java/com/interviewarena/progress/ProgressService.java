@@ -1,5 +1,7 @@
 package com.interviewarena.progress;
 
+import com.interviewarena.dsa.DsaSubmissionRepository;
+import com.interviewarena.dsa.DsaVerdict;
 import com.interviewarena.flashcard.FlashcardReviewRepository;
 import com.interviewarena.interview.InterviewSession;
 import com.interviewarena.interview.InterviewSessionRepository;
@@ -18,15 +20,18 @@ public class ProgressService {
     private final InterviewSessionRepository interviewSessionRepository;
     private final QuizAttemptRepository quizAttemptRepository;
     private final FlashcardReviewRepository flashcardReviewRepository;
+    private final DsaSubmissionRepository dsaSubmissionRepository;
 
     public ProgressService(
         InterviewSessionRepository interviewSessionRepository,
         QuizAttemptRepository quizAttemptRepository,
-        FlashcardReviewRepository flashcardReviewRepository
+        FlashcardReviewRepository flashcardReviewRepository,
+        DsaSubmissionRepository dsaSubmissionRepository
     ) {
         this.interviewSessionRepository = interviewSessionRepository;
         this.quizAttemptRepository = quizAttemptRepository;
         this.flashcardReviewRepository = flashcardReviewRepository;
+        this.dsaSubmissionRepository = dsaSubmissionRepository;
     }
 
     public ProgressResponse getProgress(UUID userId) {
@@ -44,7 +49,8 @@ public class ProgressService {
             100.0 * attempts.stream().filter(QuizAttempt::isCorrect).count() / attempts.size();
 
         long cardsReviewed = flashcardReviewRepository.countByUserId(userId);
+        long dsaProblemsSolved = dsaSubmissionRepository.countDistinctProblemIdByUserIdAndVerdict(userId, DsaVerdict.PASSED);
 
-        return new ProgressResponse(completed.size(), avgScore, accuracy, cardsReviewed);
+        return new ProgressResponse(completed.size(), avgScore, accuracy, cardsReviewed, dsaProblemsSolved);
     }
 }

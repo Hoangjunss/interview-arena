@@ -22,6 +22,7 @@ describe('ProgressPage', () => {
       averageInterviewScore: 78.5,
       quizAccuracyPercent: 66.7,
       cardsReviewedTotal: 20,
+      dsaProblemsSolved: 5,
     })
 
     render(
@@ -34,5 +35,6 @@ describe('ProgressPage', () => {
     expect(screen.getAllByText('78.5').length).toBeGreaterThan(0)
     expect(screen.getAllByText('66.7%').length).toBeGreaterThan(0)
     expect(screen.getAllByText('20').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('5').length).toBeGreaterThan(0)
   })
 })
