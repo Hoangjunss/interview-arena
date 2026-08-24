@@ -38,7 +38,7 @@ spring:
 app:
   jwt:
     secret: ${JWT_SECRET:dev-only-secret-do-not-use-in-prod-please-change-to-something-longer}
-    expiration-minutes: 120
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:120}
   llm:
     api-key: ${LLM_API_KEY:}
     base-url: ${LLM_API_BASE_URL:https://api.openai.com/v1}
@@ -47,7 +47,7 @@ app:
     base-url: ${JUDGE0_BASE_URL:http://localhost:2358}
   dsa:
     free-daily-quota: ${DSA_FREE_DAILY_QUOTA:20}
-    max-source-length: 20000
+    max-source-length: ${DSA_MAX_SOURCE_LENGTH:20000}
   stripe:
     secret-key: ${STRIPE_SECRET_KEY:}
     webhook-secret: ${STRIPE_WEBHOOK_SECRET:}
