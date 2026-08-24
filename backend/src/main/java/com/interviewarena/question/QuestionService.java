@@ -34,4 +34,12 @@ public class QuestionService {
         String body = contentReader.readBody(q.getContentPath());
         return new QuestionDetailResponse(q.getId(), q.getSlug(), q.getPosition(), q.getTechnology(), q.getLevel(), body);
     }
+
+    public QuestionSummaryResponse updateStatus(UUID id, QuestionStatus status) {
+        Question q = questionRepository.findById(id)
+            .orElseThrow(() -> new NoSuchElementException("Question not found: " + id));
+        q.setStatus(status);
+        questionRepository.save(q);
+        return new QuestionSummaryResponse(q.getId(), q.getSlug(), q.getPosition(), q.getTechnology(), q.getLevel());
+    }
 }

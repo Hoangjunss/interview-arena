@@ -73,4 +73,18 @@ class QuestionServiceTest {
         assertThatThrownBy(() -> service.getDetail(UUID.randomUUID()))
             .isInstanceOf(NoSuchElementException.class);
     }
+
+    @Test
+    void updateStatus_promotesDraftToActiveAndPersists() {
+        Question q = activeQuestion();
+        q.setStatus(QuestionStatus.DRAFT);
+        when(questionRepository.findById(any())).thenReturn(Optional.of(q));
+        when(questionRepository.save(any(Question.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        QuestionService service = new QuestionService(questionRepository, contentReader);
+        var result = service.updateStatus(UUID.randomUUID(), QuestionStatus.ACTIVE);
+
+        assertThat(result.slug()).isEqualTo("react-q1");
+        assertThat(q.getStatus()).isEqualTo(QuestionStatus.ACTIVE);
+    }
 }

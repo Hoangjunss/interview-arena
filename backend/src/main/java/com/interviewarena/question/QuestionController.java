@@ -30,4 +30,12 @@ public class QuestionController {
     public QuestionDetailResponse detail(@PathVariable UUID id) {
         return questionService.getDetail(id);
     }
+
+    @PatchMapping("/{id}/status")
+    public QuestionSummaryResponse updateStatus(
+        @PathVariable UUID id,
+        @jakarta.validation.Valid @RequestBody com.interviewarena.question.dto.UpdateStatusRequest request
+    ) {
+        return questionService.updateStatus(id, request.status());
+    }
 }
