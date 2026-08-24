@@ -31,4 +31,13 @@ public class AuthService {
         user.setCreatedAt(Instant.now());
         return userRepository.save(user);
     }
+
+    public User login(String email, String rawPassword) {
+        User user = userRepository.findByEmail(email)
+            .orElseThrow(() -> new org.springframework.security.authentication.BadCredentialsException("Invalid credentials"));
+        if (!passwordEncoder.matches(rawPassword, user.getPasswordHash())) {
+            throw new org.springframework.security.authentication.BadCredentialsException("Invalid credentials");
+        }
+        return user;
+    }
 }

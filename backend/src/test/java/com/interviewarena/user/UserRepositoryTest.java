@@ -40,6 +40,11 @@ class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
+    @org.junit.jupiter.api.BeforeEach
+    void setUp() {
+        userRepository.deleteAllInBatch();
+    }
+
     @Test
     void findByEmail_returnsSavedUser() {
         User user = new User();
